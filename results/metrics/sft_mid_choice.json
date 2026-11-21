@@ -1,0 +1,6 @@
+{
+  "grpo_early_s0_train_seconds": 1011.5682451002067,
+  "sft_seconds_at_1000": 750.1,
+  "chosen_step": 2250,
+  "sft_seconds_since_1000": 941.1
+}

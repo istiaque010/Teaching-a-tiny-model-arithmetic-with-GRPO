@@ -1,0 +1,58 @@
+{
+  "run": "sft_extra",
+  "config": {
+    "run": "sft_extra",
+    "init": "sft",
+    "seed": 1,
+    "steps": 819,
+    "batch": 64,
+    "lr": 3e-05,
+    "min_lr": 3e-05,
+    "schedule": "constant",
+    "warmup": 0,
+    "weight_decay": 0.1,
+    "eval_every": 204,
+    "eval_samples": 4
+  },
+  "train_seconds": 564.0094128008932,
+  "response_tokens": 2091942,
+  "examples": 52416,
+  "evals": [
+    {
+      "step": 0,
+      "greedy_acc": 0.986,
+      "sample_acc": 0.9785,
+      "format_rate": 1.0
+    },
+    {
+      "step": 204,
+      "greedy_acc": 0.988,
+      "sample_acc": 0.977,
+      "format_rate": 1.0
+    },
+    {
+      "step": 408,
+      "greedy_acc": 0.992,
+      "sample_acc": 0.979,
+      "format_rate": 1.0
+    },
+    {
+      "step": 612,
+      "greedy_acc": 0.986,
+      "sample_acc": 0.9775,
+      "format_rate": 1.0
+    },
+    {
+      "step": 816,
+      "greedy_acc": 0.986,
+      "sample_acc": 0.975,
+      "format_rate": 1.0
+    },
+    {
+      "step": 819,
+      "greedy_acc": 0.986,
+      "sample_acc": 0.9725,
+      "format_rate": 1.0
+    }
+  ]
+}

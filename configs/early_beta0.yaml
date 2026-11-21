@@ -1,0 +1,20 @@
+# Ablation H9: no KL penalty (beta = 0).
+run: early_beta0
+init: sft/step_01000
+seed: 0
+iters: 300
+prompts_per_step: 16
+group_size: 8
+temperature: 1.0
+max_new: 64
+epochs: 2
+minibatch: 64
+lr: 1.0e-5
+warmup: 5
+clip_eps: 0.2
+beta: 0.0
+grad_clip: 1.0
+w_correct: 1.0
+w_format: 0.1
+eval_every: 50
+eval_samples: 4

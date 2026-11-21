@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GRPO Post-Training</title>
+<meta name="description" content="Project 8 tutorial: post-training a 13.9M-parameter language model with GRPO (group relative policy optimization) on checkable arithmetic, on a CPU, against fair matched-compute SFT baselines. Every step, why, the result, and how it led to the next step.">
+<style>
+:root {
+  --bg: #f7f6f3; --surface: #ffffff; --surface-2: #f1efea; --text: #1f2328; --muted: #5d6470;
+  --border: #e2ded6; --accent: #2f6fdb; --accent-soft: #e6eefc; --good: #1f8a4c; --good-soft: #e3f4ea;
+  --warn: #b26a00; --warn-soft: #fdf1dc; --bad: #c0392b; --bad-soft: #fbe6e3; --code-bg: #f3f1ec;
+  --grpo: #0072B2; --sft: #C98A00; --base: #7F7F7F; --grid: #e1e0d9; --axis: #c3c2b7;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15171b; --surface: #1d2026; --surface-2: #242830; --text: #e7e9ee; --muted: #a0a7b4;
+    --border: #323742; --accent: #7aa7ff; --accent-soft: #1f2b44; --good: #5cc98a; --good-soft: #17301f;
+    --warn: #f0b45a; --warn-soft: #33281a; --bad: #ff8a7a; --bad-soft: #3a1f1c; --code-bg: #262a32;
+    --grpo: #5aa9e6; --sft: #f0b84a; --base: #9aa0a6; --grid: #2c2f36; --axis: #3e434d;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15171b; --surface: #1d2026; --surface-2: #242830; --text: #e7e9ee; --muted: #a0a7b4;
+  --border: #323742; --accent: #7aa7ff; --accent-soft: #1f2b44; --good: #5cc98a; --good-soft: #17301f;
+  --warn: #f0b45a; --warn-soft: #33281a; --bad: #ff8a7a; --bad-soft: #3a1f1c; --code-bg: #262a32;
+  --grpo: #5aa9e6; --sft: #f0b84a; --base: #9aa0a6; --grid: #2c2f36; --axis: #3e434d;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+a { color: var(--accent); }
+code, pre { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 0.88em; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+pre { background: var(--code-bg); padding: 12px 14px; border-radius: 8px; overflow-x: auto; line-height: 1.5; }
+pre code { background: none; padding: 0; }
+h1, h2, h3, h4 { line-height: 1.25; }
+.layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 32px; max-width: 1180px;
+  margin: 0 auto; padding: 24px 16px 80px; }
+nav.toc { position: sticky; top: 16px; align-self: start; max-height: calc(100vh - 32px); overflow-y: auto; font-size: 14px; }
+nav.toc h4 { margin: 0 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-size: 12px; }
+nav.toc a { display: block; padding: 4px 10px; border-left: 2px solid var(--border); color: var(--muted); text-decoration: none; }
+nav.toc a:hover, nav.toc a.active { color: var(--accent); border-left-color: var(--accent); }
+nav.toc .group { margin: 14px 0 4px; font-weight: 600; color: var(--text); font-size: 13px; }
+main { min-width: 0; }
+header.hero { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
+header.hero h1 { margin: 0 0 8px; font-size: 30px; }
+header.hero p { margin: 6px 0; color: var(--muted); max-width: 72ch; }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; background: var(--good-soft); color: var(--good); }
+section { margin-top: 36px; }
+section > h2 { font-size: 24px; margin: 0 0 12px; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 18px; }
+.stat { background: var(--surface-2); border-radius: 10px; padding: 14px; }
+.stat .v { font-size: 26px; font-weight: 700; }
+.stat .l { font-size: 13px; color: var(--muted); }
+.flow { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
+.flow span.box { background: var(--accent-soft); border-radius: 8px; padding: 6px 10px; font-size: 14px; }
+.flow span.arrow { color: var(--muted); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; margin: 10px 0; }
+.tw { overflow-x: auto; }
+th, td { border-bottom: 1px solid var(--border); padding: 7px 9px; text-align: left; vertical-align: top; }
+th { background: var(--surface-2); font-weight: 600; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr.hl td { background: color-mix(in srgb, var(--grpo) 9%, var(--surface)); font-weight: 600; }
+.phase { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; margin-top: 22px; }
+.phase-head { display: flex; gap: 14px; align-items: center; }
+.phase-num { flex: none; width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: var(--surface); font-weight: 700; font-size: 17px; }
+.phase-head h3 { margin: 0; font-size: 21px; }
+.phase-head .sub { color: var(--muted); font-size: 14px; }
+.part { margin-top: 16px; }
+.part > h4 { margin: 0 0 6px; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.part p { margin: 6px 0; }
+.part ul { margin: 6px 0; padding-left: 22px; }
+.analogy { background: var(--surface-2); border-radius: 10px; padding: 10px 14px; font-size: 15px; }
+.analogy::before { content: "Think of it like this: "; font-weight: 600; }
+.decide { background: var(--good-soft); border-left: 4px solid var(--good); border-radius: 8px; padding: 12px 16px; margin-top: 16px; }
+.decide h4 { margin: 0 0 6px; color: var(--good); font-size: 14px; text-transform: uppercase; letter-spacing: .05em; }
+.decide p, .decide ul { margin: 4px 0; }
+.warn { background: var(--warn-soft); border-left: 4px solid var(--warn); border-radius: 8px; padding: 10px 14px; margin-top: 12px; }
+.warn b { color: var(--warn); }
+.note { background: var(--accent-soft); border-left: 4px solid var(--accent); border-radius: 8px; padding: 10px 14px; margin-top: 12px; }
+.theme-btn { float: right; background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 5px 10px; cursor: pointer; font-size: 13px; }
+.gloss dt { font-weight: 600; margin-top: 10px; }
+.gloss dd { margin: 2px 0 0 0; color: var(--muted); }
+.idea { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; margin-top: 22px; }
+.idea > h3 { margin: 0 0 4px; font-size: 21px; }
+.idea .lead { color: var(--muted); margin: 0 0 8px; }
+.demo { background: var(--surface-2); border-radius: 12px; padding: 16px; margin-top: 14px; }
+.demo-title { font-weight: 600; font-size: 14px; margin-bottom: 8px; }
+.demo-note { font-size: 13px; color: var(--muted); margin-top: 8px; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 12px; }
+.btn { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px;
+  padding: 6px 12px; font: inherit; font-size: 14px; cursor: pointer; }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.qbox { font-family: ui-monospace, Consolas, monospace; font-size: 14px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 12px; }
+.group { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; margin-top: 10px; }
+.ans { border: 2px solid var(--border); background: var(--surface); border-radius: 10px; padding: 8px 10px; cursor: pointer; font: inherit;
+  color: var(--text); text-align: left; transition: border-color .15s; }
+.ans .t { font-family: ui-monospace, Consolas, monospace; font-size: 12.5px; }
+.ans .r { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.ans .a { font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.ans.ok { border-color: var(--good); }
+.ans.no { border-color: var(--bad); }
+.ans .a.pos { color: var(--good); } .ans .a.neg { color: var(--bad); } .ans .a.zero { color: var(--muted); }
+.facts { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; color: var(--muted); margin-top: 10px; }
+.facts b { color: var(--text); }
+.verdict { font-weight: 600; margin-top: 8px; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; margin: 6px 0; font-size: 13px; color: var(--muted); }
+.legend i { width: 18px; height: 3px; border-radius: 2px; display: inline-block; vertical-align: middle; margin-right: 6px; }
+.legend i.sq { width: 12px; height: 12px; border-radius: 3px; }
+svg.chart { width: 100%; height: auto; display: block; overflow: visible; }
+svg.chart text { fill: var(--muted); font-size: 12px; font-family: system-ui, sans-serif; }
+svg.chart .gridl { stroke: var(--grid); stroke-width: 1; }
+#tip { position: fixed; pointer-events: none; background: var(--surface); color: var(--text); border: 1px solid var(--border);
+  border-radius: 8px; padding: 6px 10px; font-size: 13px; box-shadow: 0 4px 14px rgba(0,0,0,.15); opacity: 0; transition: opacity .12s; z-index: 10; max-width: 280px; }
+.yes { color: var(--good); font-weight: 700; } .no { color: var(--bad); font-weight: 700; }
+.ex { font-family: ui-monospace, Consolas, monospace; font-size: 13.5px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; padding: 8px 12px; margin-top: 8px; }
+.ex mark { background: var(--bad-soft); color: var(--bad); border-radius: 3px; padding: 0 2px; }
+.ex .who { font-family: system-ui, sans-serif; font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; gap: 16px; }
+  nav.toc { position: static; max-height: none; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+  header.hero { padding: 20px; }
+  header.hero h1 { font-size: 24px; }
+  .phase, .idea { padding: 18px 16px; }
+}
+</style>
+</head>
+<body>
+<div id="tip" role="tooltip"></div>
+<div class="layout">
+<nav class="toc" aria-label="Contents">
+  <h4>Contents</h4>
+  <a href="#top">Overview</a>
+  <a href="#basics">Start here: the basic ideas</a>
+  <a href="#results">Final results</a>
+  <a href="#compute">Same compute, two methods</a>
+  <a href="#hyp">Predictions vs results</a>
+  <div class="group">The 16 phases</div>
+  <a href="#p1">1 Environment</a>
+  <a href="#p2">2 A checkable task</a>
+  <a href="#p3">3 Answer format and parser</a>
+  <a href="#p4">4 Baseline</a>
+  <a href="#p5">5 SFT warm-up</a>
+  <a href="#p6">6 Reward</a>
+  <a href="#p7">7 Grouped sampling</a>
+  <a href="#p8">8 Advantages</a>
+  <a href="#p9">9 GRPO objective</a>
+  <a href="#p10">10 Training</a>
+  <a href="#p11">11 Fair baselines</a>
+  <a href="#p12">12 Test results</a>
+  <a href="#p13">13 Cost</a>
+  <a href="#p14">14 Ablations</a>
+  <a href="#p15">15 Error analysis</a>
+  <a href="#p16">16 Reproducibility</a>
+  <div class="group">Wrap-up</div>
+  <a href="#lessons">Lessons learned</a>
+  <a href="#glossary">Glossary</a>
+</nav>
+<main>
+<header class="hero" id="top">
+  <button class="theme-btn" id="themeBtn" type="button">Light / dark</button>
+  <span class="badge">Project 8 · complete</span>
+  <h1>Teaching a tiny model arithmetic with GRPO</h1>
+  <p>We take Project 1's small GPT (13.9M parameters, trained only on children's stories) and post-train it with
+  <b>GRPO</b>, the reinforcement-learning method behind recent "reasoning" models, on arithmetic problems whose answers
+  a program can check. Everything is written by hand and runs on a CPU.</p>
+  <p><b>Question:</b> with the same compute, does GRPO make the model more accurate than plain supervised fine-tuning?</p>
+  <p><b>Answer:</b> GRPO works (+15 points from a half-trained start), but spending the same time on more supervised
+  training works far better (+38 points). From a fully trained start GRPO has almost nothing left to learn from.</p>
+  <div class="stats">
+    <div class="stat"><div class="v">0%</div><div class="l">original model: cannot produce an answer at all</div></div>
+    <div class="stat"><div class="v">+15 pts</div><div class="l">GRPO from a half-trained SFT model (54% → 69–70%), all 3 seeds</div></div>
+    <div class="stat"><div class="v">−22 pts</div><div class="l">GRPO vs more SFT for the same training time</div></div>
+    <div class="stat"><div class="v">~90%</div><div class="l">of answer groups give GRPO no signal when starting from the final SFT model</div></div>
+  </div>
+</header>
+
+<section id="basics">
+  <h2>Start here: the basic ideas</h2>
+  <div class="idea">
+    <h3>Two ways to teach a model</h3>
+    <p class="lead">Supervised fine-tuning shows the answer. Reinforcement learning only says "good" or "bad".</p>
+    <p><b>Supervised fine-tuning (SFT):</b> we show the model a question and a correct worked solution and train it to
+    predict every token of that solution. The model gets a correction on <i>every token</i>.</p>
+    <p><b>Reinforcement learning (RL):</b> the model writes its own answer, a program checks it, and the model gets one
+    number back: the <b>reward</b> (here 1 if the final number is right, plus 0.1 if the answer is well formed). The model
+    has to work out which of its own choices led to the reward.</p>
+    <div class="analogy">SFT is a teacher writing out the full solution for you to copy. RL is a teacher who only marks your
+    answer right or wrong. The second is much less information per question, but it works even when nobody knows how to
+    write the solution.</div>
+  </div>
+
+  <div class="idea">
+    <h3>GRPO in one picture: compare answers to the same question</h3>
+    <p class="lead">Group Relative Policy Optimization asks the model the same question several times and compares the answers with each other.</p>
+    <div class="flow">
+      <span class="box">1. ask one question 8 times</span><span class="arrow">→</span>
+      <span class="box">2. reward each answer</span><span class="arrow">→</span>
+      <span class="box">3. advantage = reward − group average</span><span class="arrow">→</span>
+      <span class="box">4. make above-average answers more likely, below-average less</span>
+    </div>
+    <p>Step 3 is the clever part. There is no separate "critic" model to predict how good an answer should be: the
+    group's own average is the yardstick. It also has a catch, which became the main story of this project: <b>if all 8
+    answers get the same reward, every advantage is zero and the model learns nothing from that question.</b></p>
+    <div class="demo">
+      <div class="demo-title">Try it: click an answer to mark it right or wrong</div>
+      <div class="qbox">Question: 34 + 59 - 18 = ?  (true answer 75)</div>
+      <div class="group" id="group"></div>
+      <div class="facts" id="gfacts"></div>
+      <div class="verdict" id="gverdict"></div>
+      <div class="controls">
+        <button class="btn" type="button" data-preset="mixed">Half-trained model (some right)</button>
+        <button class="btn" type="button" data-preset="all">Fully trained model (all right)</button>
+        <button class="btn" type="button" data-preset="none">Untrained model (none right)</button>
+        <button class="btn" type="button" data-preset="one">Only one right</button>
+      </div>
+      <div class="demo-note">Advantage = (reward − group mean) ÷ group standard deviation; the 0.1 format bonus is included.
+      A rare correct answer in a mostly-wrong group gets a big push; a group where all answers agree gets none.</div>
+    </div>
+  </div>
+
+  <div class="idea">
+    <h3>The task: checkable arithmetic</h3>
+    <p class="lead">Five kinds of problems, one or two steps each, so every answer and every step can be checked by a program.</p>
+    <div class="ex"><span class="who">prompt</span><br>Question: Sam has 47 apples. Sam gets 28 more. How many apples does Sam have now?<br>Solution:</div>
+    <div class="ex"><span class="who">what the model should write</span><br> 47 + 28 = 75.<br>Final answer: &lt;answer&gt;75&lt;/answer&gt;</div>
+    <p>Families: addition/subtraction, multiplication, 3-number chains (<code>12 * 4 - 9</code>), one-step word problems,
+    two-step word problems. 100,000 training, 500 validation, 1,000 test problems, split by a hash so no test problem (or the
+    same problem with operands swapped) ever appears in training.</p>
+  </div>
+</section>
+
+<section id="results">
+  <h2>Final results at a glance</h2>
+  <div class="card">
+    <p style="margin-top:0">Sampled accuracy on the 1,000 test problems (average over 16 answers per question at temperature 1.0,
+    which is exactly what GRPO optimises). GRPO bars are the mean of 3 seeds; hover for details.</p>
+    <div class="legend">
+      <span><i class="sq" style="background:var(--base)"></i>no training / starting point</span>
+      <span><i class="sq" style="background:var(--grpo)"></i>+ GRPO</span>
+      <span><i class="sq" style="background:var(--sft)"></i>+ more SFT, same time instead</span>
+    </div>
+    <svg class="chart" id="barChart" viewBox="0 0 720 300" role="img" aria-label="Bar chart of test sampled accuracy by system"></svg>
+    <div class="tw"><table>
+      <thead><tr><th>System</th><th class="num">Greedy</th><th class="num">Sampled</th><th class="num">pass@16</th></tr></thead>
+      <tbody>
+        <tr><td>Project 1 model</td><td class="num">0.0%</td><td class="num">0.0%</td><td class="num">0.0%</td></tr>
+        <tr><td>SFT, 1,000 updates</td><td class="num">63.6%</td><td class="num">53.6%</td><td class="num">90.3%</td></tr>
+        <tr class="hl"><td>+ GRPO (3 seeds)</td><td class="num">73.6–76.1%</td><td class="num">68.7–70.1%</td><td class="num">91.7–93.1%</td></tr>
+        <tr><td>+ more SFT, same time</td><td class="num">94.9%</td><td class="num">91.5%</td><td class="num">99.3%</td></tr>
+        <tr><td>SFT, 3,000 updates (final)</td><td class="num">98.7%</td><td class="num">96.9%</td><td class="num">99.6%</td></tr>
+        <tr class="hl"><td>+ GRPO (3 seeds)</td><td class="num">98.2–99.3%</td><td class="num">96.7–97.4%</td><td class="num">99.6–100%</td></tr>
+        <tr><td>+ more SFT, same time</td><td class="num">98.9%</td><td class="num">97.7%</td><td class="num">99.9%</td></tr>
+        <tr><td>final SFT, temperature 0.7</td><td class="num">–</td><td class="num">98.0%</td><td class="num">99.6%</td></tr>
+      </tbody>
+    </table></div>
+    <p style="font-size:14px;color:var(--muted)">Greedy = the single most likely answer. pass@16 = at least one of 16 answers is right.</p>
+  </div>
+</section>
+
+<section id="compute">
+  <h2>Same compute, two methods</h2>
+  <div class="card">
+    <p style="margin-top:0">Both lines start from the same SFT checkpoint (update 1,000). The x-axis is real training time on this
+    CPU; the y-axis is validation sampled accuracy. Hover the points.</p>
+    <div class="legend">
+      <span><i style="background:var(--sft)"></i>more SFT (the same run, continued)</span>
+      <span><i style="background:var(--grpo)"></i>GRPO, 3 seeds</span>
+    </div>
+    <svg class="chart" id="lineChart" viewBox="0 0 720 320" role="img" aria-label="Validation accuracy versus training minutes for more SFT and GRPO"></svg>
+    <p>GRPO climbs fast for about 3 minutes, then flattens near 70%. More SFT keeps climbing to 90% in the same 16–17
+    minutes. Why: as GRPO gets better, more of its answer groups become all-correct (zero signal grows from 45% to 55%),
+    while SFT gets a full worked solution for every example no matter how good the model already is.</p>
+  </div>
+</section>
+
+<section id="hyp">
+  <h2>Predictions vs results</h2>
+  <div class="card">
+    <p style="margin-top:0">All predictions were written in <code>configs/hypotheses.md</code> before any GRPO run or test result.
+    "Holds" means the 95% confidence interval is on the predicted side.</p>
+    <div class="tw"><table>
+      <thead><tr><th>#</th><th>Prediction</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>H1</td><td>The original model cannot do the task</td><td><span class="yes">holds</span>: 0% valid answers</td></tr>
+        <tr><td>H2</td><td>After SFT, ≥ 50% of GRPO groups carry signal</td><td><span class="no">fails</span>: only ~10% from the final SFT model (53–63% from the early start)</td></tr>
+        <tr><td>H3</td><td><b>GRPO improves on the final SFT model</b></td><td><span class="no">not supported</span>: +0.5, −0.2, −0.1 points</td></tr>
+        <tr><td>H4</td><td><b>GRPO beats more SFT at the same compute</b></td><td><span class="no">fails</span>: −0.4, −1.0, −1.0 points</td></tr>
+        <tr><td>H5</td><td>Greedy accuracy improves too (not just sharpening)</td><td><span class="no">not supported</span> from the final SFT model</td></tr>
+        <tr><td>H6</td><td>GRPO does not widen coverage (pass@16 &lt; +1)</td><td><span class="yes">holds</span>, but there is no room at 99.6%</td></tr>
+        <tr><td>H7</td><td>The format bonus is not needed</td><td><span class="yes">holds</span>: within ±1.2 points</td></tr>
+        <tr><td>H8</td><td>Bigger groups (8) beat small ones (2)</td><td><span class="no">fails</span>: groups of 2 were 0.8–2.3 points better</td></tr>
+        <tr><td>H9</td><td>The KL penalty limits drift</td><td><span class="no">not supported</span>: same drift without it</td></tr>
+        <tr><td>H10</td><td>From the early start, GRPO improves</td><td><span class="yes">holds</span>: +15 to +16.5 points, every seed</td></tr>
+        <tr><td>H11</td><td>From the early start, GRPO beats more SFT</td><td><span class="no">fails</span>: −21 to −23 points, every seed</td></tr>
+      </tbody>
+    </table></div>
+    <p>Most predictions failed, and that is useful: they were written down first, so the failures are real findings, not
+    stories told after the fact.</p>
+  </div>
+</section>
+
+<section id="phases">
+  <h2>The 16 phases</h2>
+
+  <div class="phase" id="p1">
+    <div class="phase-head"><div class="phase-num">1</div><div><h3>Environment</h3><div class="sub">a clean, recorded setup</div></div></div>
+    <div class="part"><h4>What we did</h4><p>New folder <code>project8</code> with its own virtual environment (PyTorch 2.14.1, CPU), a frozen
+    package list, and <code>scripts/env_report.py</code> recording Python 3.12.10, 24 CPU threads and 63.7 GB RAM. Project 1's
+    model and tokenizer are read from <code>../project1</code> and never modified (checked by sha256).</p></div>
+    <div class="part"><h4>Why</h4><p>RL results move with small details (seeds, versions, thread counts). Recording them first makes every later number reproducible.</p></div>
+    <div class="decide"><h4>Decision</h4><p>No GPU, so GRPO is written by hand in PyTorch instead of using an RL library built for GPUs. That also makes every part of the algorithm visible.</p></div>
+  </div>
+
+  <div class="phase" id="p2">
+    <div class="phase-head"><div class="phase-num">2</div><div><h3>A checkable task</h3><div class="sub">rewards a program can compute</div></div></div>
+    <div class="part"><h4>What we did</h4><p><code>grpo/tasks.py</code> generates 5 problem families with numbers small enough for a
+    13.9M model. Each problem has a "chain" (e.g. <code>3*4=12;12-5=7</code>). The split into train / validation / test is a hash of
+    that chain with commutative operands sorted, so <code>3 + 5</code> and <code>5 + 3</code> always land in the same split.</p></div>
+    <div class="part"><h4>Result</h4><p>100,000 training, 500 validation and 1,000 test problems, zero overlap (checked by an assertion).
+    Test: 476 one-step and 524 two-step problems.</p></div>
+    <div class="warn"><b>Problem found:</b> multiplication first had too few unique problems to fill the test set. We widened the range
+    (2–12 × 2–99) and made the chain canonical before generating anything else.</div>
+  </div>
+
+  <div class="phase" id="p3">
+    <div class="phase-head"><div class="phase-num">3</div><div><h3>Answer format and a strict parser</h3><div class="sub">no partial credit for sloppy answers</div></div></div>
+    <div class="part"><h4>What we did</h4><p>Every answer must end with <code>Final answer: &lt;answer&gt;N&lt;/answer&gt;</code>.
+    <code>grpo/answer_parser.py</code> accepts exactly one tag with one number and labels every failure: no tag, unclosed tag,
+    two different answers, not a number, too long.</p></div>
+    <div class="part"><h4>Why</h4><p>An RL model will exploit any loophole in its reward. A lenient parser ("take the last number in the text")
+    could pay for answers that list many numbers. Strict parsing closes that door.</p></div>
+  </div>
+
+  <div class="phase" id="p4">
+    <div class="phase-head"><div class="phase-num">4</div><div><h3>Baseline: the original model</h3><div class="sub">where we start</div></div></div>
+    <div class="part"><h4>Result</h4><p><b>0% accuracy, 0% valid format.</b> The story model just keeps writing a story after "Solution:".</p></div>
+    <div class="decide"><h4>Decision</h4><p>GRPO cannot start here: if no answer is ever right, every group has reward 0 and every advantage is 0.
+    We need a supervised warm-up first.</p></div>
+  </div>
+
+  <div class="phase" id="p5">
+    <div class="phase-head"><div class="phase-num">5</div><div><h3>SFT warm-up</h3><div class="sub">teach the format and the basics by example</div></div></div>
+    <div class="part"><h4>What we did</h4><p>3,000 updates × 64 worked solutions (38 minutes), loss only on the solution tokens,
+    learning rate 3e-4 decaying to 3e-5. Checkpoint and validation every 250 updates.</p></div>
+    <div class="part"><h4>Result</h4>
+    <div class="tw"><table><thead><tr><th>SFT update</th><th class="num">1,000</th><th class="num">2,000</th><th class="num">2,250</th><th class="num">3,000</th></tr></thead>
+    <tbody><tr><td>validation greedy</td><td class="num">64.4%</td><td class="num">89.6%</td><td class="num">96.0%</td><td class="num">98.6%</td></tr>
+    <tr><td>validation sampled</td><td class="num">54.8%</td><td class="num">84.8%</td><td class="num">89.9%</td><td class="num">96.9%</td></tr></tbody></table></div></div>
+    <div class="decide"><h4>Decision</h4><p>The final SFT model is almost perfect, so GRPO from it might have nothing to learn. Before running any GRPO,
+    we added a second starting point, <b>SFT update 1,000</b> (55%), and wrote that change into the hypotheses file. The original
+    plan was kept unchanged alongside it.</p></div>
+  </div>
+
+  <div class="phase" id="p6">
+    <div class="phase-head"><div class="phase-num">6</div><div><h3>Reward</h3><div class="sub">what "good" means</div></div></div>
+    <div class="part"><h4>What we did</h4><p><code>reward = 1.0 × correct + 0.1 × valid format</code>. The format bonus is small, so a
+    well-formatted wrong answer (0.1) is always worth much less than a correct one (1.1).</p></div>
+    <div class="analogy">A small mark for neat handwriting, a big mark for the right answer. Neatness alone never passes the test.</div>
+  </div>
+
+  <div class="phase" id="p7">
+    <div class="phase-head"><div class="phase-num">7</div><div><h3>Grouped sampling</h3><div class="sub">8 answers per question, fast</div></div></div>
+    <div class="part"><h4>What we did</h4><p><code>grpo/policy.py</code> samples 16 questions × 8 answers = 128 answers at once, at temperature 1.0,
+    with a key-value cache (each new token reuses the work done for earlier tokens). Prompts of different lengths are padded on the left so all
+    answers start at the same position, and the position numbers count only real tokens.</p></div>
+    <div class="part"><h4>Why it matters</h4><p>Generating answers is the slowest part of RL: tokens must be written one after another. Batching 128 answers
+    made one GRPO iteration take 2–3.5 seconds instead of minutes.</p></div>
+  </div>
+
+  <div class="phase" id="p8">
+    <div class="phase-head"><div class="phase-num">8</div><div><h3>Group-relative advantages</h3><div class="sub">better or worse than the group?</div></div></div>
+    <div class="part"><h4>What we did</h4><p><code>advantage = (reward − group mean) / (group std + 1e-6)</code>. Groups where all rewards are equal get advantage 0,
+    and their share is logged every iteration. That number, "zero-variance groups", became the key diagnostic.</p></div>
+    <div class="note">Try the demo at the top: one right answer among eight gets advantage +2.6; seven right and one wrong gives the wrong one −2.6 and each right one only +0.38.</div>
+  </div>
+
+  <div class="phase" id="p9">
+    <div class="phase-head"><div class="phase-num">9</div><div><h3>The GRPO objective</h3><div class="sub">a careful, limited step</div></div></div>
+    <div class="part"><h4>What we did</h4><p><code>grpo/grpo_loss.py</code>: for every answer token, the ratio between the new and old probability of that token,
+    multiplied by the answer's advantage, with the ratio <b>clipped</b> to [0.8, 1.2] so one update cannot move too far. Plus a
+    <b>KL penalty</b> (β = 0.04) that pulls the model back toward the starting model. Each batch of 128 answers is used for 2 passes
+    of 2 updates.</p></div>
+    <div class="analogy">Clipping is a speed limit per update; the KL penalty is a rubber band tying the model to where it started.</div>
+    <div class="part"><h4>Check</h4><p>Unit tests: answers with zero advantage give zero gradient; a clipped token gives no gradient; KL is 0 at the reference. 46 tests in total.</p></div>
+  </div>
+
+  <div class="phase" id="p10">
+    <div class="phase-head"><div class="phase-num">10</div><div><h3>Training with GRPO</h3><div class="sub">pilot first, then 10 runs</div></div></div>
+    <div class="part"><h4>Learning-rate pilot (validation only, 60 iterations)</h4>
+    <div class="tw"><table><thead><tr><th>learning rate</th><th class="num">val sampled after 60 iterations</th></tr></thead>
+    <tbody><tr><td><b>1e-5</b></td><td class="num"><b>63.3%</b> (from 53.4%)</td></tr><tr><td>3e-5</td><td class="num">60.3%</td></tr><tr><td>1e-4</td><td class="num">36.5% (collapsed)</td></tr></tbody></table></div></div>
+    <div class="part"><h4>Main runs (300 iterations, 38,400 answers each)</h4>
+    <ul>
+      <li><b>From the final SFT model:</b> about 90% of groups are all-correct for the whole run; the reward stays flat at 1.07.</li>
+      <li><b>From SFT update 1,000:</b> about half the groups have signal; reward rises 0.70 → 0.84; validation 54% → 68–72%. Training is
+      stable: about 0.1% of tokens clipped, answer length unchanged.</li>
+    </ul></div>
+    <div class="warn"><b>Lesson:</b> the learning rate, not the clipping, kept GRPO stable. At 1e-4 the model broke within 20 iterations even with clipping.</div>
+  </div>
+
+  <div class="phase" id="p11">
+    <div class="phase-head"><div class="phase-num">11</div><div><h3>Fair baselines</h3><div class="sub">what would the same time buy otherwise?</div></div></div>
+    <div class="part"><h4>What we did</h4><p>A GRPO gain only counts if it beats the obvious alternative. Fixed before testing:</p>
+    <ul>
+      <li><b>more SFT, same time</b> for each starting point: for the early start, the SFT checkpoint whose extra time after update 1,000
+      is closest to GRPO's (update 2,250: 941 s vs 1,012 s); for the final start, 819 more SFT updates (564 s vs 618 s).</li>
+      <li><b>a lower sampling temperature (0.7)</b>: RL often just makes a model more confident, which a lower temperature does for free.</li>
+    </ul>
+    Both "more SFT" controls got slightly <i>less</i> time than GRPO, so the comparison leans in GRPO's favour.</p></div>
+  </div>
+
+  <div class="phase" id="p12">
+    <div class="phase-head"><div class="phase-num">12</div><div><h3>Test results</h3><div class="sub">1,000 problems × (1 greedy + 16 sampled answers)</div></div></div>
+    <div class="part"><h4>Paired differences (points, 95% interval; seeds 0 / 1 / 2)</h4>
+    <div class="tw"><table><thead><tr><th>Comparison</th><th>Sampled accuracy</th></tr></thead><tbody>
+      <tr><td>GRPO (early) − its start</td><td><span class="yes">+16.5 / +15.0 / +15.1</span></td></tr>
+      <tr><td>GRPO (early) − more SFT, same time</td><td><span class="no">−21.4 / −22.9 / −22.8</span></td></tr>
+      <tr><td>GRPO (early) − start at temperature 0.7</td><td><span class="yes">+11.2</span> [+9.5, +12.9]</td></tr>
+      <tr><td>GRPO (final) − its start</td><td>+0.5 [−0.0, +0.9] / −0.2 / −0.1</td></tr>
+      <tr><td>GRPO (final) − more SFT, same time</td><td>−0.4 / <span class="no">−1.0 / −1.0</span></td></tr>
+      <tr><td>GRPO (final) − start at temperature 0.7</td><td><span class="no">−0.7</span> [−1.2, −0.2]</td></tr>
+    </tbody></table></div></div>
+    <div class="decide"><h4>What it means</h4><p>GRPO really learns when there is signal: it beats the temperature trick and improves greedy answers
+    by 10–12 points. But here correct worked solutions are free, and SFT learns from every token of them, so imitation wins by
+    a wide margin. GRPO's real strength is for tasks where you <i>cannot</i> write the solution, only check it.</p></div>
+  </div>
+
+  <div class="phase" id="p13">
+    <div class="phase-head"><div class="phase-num">13</div><div><h3>Cost</h3><div class="sub">time, memory, speed</div></div></div>
+    <div class="tw"><table><thead><tr><th>Run</th><th class="num">Time</th><th>Consumed</th><th class="num">Peak RAM</th></tr></thead><tbody>
+      <tr><td>SFT, 3,000 updates</td><td class="num">37.7 min</td><td>192,000 worked solutions</td><td class="num">–</td></tr>
+      <tr><td>GRPO from final SFT</td><td class="num">9.4–10.3 min</td><td>38,400 own answers</td><td class="num">2.5–2.7 GB</td></tr>
+      <tr><td>GRPO from SFT 1,000</td><td class="num">16.9–17.5 min</td><td>38,400 own answers</td><td class="num">3.5–3.8 GB</td></tr>
+    </tbody></table></div>
+    <p>Answering is equally fast for every trained model (about 65–70 ms per answer, 1.7 ms per token) because GRPO did not change
+    answer length. The early-start GRPO runs take longer because more groups have signal, so more answers go through each update.</p>
+  </div>
+
+  <div class="phase" id="p14">
+    <div class="phase-head"><div class="phase-num">14</div><div><h3>Ablations</h3><div class="sub">change one thing at a time</div></div></div>
+    <div class="tw"><table><thead><tr><th>Change (from the early start)</th><th class="num">Test sampled</th><th>vs main run, seeds 0 / 1 / 2</th></tr></thead><tbody>
+      <tr><td>main: 8 answers per question, KL 0.04, format bonus</td><td class="num">68.7–70.1%</td><td>–</td></tr>
+      <tr><td>no format bonus</td><td class="num">68.9%</td><td>−1.2 / +0.3 / +0.2</td></tr>
+      <tr><td>4 answers × 32 questions</td><td class="num">70.9%</td><td>+0.8 / +2.2 / +2.1</td></tr>
+      <tr><td>2 answers × 64 questions</td><td class="num">70.9%</td><td>+0.8 / +2.3 / +2.2</td></tr>
+      <tr><td>no KL penalty</td><td class="num">68.8%</td><td>−1.3 / +0.1 / +0.0</td></tr>
+    </tbody></table></div>
+    <div class="warn"><b>Seeds matter as much as the ablation:</b> compared with seed 0 only, removing the format bonus or the KL penalty looks
+    significantly worse. Compared with seeds 1 and 2 it makes no difference. A one-seed ablation would have reported a false finding.</div>
+    <p>The KL penalty did nothing measurable: measured afterwards, the model moved the same distance from its start with it (0.0167 per token)
+    and without it (0.0170). At this small learning rate the model barely moves, so the rubber band is never pulled. More SFT moved it twice
+    as far, and to a much better place.</p>
+  </div>
+
+  <div class="phase" id="p15">
+    <div class="phase-head"><div class="phase-num">15</div><div><h3>Error analysis</h3><div class="sub">every step checked automatically</div></div></div>
+    <p>Each of the 16,000 answers per system is compared step by step with the true computation.</p>
+    <div class="ex"><span class="who">arithmetic error (97% of all mistakes)</span><br>Question: 8 + 87 = ?<br> 8 + 87 = <mark>85</mark>.<br>Final answer: &lt;answer&gt;85&lt;/answer&gt;</div>
+    <div class="ex"><span class="who">"lucky": right answer, wrong steps (1–2% of correct answers)</span><br>Question: 88 + 91 - 86 = ?<br> 88 + 91 = <mark>189</mark>. 189 - 86 = <mark>93</mark>.<br>Final answer: &lt;answer&gt;93&lt;/answer&gt;
+    <br><span style="font-family:system-ui;font-size:13px;color:var(--muted)">Two wrong steps cancel out (88 + 91 is 179; 189 − 86 is 103), and the final answer 93 happens to be right.</span></div>
+    <ul>
+      <li>The model almost always sets up the right steps; what it gets wrong is the addition or multiplication itself. GRPO makes those errors
+      rarer (7,153 → 4,619) but does not change their kind.</li>
+      <li>The reward only checks the final number, so "lucky" answers are paid in full. GRPO did not learn to exploit this: they fell from 2.1% to 1.2% of correct answers.</li>
+      <li>GRPO makes answers more uniform: different answers per 16 samples fell from 4.6 to 3.1. More SFT does that even more (1.6).</li>
+    </ul>
+  </div>
+
+  <div class="phase" id="p16">
+    <div class="phase-head"><div class="phase-num">16</div><div><h3>Reproducibility</h3><div class="sub">one command per step</div></div></div>
+    <pre><code>python -m grpo.dataset
+python -m grpo.train_sft --config sft.yaml       # ~38 min
+bash scripts/lr_pilot.sh                         # ~10 min
+bash scripts/train_all.sh                        # 10 GRPO runs + SFT control, ~2.7 h
+bash scripts/eval_all.sh                         # 17 systems on test, ~1 h
+python -m grpo.compare --split test
+python -m grpo.errors --split test --systems ...
+python -m grpo.drift --systems ...
+python -m grpo.benchmark --systems ...
+python -m grpo.plots</code></pre>
+    <p>Every random choice has a fixed seed; all training logs, evaluations, every generated answer and the figures are saved under <code>results/</code>.
+    Checkpoints (55 MB each) are rebuilt by the scripts.</p>
+  </div>
+</section>
+
+<section id="lessons">
+  <h2>Lessons learned (useful for any ML project)</h2>
+  <div class="card"><ol style="margin:0;padding-left:22px">
+    <li><b>RL needs a model that is sometimes right and sometimes wrong.</b> Watch the share of groups with no signal. Too weak or too strong a model gives GRPO nothing.</li>
+    <li><b>Always compare with "the same compute spent on the simple thing".</b> GRPO's +15 points looked great until more SFT gave +38 in the same time.</li>
+    <li><b>Check the cheap trick.</b> A lower sampling temperature beat GRPO from the final SFT model with no training at all.</li>
+    <li><b>Run more than one seed before believing an ablation.</b> Seed-to-seed spread (1.4 points) was as big as most ablation effects.</li>
+    <li><b>Write predictions down first.</b> 7 of 11 failed; because they were pre-registered, that is information, not embarrassment.</li>
+    <li><b>Make every step checkable.</b> Automatic step checking showed the errors are arithmetic, not planning, and that GRPO did not learn to game the reward.</li>
+  </ol></div>
+</section>
+
+<section id="glossary">
+  <h2>Glossary</h2>
+  <div class="card"><dl class="gloss">
+    <dt>Advantage</dt><dd>How much better an answer did than the average answer to the same question (in GRPO, divided by the group's spread).</dd>
+    <dt>Clipping</dt><dd>Limiting how much one update can change the probability of a token (here to ±20%).</dd>
+    <dt>GRPO</dt><dd>Group Relative Policy Optimization: RL that compares several answers to the same question instead of training a separate critic.</dd>
+    <dt>Greedy decoding</dt><dd>Always choosing the most likely next token: one deterministic answer.</dd>
+    <dt>KL divergence</dt><dd>A measure of how different two probability distributions are; here, how far the trained model has moved from its starting point.</dd>
+    <dt>Matched compute</dt><dd>Giving two methods the same training time (or cost) before comparing them.</dd>
+    <dt>pass@k</dt><dd>The chance that at least one of k sampled answers is correct; it measures what the model <i>can</i> find.</dd>
+    <dt>Policy</dt><dd>RL's name for the model that chooses actions; here, the language model choosing tokens.</dd>
+    <dt>Reward</dt><dd>The score a program gives an answer: 1 for correct, plus 0.1 for valid format.</dd>
+    <dt>Sampled accuracy</dt><dd>The average correctness of answers drawn at random from the model (temperature 1.0).</dd>
+    <dt>SFT</dt><dd>Supervised fine-tuning: training on correct example solutions.</dd>
+    <dt>Temperature</dt><dd>A knob on sampling: below 1 makes the model pick likely tokens more often (more confident), above 1 more random.</dd>
+    <dt>Zero-variance group</dt><dd>A question whose sampled answers all got the same reward; GRPO learns nothing from it.</dd>
+  </dl></div>
+</section>
+</main>
+</div>
+
+<script>
+(function () {
+  // theme toggle
+  var btn = document.getElementById("themeBtn");
+  btn.addEventListener("click", function () {
+    var r = document.documentElement, cur = r.getAttribute("data-theme");
+    var dark = cur ? cur === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    r.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+
+  var tip = document.getElementById("tip");
+  function showTip(e, html) { tip.innerHTML = html; tip.style.opacity = 1; moveTip(e); }
+  function moveTip(e) {
+    var x = e.clientX + 14, y = e.clientY + 14;
+    if (x + 290 > window.innerWidth) x = e.clientX - 290;
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  }
+  function hideTip() { tip.style.opacity = 0; }
+  var NS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs, parent) {
+    var n = document.createElementNS(NS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+
+  // ---- GRPO group demo ----
+  var answers = [
+    { t: "34 + 59 = 93. 93 - 18 = 75.", v: 75 }, { t: "34 + 59 = 93. 93 - 18 = 85.", v: 85 },
+    { t: "34 + 59 = 83. 83 - 18 = 65.", v: 65 }, { t: "34 + 59 = 93. 93 - 18 = 75.", v: 75 },
+    { t: "34 + 59 = 93. 93 - 18 = 75.", v: 75 }, { t: "34 + 59 = 92. 92 - 18 = 74.", v: 74 },
+    { t: "34 + 59 = 93. 93 - 18 = 75.", v: 75 }, { t: "34 + 59 = 93. 93 - 18 = 76.", v: 76 }
+  ];
+  var ok = [true, false, false, true, true, false, true, false];
+  var presets = { mixed: [true, false, false, true, true, false, true, false], all: [true, true, true, true, true, true, true, true],
+    none: [false, false, false, false, false, false, false, false], one: [true, false, false, false, false, false, false, false] };
+  var groupEl = document.getElementById("group");
+  function render() {
+    var r = ok.map(function (c) { return (c ? 1 : 0) + 0.1; });
+    var mean = r.reduce(function (a, b) { return a + b; }, 0) / r.length;
+    var sd = Math.sqrt(r.reduce(function (a, b) { return a + (b - mean) * (b - mean); }, 0) / r.length);
+    var adv = r.map(function (x) { return (x - mean) / (sd + 1e-6); });
+    groupEl.innerHTML = "";
+    ok.forEach(function (c, i) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "ans " + (c ? "ok" : "no");
+      b.setAttribute("aria-pressed", c ? "true" : "false");
+      var wrongs = ["34 + 59 = 93. 93 - 18 = 85.", "34 + 59 = 83. 83 - 18 = 65.", "34 + 59 = 92. 92 - 18 = 74.", "34 + 59 = 93. 93 - 18 = 76."];
+      var txt = c ? "34 + 59 = 93. 93 - 18 = 75." : wrongs[i % wrongs.length];
+      var a = adv[i], cls = Math.abs(a) < 1e-9 ? "zero" : (a > 0 ? "pos" : "neg");
+      b.innerHTML = '<div class="t">' + txt + '</div><div class="r">' + (c ? "correct" : "wrong") + ", reward " + r[i].toFixed(1) +
+        '</div><div class="a ' + cls + '">advantage ' + (a >= 0 ? "+" : "−") + Math.abs(a).toFixed(2) + "</div>";
+      b.addEventListener("click", function () { ok[i] = !ok[i]; render(); });
+      groupEl.appendChild(b);
+    });
+    var n = ok.filter(Boolean).length;
+    document.getElementById("gfacts").innerHTML = "<span>correct: <b>" + n + " / 8</b></span><span>group mean reward: <b>" + mean.toFixed(3) +
+      "</b></span><span>group std: <b>" + sd.toFixed(3) + "</b></span>";
+    document.getElementById("gverdict").innerHTML = sd < 1e-9
+      ? '<span class="no">Every answer got the same reward, so every advantage is 0: this question teaches the model nothing.</span>'
+      : '<span class="yes">Mixed rewards: correct answers are pushed up, wrong ones down.</span>';
+  }
+  document.querySelectorAll("[data-preset]").forEach(function (b) {
+    b.addEventListener("click", function () { ok = presets[b.getAttribute("data-preset")].slice(); render(); });
+  });
+  render();
+
+  // ---- bar chart: test sampled accuracy ----
+  var bars = [
+    { g: "Start: SFT 1,000", items: [
+      { l: "SFT 1,000", v: 53.6, c: "--base", d: "SFT after 1,000 updates" },
+      { l: "+ GRPO", v: 69.2, c: "--grpo", d: "+ GRPO, mean of 3 seeds (70.1 / 68.7 / 68.8%)" },
+      { l: "+ more SFT", v: 91.5, c: "--sft", d: "+ more SFT for the same time (update 2,250)" } ] },
+    { g: "Start: final SFT", items: [
+      { l: "SFT final", v: 96.9, c: "--base", d: "SFT after 3,000 updates" },
+      { l: "+ GRPO", v: 97.0, c: "--grpo", d: "+ GRPO, mean of 3 seeds (97.4 / 96.7 / 96.8%)" },
+      { l: "+ more SFT", v: 97.7, c: "--sft", d: "+ 819 more SFT updates for the same time" } ] }
+  ];
+  (function () {
+    var svg = document.getElementById("barChart");
+    var L = 46, R = 710, T = 14, B = 250, H = B - T;
+    [0, 25, 50, 75, 100].forEach(function (v) {
+      var y = B - H * v / 100;
+      el("line", { x1: L, x2: R, y1: y, y2: y, "class": "gridl" }, svg);
+      el("text", { x: L - 8, y: y + 4, "text-anchor": "end" }, svg).textContent = v + "%";
+    });
+    var gw = (R - L) / bars.length, bw = 58, gap = 14;
+    bars.forEach(function (grp, gi) {
+      var gx = L + gi * gw, tot = grp.items.length * bw + (grp.items.length - 1) * gap, x0 = gx + (gw - tot) / 2;
+      grp.items.forEach(function (it, i) {
+        var x = x0 + i * (bw + gap), y = B - H * it.v / 100;
+        var h = B - y, r = Math.min(4, h);
+        var p = el("path", { d: "M" + x + "," + B + "V" + (y + r) + "Q" + x + "," + y + " " + (x + r) + "," + y + "H" + (x + bw - r) +
+          "Q" + (x + bw) + "," + y + " " + (x + bw) + "," + (y + r) + "V" + B + "Z", fill: "var(" + it.c + ")" }, svg);
+        var hit = el("rect", { x: x - 4, y: T, width: bw + 8, height: H, fill: "transparent" }, svg);
+        hit.addEventListener("mousemove", function (e) { showTip(e, "<b>" + it.v.toFixed(1) + "%</b><br>" + it.d); p.style.opacity = .8; });
+        hit.addEventListener("mouseleave", function () { hideTip(); p.style.opacity = 1; });
+        el("text", { x: x + bw / 2, y: y - 6, "text-anchor": "middle", style: "fill:var(--text);font-weight:600" }, svg).textContent = it.v.toFixed(1);
+        el("text", { x: x + bw / 2, y: B + 16, "text-anchor": "middle" }, svg).textContent = it.l;
+      });
+      el("text", { x: gx + gw / 2, y: B + 40, "text-anchor": "middle", style: "fill:var(--text);font-weight:600" }, svg).textContent = grp.g;
+    });
+    el("line", { x1: L, x2: R, y1: B, y2: B, stroke: "var(--axis)" }, svg);
+  })();
+
+  // ---- line chart: matched compute ----
+  var sft = [[0, 54.8, 0], [186, 59.0, 1250], [373, 72.1, 1500], [564, 78.7, 1750], [755, 84.8, 2000], [941, 89.9, 2250],
+             [1134, 94.0, 2500], [1322, 95.3, 2750], [1511, 96.9, 3000]];
+  var g = [
+    { n: "GRPO seed 0", d: "", p: [[0, 53.4], [177, 61.5], [346, 65.1], [515, 68.0], [680, 67.5], [840, 68.5], [1012, 70.2]] },
+    { n: "GRPO seed 1", d: "6 4", p: [[0, 53.4], [183, 62.5], [354, 63.7], [525, 64.7], [700, 68.0], [863, 69.2], [1020, 71.8]] },
+    { n: "GRPO seed 2", d: "2 4", p: [[0, 53.4], [181, 62.5], [361, 65.5], [529, 66.2], [730, 67.8], [892, 68.5], [1051, 67.7]] }
+  ];
+  (function () {
+    var svg = document.getElementById("lineChart");
+    var L = 46, R = 700, T = 12, B = 272, X1 = 26, Y0 = 50, Y1 = 100;
+    function sx(s) { return L + (R - L) * (s / 60) / X1; }
+    function sy(v) { return B - (B - T) * (v - Y0) / (Y1 - Y0); }
+    [50, 60, 70, 80, 90, 100].forEach(function (v) {
+      el("line", { x1: L, x2: R, y1: sy(v), y2: sy(v), "class": "gridl" }, svg);
+      el("text", { x: L - 8, y: sy(v) + 4, "text-anchor": "end" }, svg).textContent = v + "%";
+    });
+    [0, 5, 10, 15, 20, 25].forEach(function (m) {
+      el("text", { x: sx(m * 60), y: B + 18, "text-anchor": "middle" }, svg).textContent = m;
+    });
+    el("text", { x: (L + R) / 2, y: B + 40, "text-anchor": "middle" }, svg).textContent = "training minutes after SFT update 1,000 (this CPU)";
+    el("line", { x1: L, x2: R, y1: B, y2: B, stroke: "var(--axis)" }, svg);
+    function line(pts, color, dash) {
+      el("path", { d: pts.map(function (p, i) { return (i ? "L" : "M") + sx(p[0]) + "," + sy(p[1]); }).join(""), fill: "none",
+        stroke: "var(" + color + ")", "stroke-width": 2, "stroke-dasharray": dash || "", "stroke-linejoin": "round" }, svg);
+    }
+    function dots(pts, color, label) {
+      pts.forEach(function (p) {
+        el("circle", { cx: sx(p[0]), cy: sy(p[1]), r: 4.5, fill: "var(" + color + ")", stroke: "var(--surface)", "stroke-width": 2 }, svg);
+        var hit = el("circle", { cx: sx(p[0]), cy: sy(p[1]), r: 12, fill: "transparent" }, svg);
+        hit.addEventListener("mousemove", function (e) { showTip(e, "<b>" + label(p) + "</b><br>" + (p[0] / 60).toFixed(1) + " min: " + p[1].toFixed(1) + "% val sampled"); });
+        hit.addEventListener("mouseleave", hideTip);
+      });
+    }
+    g.forEach(function (s) { line(s.p, "--grpo", s.d); });
+    line(sft, "--sft");
+    g.forEach(function (s) { dots(s.p, "--grpo", function () { return s.n; }); });
+    dots(sft, "--sft", function (p) { return "more SFT" + (p[2] ? ", update " + p[2].toLocaleString("en") : ", update 1,000"); });
+    el("text", { x: sx(sft[8][0]) - 6, y: sy(96.9) + 18, "text-anchor": "end", style: "fill:var(--text)" }, svg).textContent = "more SFT";
+    el("text", { x: sx(1051) + 8, y: sy(69.5) + 4, style: "fill:var(--text)" }, svg).textContent = "GRPO (3 seeds)";
+  })();
+
+  // ---- toc highlighting ----
+  var links = Array.prototype.slice.call(document.querySelectorAll("nav.toc a"));
+  var targets = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+  window.addEventListener("scroll", function () {
+    var cur = 0;
+    targets.forEach(function (t, i) { if (t && t.getBoundingClientRect().top < 120) cur = i; });
+    links.forEach(function (a, i) { a.classList.toggle("active", i === cur); });
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+[grpo_s0] iter 0 val greedy 0.986 sample 0.970 format 1.000  train 0s
+[grpo_s0] iter 0 reward 1.077 correct 0.977 zero_var 0.94 len 43.5 clip 0.004 kl 0.0003387488900346959 roll 1.7s opt 0.3s
+[grpo_s0] iter 10 reward 1.100 correct 1.000 zero_var 1.00 len 38.6 clip nan kl nan roll 1.7s opt 0.0s
+[grpo_s0] iter 20 reward 1.084 correct 0.984 zero_var 0.88 len 36.4 clip 0.001 kl 0.00014075417267648798 roll 1.8s opt 0.4s
+[grpo_s0] iter 30 reward 1.100 correct 1.000 zero_var 1.00 len 35.3 clip nan kl nan roll 1.6s opt 0.0s
+[grpo_s0] iter 40 reward 1.069 correct 0.969 zero_var 0.88 len 40.0 clip 0.002 kl 0.0017703518581887086 roll 1.7s opt 0.4s
+[grpo_s0] iter 50 val greedy 0.984 sample 0.966 format 1.000  train 101s
+[grpo_s0] iter 50 reward 1.084 correct 0.984 zero_var 0.88 len 40.1 clip 0.001 kl 0.0006321527269989135 roll 1.7s opt 0.4s
+[grpo_s0] iter 60 reward 1.077 correct 0.977 zero_var 0.81 len 40.3 clip 0.001 kl 0.0011155326087195594 roll 1.7s opt 0.6s
+[grpo_s0] iter 70 reward 1.069 correct 0.969 zero_var 0.81 len 42.6 clip 0.002 kl 0.0008121238269951786 roll 1.8s opt 0.6s
+[grpo_s0] iter 80 reward 1.100 correct 1.000 zero_var 1.00 len 36.8 clip nan kl nan roll 1.5s opt 0.0s
+[grpo_s0] iter 90 reward 1.092 correct 0.992 zero_var 0.94 len 38.7 clip 0.001 kl 0.03227367614234626 roll 1.7s opt 0.3s
+[grpo_s0] iter 100 val greedy 0.984 sample 0.972 format 1.000  train 204s
+[grpo_s0] iter 100 reward 1.030 correct 0.930 zero_var 0.94 len 38.5 clip 0.001 kl 0.0001925895719424538 roll 1.7s opt 0.3s
+[grpo_s0] iter 110 reward 1.084 correct 0.984 zero_var 0.94 len 41.4 clip 0.003 kl 0.00518723726272583 roll 1.7s opt 0.3s
+[grpo_s0] iter 120 reward 1.100 correct 1.000 zero_var 1.00 len 41.4 clip nan kl nan roll 1.8s opt 0.0s
+[grpo_s0] iter 130 reward 1.069 correct 0.969 zero_var 0.81 len 40.4 clip 0.001 kl 0.004043382282058397 roll 1.7s opt 0.6s
+[grpo_s0] iter 140 reward 1.100 correct 1.000 zero_var 1.00 len 37.6 clip nan kl nan roll 1.7s opt 0.0s
+[grpo_s0] iter 150 val greedy 0.986 sample 0.972 format 1.000  train 307s
+[grpo_s0] iter 150 reward 1.069 correct 0.969 zero_var 0.88 len 42.5 clip 0.003 kl 0.002703027393284891 roll 1.8s opt 0.5s
+[grpo_s0] iter 160 reward 1.045 correct 0.945 zero_var 0.88 len 41.1 clip 0.003 kl 0.010923940946560094 roll 1.8s opt 0.5s
+[grpo_s0] iter 170 reward 1.061 correct 0.961 zero_var 0.81 len 40.2 clip 0.001 kl 0.007034492173987621 roll 1.7s opt 0.6s
+[grpo_s0] iter 180 reward 1.100 correct 1.000 zero_var 1.00 len 39.5 clip nan kl nan roll 1.7s opt 0.0s
+[grpo_s0] iter 190 reward 1.077 correct 0.977 zero_var 0.88 len 42.6 clip 0.002 kl 0.007119939682331491 roll 1.7s opt 0.4s
+[grpo_s0] iter 200 val greedy 0.990 sample 0.978 format 1.000  train 410s
+[grpo_s0] iter 200 reward 1.100 correct 1.000 zero_var 1.00 len 42.7 clip nan kl nan roll 1.9s opt 0.0s
+[grpo_s0] iter 210 reward 1.084 correct 0.984 zero_var 0.94 len 38.8 clip 0.004 kl 0.017315559554845095 roll 1.7s opt 0.3s
+[grpo_s0] iter 220 reward 1.045 correct 0.945 zero_var 0.88 len 40.7 clip 0.002 kl 0.007681861049250552 roll 1.8s opt 0.4s
+[grpo_s0] iter 230 reward 1.100 correct 1.000 zero_var 1.00 len 39.6 clip nan kl nan roll 1.9s opt 0.0s
+[grpo_s0] iter 240 reward 1.100 correct 1.000 zero_var 1.00 len 39.9 clip nan kl nan roll 1.7s opt 0.0s
+[grpo_s0] iter 250 val greedy 0.992 sample 0.980 format 1.000  train 514s
+[grpo_s0] iter 250 reward 1.069 correct 0.969 zero_var 0.88 len 39.1 clip 0.002 kl 0.09684726397196453 roll 1.6s opt 0.4s
+[grpo_s0] iter 260 reward 1.084 correct 0.984 zero_var 0.88 len 39.3 clip 0.002 kl 0.0037956460567803874 roll 1.7s opt 0.4s
+[grpo_s0] iter 270 reward 1.022 correct 0.922 zero_var 0.75 len 38.7 clip 0.001 kl 0.010564010828099352 roll 1.7s opt 0.9s
+[grpo_s0] iter 280 reward 1.084 correct 0.984 zero_var 0.94 len 39.6 clip 0.003 kl 0.010798610588337513 roll 1.8s opt 0.3s
+[grpo_s0] iter 290 reward 1.100 correct 1.000 zero_var 1.00 len 43.7 clip nan kl nan roll 1.8s opt 0.0s
+[grpo_s0] iter 300 val greedy 0.990 sample 0.975 format 1.000  train 618s

@@ -1,0 +1,37 @@
+[grpo_s2] iter 0 val greedy 0.986 sample 0.970 format 1.000  train 0s
+[grpo_s2] iter 0 reward 1.100 correct 1.000 zero_var 1.00 len 40.2 clip nan kl nan roll 1.6s opt 0.0s
+[grpo_s2] iter 10 reward 1.069 correct 0.969 zero_var 0.88 len 43.0 clip 0.003 kl 0.0003980574539945096 roll 1.7s opt 0.5s
+[grpo_s2] iter 20 reward 1.069 correct 0.969 zero_var 0.94 len 38.0 clip 0.004 kl 0.004552013091458619 roll 1.7s opt 0.2s
+[grpo_s2] iter 30 reward 1.077 correct 0.977 zero_var 0.88 len 41.3 clip 0.006 kl 0.006249230904657332 roll 1.6s opt 0.4s
+[grpo_s2] iter 40 reward 1.045 correct 0.945 zero_var 0.88 len 42.4 clip 0.002 kl 0.0027343918240179997 roll 1.7s opt 0.4s
+[grpo_s2] iter 50 val greedy 0.994 sample 0.972 format 1.000  train 104s
+[grpo_s2] iter 50 reward 1.077 correct 0.977 zero_var 0.94 len 39.8 clip 0.011 kl 0.0033050505651368036 roll 1.5s opt 0.3s
+[grpo_s2] iter 60 reward 1.069 correct 0.969 zero_var 0.88 len 41.1 clip 0.003 kl 0.004379414097227231 roll 1.6s opt 0.4s
+[grpo_s2] iter 70 reward 1.100 correct 1.000 zero_var 1.00 len 38.4 clip nan kl nan roll 1.5s opt 0.0s
+[grpo_s2] iter 80 reward 1.061 correct 0.961 zero_var 0.88 len 42.5 clip 0.007 kl 0.04896639812888438 roll 1.6s opt 0.4s
+[grpo_s2] iter 90 reward 1.077 correct 0.977 zero_var 0.88 len 37.1 clip 0.002 kl 0.014402572895453228 roll 1.4s opt 0.4s
+[grpo_s2] iter 100 val greedy 0.990 sample 0.975 format 1.000  train 197s
+[grpo_s2] iter 100 reward 1.077 correct 0.977 zero_var 0.94 len 38.7 clip 0.004 kl 0.008095397922022714 roll 1.6s opt 0.2s
+[grpo_s2] iter 110 reward 1.084 correct 0.984 zero_var 0.88 len 42.0 clip 0.002 kl 0.0004705898275262791 roll 1.6s opt 0.4s
+[grpo_s2] iter 120 reward 1.077 correct 0.977 zero_var 0.94 len 39.2 clip 0.001 kl 0.046702902317047115 roll 1.6s opt 0.2s
+[grpo_s2] iter 130 reward 1.100 correct 1.000 zero_var 1.00 len 42.4 clip nan kl nan roll 1.6s opt 0.0s
+[grpo_s2] iter 140 reward 1.100 correct 1.000 zero_var 1.00 len 40.0 clip nan kl nan roll 1.5s opt 0.0s
+[grpo_s2] iter 150 val greedy 0.992 sample 0.977 format 1.000  train 290s
+[grpo_s2] iter 150 reward 1.100 correct 1.000 zero_var 1.00 len 39.5 clip nan kl nan roll 1.6s opt 0.0s
+[grpo_s2] iter 160 reward 1.084 correct 0.984 zero_var 0.88 len 42.6 clip 0.002 kl 0.011335783824324607 roll 1.6s opt 0.4s
+[grpo_s2] iter 170 reward 1.100 correct 1.000 zero_var 1.00 len 41.1 clip nan kl nan roll 1.5s opt 0.0s
+[grpo_s2] iter 180 reward 1.030 correct 0.930 zero_var 0.88 len 37.2 clip 0.001 kl 0.008495287253306463 roll 1.5s opt 0.4s
+[grpo_s2] iter 190 reward 1.061 correct 0.961 zero_var 0.88 len 40.1 clip 0.000 kl 0.005216714232525926 roll 1.5s opt 0.4s
+[grpo_s2] iter 200 val greedy 0.986 sample 0.972 format 1.000  train 381s
+[grpo_s2] iter 200 reward 1.061 correct 0.961 zero_var 0.81 len 39.5 clip 0.002 kl 0.00271775547517549 roll 1.5s opt 0.6s
+[grpo_s2] iter 210 reward 1.077 correct 0.977 zero_var 0.88 len 40.6 clip 0.001 kl 0.01740358257035253 roll 1.6s opt 0.4s
+[grpo_s2] iter 220 reward 1.077 correct 0.977 zero_var 0.88 len 40.9 clip 0.001 kl 0.004175572383283365 roll 1.6s opt 0.4s
+[grpo_s2] iter 230 reward 1.038 correct 0.938 zero_var 1.00 len 39.6 clip nan kl nan roll 1.5s opt 0.0s
+[grpo_s2] iter 240 reward 1.069 correct 0.969 zero_var 0.88 len 38.8 clip 0.006 kl 0.0071844284454088535 roll 1.5s opt 0.4s
+[grpo_s2] iter 250 val greedy 0.992 sample 0.977 format 1.000  train 470s
+[grpo_s2] iter 250 reward 1.084 correct 0.984 zero_var 0.94 len 40.4 clip 0.003 kl 0.0027867399278234265 roll 1.5s opt 0.2s
+[grpo_s2] iter 260 reward 1.077 correct 0.977 zero_var 0.88 len 41.1 clip 0.001 kl 0.002960747593770857 roll 1.6s opt 0.4s
+[grpo_s2] iter 270 reward 1.084 correct 0.984 zero_var 0.88 len 40.0 clip 0.001 kl 0.0006706442639052149 roll 1.6s opt 0.4s
+[grpo_s2] iter 280 reward 1.092 correct 0.992 zero_var 0.94 len 39.6 clip 0.001 kl 0.00533689558506012 roll 1.4s opt 0.3s
+[grpo_s2] iter 290 reward 1.092 correct 0.992 zero_var 0.94 len 36.1 clip 0.001 kl 0.0016450163992968473 roll 1.4s opt 0.2s
+[grpo_s2] iter 300 val greedy 0.988 sample 0.973 format 1.000  train 564s

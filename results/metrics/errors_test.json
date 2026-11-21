@@ -1,0 +1,5262 @@
+{
+  "base": {
+    "n_responses": 16000,
+    "counts": {
+      "invalid:no_tag": 15993,
+      "invalid:empty": 7
+    },
+    "share_of_wrong": {
+      "invalid:no_tag": 0.9995625,
+      "invalid:empty": 0.0004375
+    },
+    "lucky_share_of_correct": 0.0,
+    "by_family": {
+      "add": {
+        "invalid:no_tag": 3215,
+        "invalid:empty": 1
+      },
+      "mul": {
+        "invalid:no_tag": 1680
+      },
+      "multi": {
+        "invalid:no_tag": 5550,
+        "invalid:empty": 2
+      },
+      "word1": {
+        "invalid:no_tag": 2718,
+        "invalid:empty": 2
+      },
+      "word2": {
+        "invalid:no_tag": 2830,
+        "invalid:empty": 2
+      }
+    },
+    "distinct_per_16_mean": 16.0,
+    "single_answer_questions": 0.0,
+    "len_mean": 60.790375,
+    "len_sd": 10.265064897962166,
+    "examples": {
+      "invalid:no_tag": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " One week, CarSes decides like lemons. Mom, Molly, Anna, and her mom all went to the store. When they got there, there was a lemon tree. Momma called out to D ref, \"Look at the lemons, Anna. That one is important!\" Anna looked at the lemon tree again"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " retty is terrible!\" His dad laughed. He said, \" sweetheart, why don't you go get some ice cream? It's very cold outside protecting you from something in the snow.\" correct player was so excited! He went running and put on his charming glove and quickly ran outside. He felt the cold cold"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": "  mic flav scratt today\". The sours finally P tun wing started shooting. It was perfectly very st dads way out, gathering people and others through the kingdom, and that everyone on the kingdom was happy. They thanked Piki for her help and for their help. The sfortititation was a successful"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " arge  Hallow,  col. They'd go back to check on your fish tummy. Trust Yum! Lego up,  naughtGood day to test your small fish© in a nice fill yard. wk are so tasty, and �� dads get all messy! But Tain agrees"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " dom oral  embar.\"?!\" \"Oh, Mrs,\" said Chestic \"Dailable. That means that the: Fl stat often wear to keep him warm.\" Mama and Ch provided ambulance before seat in their seats. Chctor was scared but happy that their nics resoured and soon they"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " Yum! They were the best day ever!"
+        }
+      ],
+      "invalid:empty": [
+        {
+          "id": "test-000031",
+          "question": "5 * 74 + 92 = ?",
+          "answer": 462,
+          "response": ""
+        },
+        {
+          "id": "test-000188",
+          "question": "Sue has 4 jars with 8 books in each. How many books does Sue have?",
+          "answer": 32,
+          "response": ""
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": ""
+        },
+        {
+          "id": "test-000699",
+          "question": "Ben has 3 stars and Lucy has 2 stars. Their mom gives them 4 times as many stars as they have together. How many stars does their mom give them?",
+          "answer": 20,
+          "response": ""
+        },
+        {
+          "id": "test-000860",
+          "question": "Sam has 7 jars with 2 candies in each. How many candies does Sam have?",
+          "answer": 14,
+          "response": ""
+        },
+        {
+          "id": "test-000884",
+          "question": "Sam has 19 flowers and Zoe has 23 flowers. Their mom gives them 4 times as many flowers as they have together. How many flowers does their mom give them?",
+          "answer": 168,
+          "response": ""
+        }
+      ]
+    }
+  },
+  "sft_1000": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 8399,
+      "arithmetic": 7153,
+      "lucky": 183,
+      "misread": 141,
+      "wrong_plan": 44,
+      "final_mismatch": 38,
+      "other": 26,
+      "invalid:not_number": 7,
+      "invalid:no_tag": 7,
+      "invalid:unclosed": 2
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9642760851981667,
+      "final_mismatch": 0.005122674575357239,
+      "misread": 0.019007818819088702,
+      "other": 0.00350498786734969,
+      "wrong_plan": 0.005931517929361013,
+      "invalid:not_number": 0.0009436505796710703,
+      "invalid:unclosed": 0.00026961445133459155,
+      "invalid:no_tag": 0.0009436505796710703
+    },
+    "lucky_share_of_correct": 0.021323700769051504,
+    "by_family": {
+      "add": {
+        "faithful": 1885,
+        "arithmetic": 1313,
+        "final_mismatch": 4,
+        "lucky": 5,
+        "invalid:not_number": 3,
+        "other": 5,
+        "misread": 1
+      },
+      "mul": {
+        "arithmetic": 919,
+        "faithful": 741,
+        "other": 10,
+        "misread": 3,
+        "invalid:unclosed": 1,
+        "lucky": 3,
+        "invalid:not_number": 3
+      },
+      "multi": {
+        "arithmetic": 3442,
+        "faithful": 1862,
+        "misread": 74,
+        "lucky": 116,
+        "other": 4,
+        "wrong_plan": 25,
+        "invalid:no_tag": 5,
+        "final_mismatch": 22,
+        "invalid:not_number": 1,
+        "invalid:unclosed": 1
+      },
+      "word1": {
+        "faithful": 2209,
+        "arithmetic": 480,
+        "other": 7,
+        "lucky": 4,
+        "wrong_plan": 6,
+        "misread": 14
+      },
+      "word2": {
+        "faithful": 1702,
+        "arithmetic": 999,
+        "misread": 49,
+        "lucky": 55,
+        "wrong_plan": 13,
+        "final_mismatch": 12,
+        "invalid:no_tag": 2
+      }
+    },
+    "distinct_per_16_mean": 4.608,
+    "single_answer_questions": 0.139,
+    "len_mean": 38.3409375,
+    "len_sd": 6.513942671001469,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 86.\nFinal answer: <answer>86</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000001",
+          "question": "35 + 32 = ?",
+          "answer": 67,
+          "response": " 35 + 32 = 77.\nFinal answer: <answer>77</answer>"
+        },
+        {
+          "id": "test-000001",
+          "question": "35 + 32 = ?",
+          "answer": 67,
+          "response": " 35 + 32 = 77.\nFinal answer: <answer>77</answer>"
+        },
+        {
+          "id": "test-000001",
+          "question": "35 + 32 = ?",
+          "answer": 67,
+          "response": " 35 + 32 = 77.\nFinal answer: <answer>77</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000004",
+          "question": "62 + 49 = ?",
+          "answer": 111,
+          "response": " 62 + 49 = 111.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000195",
+          "question": "99 + 87 = ?",
+          "answer": 186,
+          "response": " 99 + 87 = 186.\nFinal answer: <answer>886</answer>"
+        },
+        {
+          "id": "test-000201",
+          "question": "Jack has 39 stickers. He finds 19 more. Then he gives 58 to Zoe. How many stickers does Jack have now?",
+          "answer": 0,
+          "response": " 39 + 19 = 58. 58 - 58 = 0.\nFinal answer: <answer>08</answer>"
+        },
+        {
+          "id": "test-000201",
+          "question": "Jack has 39 stickers. He finds 19 more. Then he gives 58 to Zoe. How many stickers does Jack have now?",
+          "answer": 0,
+          "response": " 39 + 19 = 58. 58 - 58 = 0.\nFinal answer: <answer>08</answer>"
+        },
+        {
+          "id": "test-000201",
+          "question": "Jack has 39 stickers. He finds 19 more. Then he gives 58 to Zoe. How many stickers does Jack have now?",
+          "answer": 0,
+          "response": " 39 + 19 = 58. 58 - 58 = 0.\nFinal answer: <answer>08</answer>"
+        },
+        {
+          "id": "test-000201",
+          "question": "Jack has 39 stickers. He finds 19 more. Then he gives 58 to Zoe. How many stickers does Jack have now?",
+          "answer": 0,
+          "response": " 39 + 19 = 58. 58 - 58 = 0.\nFinal answer: <answer>08</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 368. 688 + 92 = 680.\nFinal answer: <answer>680</answer>"
+        },
+        {
+          "id": "test-000037",
+          "question": "Zoe has 22 stars. She finds 35 more. Then she gives 55 to Anna. How many stars does Zoe have now?",
+          "answer": 2,
+          "response": " 22 + 35 = 57. 57 - 5 = 54.\nFinal answer: <answer>54</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 12 * 5 = 60.\nFinal answer: <answer>60</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Lily17. 91 + 86 = 187.\nFinal answer: <answer>187</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Ben has many9. 9 + 86 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Anna27. 82 + 86 = 168.\nFinal answer: <answer>168</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 274. 274 - 57 = 207.\nFinal answer: <answer>207</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 284. 284 - 57 = 207.\nFinal answer: <answer>207</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000024",
+          "question": "(30 - 14) * 2 = ?",
+          "answer": 32,
+          "response": " 3 times - 14 = 1. 1 * 2 4 = 4.\nFinal answer: <answer>4</answer>"
+        },
+        {
+          "id": "test-000054",
+          "question": "74 * 4 = ?",
+          "answer": 296,
+          "response": " 74 * 4 = 3 184.\nFinal answer: <answer>384</answer>"
+        },
+        {
+          "id": "test-000089",
+          "question": "77 * 3 = ?",
+          "answer": 231,
+          "response": " 77 * 3 = 2 229.\nFinal answer: <answer>229</answer>"
+        },
+        {
+          "id": "test-000124",
+          "question": "Max has 41 shells. He gives 36 shells to Sam. How many shells does Max have now?",
+          "answer": 5,
+          "response": " 41 - 36 =?\n 15.\nFinal answer: <answer>15</answer>"
+        },
+        {
+          "id": "test-000141",
+          "question": "42 + 77 = ?",
+          "answer": 119,
+          "response": " 42 + 77 = 1 tugged has many 137.\nFinal answer: <answer>137</answer>"
+        },
+        {
+          "id": "test-000174",
+          "question": "9 * 24 = ?",
+          "answer": 216,
+          "response": " 9 * 24 = 24 3.\nFinal answer: <answer>24</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000040",
+          "question": "65 + 26 + 72 = ?",
+          "answer": 163,
+          "response": " 65 + 26 = 91. 91 + 72 =93.\nFinal answer: <answer>993</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 20 * 5 = 100.\nFinal answer: <answer>100</answer>"
+        },
+        {
+          "id": "test-000068",
+          "question": "(12 - 6) * 7 = ?",
+          "answer": 42,
+          "response": " 12 - 6 = 6. 6 * 6 = 36.\nFinal answer: <answer>36</answer>"
+        },
+        {
+          "id": "test-000157",
+          "question": "Anna has 26 rocks. She finds 29 more. Then she gives 22 to Zoe. How many rocks does Anna have now?",
+          "answer": 33,
+          "response": " 26 + 29 = 55. 55 - 22 =4.\nFinal answer: <answer>44</answer>"
+        },
+        {
+          "id": "test-000209",
+          "question": "8 * 7 + 45 = ?",
+          "answer": 101,
+          "response": " 8 * 7 = 56. 56 + 45 =ionanswer> 61.\nFinal answer: <answer>61</answer>"
+        },
+        {
+          "id": "test-000224",
+          "question": "(8 - 5) * 5 = ?",
+          "answer": 15,
+          "response": " 8 - 5 = 3. 3 * 5 = 1 10.\nFinal answer: <answer>10</answer>"
+        }
+      ],
+      "invalid:not_number": [
+        {
+          "id": "test-000093",
+          "question": "81 - 21 = ?",
+          "answer": 60,
+          "response": " 81 - 21 = 60.\nFinal answer: <answer>60.\nFinal answer: <answer>60</answer>"
+        },
+        {
+          "id": "test-000282",
+          "question": "40 * 10 = ?",
+          "answer": 400,
+          "response": " 40 * 10 = 400.\nFinal answer: <answer>400 = 600.\nFinal answer: <answer>600</answer>"
+        },
+        {
+          "id": "test-000352",
+          "question": "89 - 6 = ?",
+          "answer": 83,
+          "response": " 89 - 6 = 83.\nFinal answer: <answer>83< 8</answer>"
+        },
+        {
+          "id": "test-000596",
+          "question": "4 * 90 = ?",
+          "answer": 360,
+          "response": " 4 * 90 = 3 answer: <answer>300.\nFinal answer: <answer>300</answer>"
+        },
+        {
+          "id": "test-000608",
+          "question": "55 * 10 = ?",
+          "answer": 550,
+          "response": " 55 * 10 = 550.\nFinal answer: <answer>550 = 910.\nFinal answer: <answer>910</answer>"
+        },
+        {
+          "id": "test-000664",
+          "question": "4 * 23 + 99 = ?",
+          "answer": 191,
+          "response": " 4 * 23 = 92. 92 + 99 = 181.\nFinal answer: <answer>181 = 181</answer>"
+        }
+      ],
+      "invalid:unclosed": [
+        {
+          "id": "test-000177",
+          "question": "94 * 11 = ?",
+          "answer": 1034,
+          "response": " 94 * 11 = 1024.\nFinal answer: <answer>102Final"
+        },
+        {
+          "id": "test-000885",
+          "question": "27 * 12 + 70 = ?",
+          "answer": 394,
+          "response": " 27 * 12 = 396. 396 + 70 = 460.\nFinal answer: <answer>460*/answer>"
+        }
+      ],
+      "invalid:no_tag": [
+        {
+          "id": "test-000256",
+          "question": "44 + 66 - 67 = ?",
+          "answer": 43,
+          "response": " 44 + 66 = 110. 110 - 67 = 33.\n/answer>"
+        },
+        {
+          "id": "test-000304",
+          "question": "30 * 3 - 81 = ?",
+          "answer": 9,
+          "response": " 30 * 3 = 90. 90 - 81 = 8.\nFinal answer: <ananswer>8</answer>"
+        },
+        {
+          "id": "test-000421",
+          "question": "7 * 66 - 21 = ?",
+          "answer": 441,
+          "response": " 7 * 66 = 452. 452 - 21 = 441.\nFinal answer: <ananswer>441</answer>"
+        },
+        {
+          "id": "test-000589",
+          "question": "Ben has 28 candies and Tom has 15 candies. Their mom gives them 4 times as many candies as they have together. How many candies does their mom give them?",
+          "answer": 172,
+          "response": " 28 + 15 = 43. 43 * 4 = he did toilet cobweb cars sang crystalcers know order their villagers over ok tune bo mysterious these to baths and sleep sank snowflakes loyal bake urge scientistœLetâer>432.\nFinaler> funny stra or"
+        },
+        {
+          "id": "test-000705",
+          "question": "(8 - 5) * 3 = ?",
+          "answer": 9,
+          "response": " 8 - 5 = 3. 3 * 3 </answer>"
+        },
+        {
+          "id": "test-000753",
+          "question": "Lucy has 30 cookies and Jack has 30 cookies. Their mom gives them 5 times as many cookies as they have together. How many cookies does their mom give them?",
+          "answer": 300,
+          "response": " 30 + 30 = 70. 70 * 5 ="
+        }
+      ]
+    }
+  },
+  "grpo_early_s0": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 11084,
+      "arithmetic": 4619,
+      "lucky": 132,
+      "misread": 49,
+      "final_mismatch": 47,
+      "wrong_plan": 43,
+      "other": 20,
+      "invalid:not_number": 3,
+      "invalid:no_tag": 2,
+      "invalid:unclosed": 1
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.965510033444816,
+      "final_mismatch": 0.009824414715719064,
+      "misread": 0.01024247491638796,
+      "wrong_plan": 0.00898829431438127,
+      "invalid:not_number": 0.0006270903010033445,
+      "other": 0.004180602006688963,
+      "invalid:no_tag": 0.0004180602006688963,
+      "invalid:unclosed": 0.00020903010033444816
+    },
+    "lucky_share_of_correct": 0.011768901569186876,
+    "by_family": {
+      "add": {
+        "faithful": 2468,
+        "arithmetic": 712,
+        "final_mismatch": 21,
+        "other": 11,
+        "lucky": 4
+      },
+      "mul": {
+        "arithmetic": 736,
+        "faithful": 934,
+        "invalid:not_number": 1,
+        "final_mismatch": 2,
+        "lucky": 3,
+        "other": 4
+      },
+      "multi": {
+        "faithful": 2784,
+        "arithmetic": 2565,
+        "lucky": 104,
+        "misread": 48,
+        "wrong_plan": 36,
+        "other": 2,
+        "invalid:no_tag": 2,
+        "invalid:not_number": 2,
+        "final_mismatch": 9
+      },
+      "word1": {
+        "faithful": 2462,
+        "arithmetic": 248,
+        "final_mismatch": 1,
+        "invalid:unclosed": 1,
+        "lucky": 5,
+        "other": 3
+      },
+      "word2": {
+        "faithful": 2436,
+        "arithmetic": 358,
+        "wrong_plan": 7,
+        "lucky": 16,
+        "misread": 1,
+        "final_mismatch": 14
+      }
+    },
+    "distinct_per_16_mean": 3.075,
+    "single_answer_questions": 0.338,
+    "len_mean": 38.3336875,
+    "len_sd": 6.505571854367896,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 81.\nFinal answer: <answer>81</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 81.\nFinal answer: <answer>81</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 91.\nFinal answer: <answer>91</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 81.\nFinal answer: <answer>81</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 158. 158 - 77 = 81.\nFinal answer: <answer>81</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000004",
+          "question": "62 + 49 = ?",
+          "answer": 111,
+          "response": " 62 + 49 = 111.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000004",
+          "question": "62 + 49 = ?",
+          "answer": 111,
+          "response": " 62 + 49 = 111.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000004",
+          "question": "62 + 49 = ?",
+          "answer": 111,
+          "response": " 62 + 49 = 111.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000004",
+          "question": "62 + 49 = ?",
+          "answer": 111,
+          "response": " 62 + 49 = 111.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000128",
+          "question": "Mia has 6 boxes with 10 apples in each. How many apples does Mia have?",
+          "answer": 60,
+          "response": " 6 * 10 = 60.\nF* 60 = 360.\nFinal answer: <answer>360</answer>"
+        },
+        {
+          "id": "test-000142",
+          "question": "80 + 99 = ?",
+          "answer": 179,
+          "response": " 80 + 99 = 179.\nFinal answer: <answer>159</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 254. 254 - 57 = 207.\nFinal answer: <answer>207</answer>"
+        },
+        {
+          "id": "test-000020",
+          "question": "6 * 76 + 68 = ?",
+          "answer": 524,
+          "response": " 6 * 76 = 476. 476 + 68 = 524.\nFinal answer: <answer>524</answer>"
+        },
+        {
+          "id": "test-000020",
+          "question": "6 * 76 + 68 = ?",
+          "answer": 524,
+          "response": " 6 * 76 = 436. 436 + 68 = 524.\nFinal answer: <answer>524</answer>"
+        },
+        {
+          "id": "test-000027",
+          "question": "63 + 95 + 39 = ?",
+          "answer": 197,
+          "response": " 63 + 95 = 168. 168 + 39 = 197.\nFinal answer: <answer>197</answer>"
+        },
+        {
+          "id": "test-000027",
+          "question": "63 + 95 + 39 = ?",
+          "answer": 197,
+          "response": " 63 + 95 = 168. 168 + 39 = 197.\nFinal answer: <answer>197</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000024",
+          "question": "(30 - 14) * 2 = ?",
+          "answer": 32,
+          "response": " 3 times 10 - 14 = 6. 6 * 2 = 12.\nFinal answer: <answer>12</answer>"
+        },
+        {
+          "id": "test-000048",
+          "question": "(11 - 7) * 8 = ?",
+          "answer": 32,
+          "response": "1 - 7 = 2. 2 * 8 = 16.\nFinal answer: <answer>16</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Lily37. 337 + 86 = 63.\nFinal answer: <answer>63</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 =  Tom Max77. 77 + 86 = 163.\nFinal answer: <answer>163</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Lily37. 337 + 86 = 533.\nFinal answer: <answer>533</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Anna3. 33 + 86 = 129.\nFinal answer: <answer>129</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000030",
+          "question": "50 * 2 - 39 = ?",
+          "answer": 61,
+          "response": " 50 * 2 =50. 50 - 39 = 11.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        }
+      ],
+      "invalid:not_number": [
+        {
+          "id": "test-000038",
+          "question": "9 * 66 = ?",
+          "answer": 594,
+          "response": " 9 * 66 = 534.\nFinal answer: <answer>534= 758.\nFinal answer: <answer>758</answer>"
+        },
+        {
+          "id": "test-000470",
+          "question": "73 - 72 + 1 = ?",
+          "answer": 2,
+          "response": " 73 - 72 = .         = .\n.\nFinal answer:<answer></answer>"
+        },
+        {
+          "id": "test-000470",
+          "question": "73 - 72 + 1 = ?",
+          "answer": 2,
+          "response": " 73 - 72 = . ut answer: <answer> </answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000117",
+          "question": "53 + 48 = ?",
+          "answer": 101,
+          "response": " 53 + 48 = puol bou bowls11.\nFinal answer: <answer>21</answer>"
+        },
+        {
+          "id": "test-000144",
+          "question": "(17 + 29) * 6 = ?",
+          "answer": 276,
+          "response": " 17 + 29 =  36. 46 * 6 = 20Final answer: <answer>20</answer>"
+        },
+        {
+          "id": "test-000342",
+          "question": "93 - 19 = ?",
+          "answer": 74,
+          "response": " 93 - 19 = 7 Being.\nFinal answer: <answer>7</answer>"
+        },
+        {
+          "id": "test-000358",
+          "question": "84 + 93 = ?",
+          "answer": 177,
+          "response": " 84 + 93 = 18= 187.\nFinal answer: <answer>187</answer>"
+        },
+        {
+          "id": "test-000422",
+          "question": "26 - 19 = ?",
+          "answer": 7,
+          "response": " 26 - 19 = 7 to7.\nFinal answer: <answer>77</answer>"
+        },
+        {
+          "id": "test-000521",
+          "question": "16 + 88 = ?",
+          "answer": 104,
+          "response": " 16 + 88 =94.\nFinal answer: <answer>994</answer>"
+        }
+      ],
+      "invalid:no_tag": [
+        {
+          "id": "test-000144",
+          "question": "(17 + 29) * 6 = ?",
+          "answer": 276,
+          "response": " 17 + 29 = 46. 46 * 6 = 2/answer>"
+        },
+        {
+          "id": "test-000470",
+          "question": "73 - 72 + 1 = ?",
+          "answer": 2,
+          "response": " 73 - 72 = .          + > .\n < < 2</+er>"
+        }
+      ],
+      "invalid:unclosed": [
+        {
+          "id": "test-000331",
+          "question": "Sam has 2 shells. He gives 2 shells to Lucy. How many shells does Sam have now?",
+          "answer": 0,
+          "response": " 2 - 2 = .\n answer: <answer>/answer>"
+        }
+      ]
+    }
+  },
+  "grpo_early_s1": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 10813,
+      "arithmetic": 4856,
+      "lucky": 172,
+      "misread": 67,
+      "wrong_plan": 29,
+      "other": 28,
+      "final_mismatch": 24,
+      "invalid:not_number": 6,
+      "invalid:no_tag": 4,
+      "invalid:unclosed": 1
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9682951146560319,
+      "wrong_plan": 0.005782652043868395,
+      "misread": 0.013359920239282154,
+      "other": 0.0055832502492522435,
+      "final_mismatch": 0.004785643070787637,
+      "invalid:not_number": 0.0011964107676969093,
+      "invalid:no_tag": 0.0007976071784646061,
+      "invalid:unclosed": 0.00019940179461615153
+    },
+    "lucky_share_of_correct": 0.01565771506599909,
+    "by_family": {
+      "add": {
+        "faithful": 2384,
+        "arithmetic": 807,
+        "other": 14,
+        "lucky": 7,
+        "invalid:not_number": 2,
+        "misread": 2
+      },
+      "mul": {
+        "arithmetic": 707,
+        "faithful": 953,
+        "other": 7,
+        "final_mismatch": 1,
+        "lucky": 10,
+        "invalid:not_number": 1,
+        "invalid:unclosed": 1
+      },
+      "multi": {
+        "faithful": 2781,
+        "arithmetic": 2551,
+        "wrong_plan": 25,
+        "lucky": 123,
+        "misread": 58,
+        "invalid:no_tag": 4,
+        "final_mismatch": 9,
+        "other": 1
+      },
+      "word1": {
+        "faithful": 2396,
+        "arithmetic": 300,
+        "misread": 1,
+        "final_mismatch": 1,
+        "invalid:not_number": 3,
+        "lucky": 13,
+        "other": 6
+      },
+      "word2": {
+        "faithful": 2299,
+        "arithmetic": 491,
+        "lucky": 19,
+        "wrong_plan": 4,
+        "misread": 6,
+        "final_mismatch": 13
+      }
+    },
+    "distinct_per_16_mean": 3.115,
+    "single_answer_questions": 0.32,
+    "len_mean": 38.334,
+    "len_sd": 6.486269652119005,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000001",
+          "question": "35 + 32 = ?",
+          "answer": 67,
+          "response": " 35 + 32 = 77.\nFinal answer: <answer>77</answer>"
+        },
+        {
+          "id": "test-000002",
+          "question": "Ben has 7 baskets with 7 cookies in each. He gives 18 cookies to Max. How many cookies does Ben have now?",
+          "answer": 31,
+          "response": " 7 * 7 = 49. 49 - 18 = 21.\nFinal answer: <answer>21</answer>"
+        },
+        {
+          "id": "test-000002",
+          "question": "Ben has 7 baskets with 7 cookies in each. He gives 18 cookies to Max. How many cookies does Ben have now?",
+          "answer": 31,
+          "response": " 7 * 7 = 49. 49 - 18 = 21.\nFinal answer: <answer>21</answer>"
+        },
+        {
+          "id": "test-000002",
+          "question": "Ben has 7 baskets with 7 cookies in each. He gives 18 cookies to Max. How many cookies does Ben have now?",
+          "answer": 31,
+          "response": " 7 * 7 = 49. 49 - 18 = 21.\nFinal answer: <answer>21</answer>"
+        },
+        {
+          "id": "test-000002",
+          "question": "Ben has 7 baskets with 7 cookies in each. He gives 18 cookies to Max. How many cookies does Ben have now?",
+          "answer": 31,
+          "response": " 7 * 7 = 49. 49 - 18 = 21.\nFinal answer: <answer>21</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 179. 179 - 86 = 9 they.\nFinal answer: <answer>9</answer>"
+        },
+        {
+          "id": "test-000024",
+          "question": "(30 - 14) * 2 = ?",
+          "answer": 32,
+          "response": " 30 - 14 = 16. 16 * 2 =4.\nFinal answer: <answer>44</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000134",
+          "question": "Mia has 35 apples and Tom has 17 apples. Their mom gives them 2 times as many apples as they have together. How many apples does their mom give them?",
+          "answer": 104,
+          "response": " 35 + 17 = 52. 52 * 2 =56.\nFinal answer: <answer>56</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000008",
+          "question": "Zoe has 3 jars with 10 books in each. She gives 1 books to Lucy. How many books does Zoe have now?",
+          "answer": 29,
+          "response": " 3 * 10  ste = 30. 30 - 1 = 29.\nFinal answer: <answer>29</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 284. 284 - 57 = 207.\nFinal answer: <answer>207</answer>"
+        },
+        {
+          "id": "test-000020",
+          "question": "6 * 76 + 68 = ?",
+          "answer": 524,
+          "response": " 6 * 76 = 466. 466 + 68 = 524.\nFinal answer: <answer>524</answer>"
+        },
+        {
+          "id": "test-000034",
+          "question": "85 * 8 + 47 = ?",
+          "answer": 727,
+          "response": " 85 * 8 = 760. 760 + 47 = 727.\nFinal answer: <answer>727</answer>"
+        },
+        {
+          "id": "test-000037",
+          "question": "Zoe has 22 stars. She finds 35 more. Then she gives 55 to Anna. How many stars does Zoe have now?",
+          "answer": 2,
+          "response": " 22 + 35 = 47. 47 - 55 = 2.\nFinal answer: <answer>2</answer>"
+        },
+        {
+          "id": "test-000040",
+          "question": "65 + 26 + 72 = ?",
+          "answer": 163,
+          "response": " 65 + 26 = 101. 101 + 72 = 163.\nFinal answer: <answer>163</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000022",
+          "question": "85 * 7 - 31 = ?",
+          "answer": 564,
+          "response": " 85 * 7 = 655. 65 - 31 = 444.\nFinal answer: <answer>444</answer>"
+        },
+        {
+          "id": "test-000024",
+          "question": "(30 - 14) * 2 = ?",
+          "answer": 32,
+          "response": " 3 times 10 - 14 = 6. 6 * 2 = 12.\nFinal answer: <answer>12</answer>"
+        },
+        {
+          "id": "test-000030",
+          "question": "50 * 2 - 39 = ?",
+          "answer": 61,
+          "response": " 50 * 2 = 100. 110 - 39 = 11.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = gives 77. 77 + 86 = 153.\nFinal answer: <answer>153</answer>"
+        },
+        {
+          "id": "test-000069",
+          "question": "7 * 89 - 23 = ?",
+          "answer": 600,
+          "response": " 7 * 89 = 633. 63 - 23 = 412.\nFinal answer: <answer>412</answer>"
+        },
+        {
+          "id": "test-000069",
+          "question": "7 * 89 - 23 = ?",
+          "answer": 600,
+          "response": " 7 * 89 = 63 hedgehog 63. 63 - 23 = 510.\nFinal answer: <answer>510</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000044",
+          "question": "23 + 54 = ?",
+          "answer": 77,
+          "response": " 23 + 54 = 7= 87.\nFinal answer: <answer>87</answer>"
+        },
+        {
+          "id": "test-000052",
+          "question": "5 * 51 = ?",
+          "answer": 255,
+          "response": " 5 * 51 = Then05.\nFinal answer: <answer>105</answer>"
+        },
+        {
+          "id": "test-000061",
+          "question": "49 - 41 = ?",
+          "answer": 8,
+          "response": " 49 - 4 1 = 48.\nFinal answer: <answer>48</answer>"
+        },
+        {
+          "id": "test-000104",
+          "question": "87 + 8 = ?",
+          "answer": 95,
+          "response": " 87 + 8 =85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000197",
+          "question": "96 + 30 = ?",
+          "answer": 126,
+          "response": " 96 + 30 =96.\nFinal answer: <answer>99</answer>"
+        },
+        {
+          "id": "test-000206",
+          "question": "64 * 12 = ?",
+          "answer": 768,
+          "response": " 64 * 12 = 78olog 70.\nFinal answer: <answer>780</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000128",
+          "question": "Mia has 6 boxes with 10 apples in each. How many apples does Mia have?",
+          "answer": 60,
+          "response": " 6 * 10 = 60.\nF* 60 = 400.\nFinal answer: <answer>400</answer>"
+        },
+        {
+          "id": "test-000255",
+          "question": "10 * 9 = ?",
+          "answer": 90,
+          "response": " 10 * 9 = 90.\nFinal answer: <answer>80</answer>"
+        },
+        {
+          "id": "test-000472",
+          "question": "Ben has 17 rocks. He finds 5 more. Then he gives 21 to Jack. How many rocks does Ben have now?",
+          "answer": 1,
+          "response": " 17 + 5 = 22. 22 - 21 = 1.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000472",
+          "question": "Ben has 17 rocks. He finds 5 more. Then he gives 21 to Jack. How many rocks does Ben have now?",
+          "answer": 1,
+          "response": " 17 + 5 = 22. 22 - 21 = 1.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000472",
+          "question": "Ben has 17 rocks. He finds 5 more. Then he gives 21 to Jack. How many rocks does Ben have now?",
+          "answer": 1,
+          "response": " 17 + 5 = 22. 22 - 21 = 1.\nFinal answer: <answer>10</answer>"
+        },
+        {
+          "id": "test-000472",
+          "question": "Ben has 17 rocks. He finds 5 more. Then he gives 21 to Jack. How many rocks does Ben have now?",
+          "answer": 1,
+          "response": " 17 + 5 = 22. 22 - 21 = 1.\nFinal answer: <answer>11</answer>"
+        }
+      ],
+      "invalid:not_number": [
+        {
+          "id": "test-000175",
+          "question": "Sue has 97 toys. She gives 95 toys to Anna. How many toys does Sue have now?",
+          "answer": 2,
+          "response": " 97 - 95 = .\nFinal answer: <answer> <8</answer>"
+        },
+        {
+          "id": "test-000330",
+          "question": "Sam has 9 bags with 10 flowers in each. How many flowers does Sam have?",
+          "answer": 90,
+          "response": " 9 * 10 = 90.\nFinal answer: <answer> Lucy90</answer>"
+        },
+        {
+          "id": "test-000352",
+          "question": "89 - 6 = ?",
+          "answer": 83,
+          "response": " 89 - 6 = 83.\nFinal answer: <answer>83< 83</answer>"
+        },
+        {
+          "id": "test-000495",
+          "question": "Ben has 26 shells. He gives 19 shells to Sue. How many shells does Ben have now?",
+          "answer": 7,
+          "response": " 26 - 19 = 7.\nFinal answer: <answer> Mia7</answer>"
+        },
+        {
+          "id": "test-000523",
+          "question": "12 * 81 = ?",
+          "answer": 972,
+          "response": " 12 * 81 = 992.\nFinal answer: <answer>992< 18< 102< = 10003.\nFinal answer: <answer>1003</answer>"
+        },
+        {
+          "id": "test-000922",
+          "question": "23 + 80 = ?",
+          "answer": 103,
+          "response": " 23 + 80 = 103.\nFinal answer: <answer>1 103</answer>"
+        }
+      ],
+      "invalid:no_tag": [
+        {
+          "id": "test-000295",
+          "question": "(15 - 5) * 4 = ?",
+          "answer": 40,
+          "response": " 15 - 5 = 0. 0 *                =       *   = = \n = = = \n>?\n 33 Anna"
+        },
+        {
+          "id": "test-000814",
+          "question": "8 * 17 - 26 = ?",
+          "answer": 110,
+          "response": " 8 * 17 = 146. 146 - 26 = 110.\nFinal answer: <ananswer>110</answer>"
+        },
+        {
+          "id": "test-000879",
+          "question": "12 * 36 + 58 = ?",
+          "answer": 490,
+          "response": " 12 * 36 = 392. 392 + 58 = 440.\nFinal answer: <an equer>440</answer>"
+        },
+        {
+          "id": "test-000934",
+          "question": "(2 - 1) * 3 = ?",
+          "answer": 3,
+          "response": " 2 - 1 = .                       =     \n ize = = + +\n?\n"
+        }
+      ],
+      "invalid:unclosed": [
+        {
+          "id": "test-000523",
+          "question": "12 * 81 = ?",
+          "answer": 972,
+          "response": " 12 * 81 = 992.\nFinal answer: <answer>992<"
+        }
+      ]
+    }
+  },
+  "grpo_early_s2": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 10802,
+      "arithmetic": 4894,
+      "lucky": 200,
+      "misread": 46,
+      "wrong_plan": 25,
+      "other": 21,
+      "final_mismatch": 6,
+      "invalid:not_number": 3,
+      "invalid:no_tag": 2,
+      "invalid:unclosed": 1
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9791916766706683,
+      "misread": 0.009203681472589036,
+      "other": 0.004201680672268907,
+      "invalid:not_number": 0.0006002400960384153,
+      "final_mismatch": 0.0012004801920768306,
+      "wrong_plan": 0.005002000800320128,
+      "invalid:unclosed": 0.00020008003201280514,
+      "invalid:no_tag": 0.00040016006402561027
+    },
+    "lucky_share_of_correct": 0.018178512997636793,
+    "by_family": {
+      "add": {
+        "faithful": 2389,
+        "arithmetic": 814,
+        "lucky": 3,
+        "other": 8,
+        "misread": 2
+      },
+      "mul": {
+        "arithmetic": 704,
+        "faithful": 963,
+        "other": 9,
+        "invalid:not_number": 2,
+        "lucky": 1,
+        "final_mismatch": 1
+      },
+      "multi": {
+        "faithful": 2648,
+        "arithmetic": 2662,
+        "lucky": 178,
+        "misread": 42,
+        "other": 1,
+        "wrong_plan": 13,
+        "invalid:unclosed": 1,
+        "final_mismatch": 5,
+        "invalid:no_tag": 2
+      },
+      "word1": {
+        "faithful": 2427,
+        "arithmetic": 287,
+        "other": 3,
+        "lucky": 3
+      },
+      "word2": {
+        "faithful": 2375,
+        "arithmetic": 427,
+        "wrong_plan": 12,
+        "lucky": 15,
+        "misread": 2,
+        "invalid:not_number": 1
+      }
+    },
+    "distinct_per_16_mean": 3.139,
+    "single_answer_questions": 0.325,
+    "len_mean": 38.3435625,
+    "len_sd": 6.502665015868013,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 105.\nFinal answer: <answer>105</answer>"
+        },
+        {
+          "id": "test-000002",
+          "question": "Ben has 7 baskets with 7 cookies in each. He gives 18 cookies to Max. How many cookies does Ben have now?",
+          "answer": 31,
+          "response": " 7 * 7 = 49. 49 - 18 = 21.\nFinal answer: <answer>21</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 50.\nFinal answer: <answer>50</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000024",
+          "question": "(30 - 14) * 2 = ?",
+          "answer": 32,
+          "response": " 3 times - 14 = 18. 18 * 2 = 34.\nFinal answer: <answer>34</answer>"
+        },
+        {
+          "id": "test-000030",
+          "question": "50 * 2 - 39 = ?",
+          "answer": 61,
+          "response": " 50 * 2 = 100. 110 - 39 = 91.\nFinal answer: <answer>91</answer>"
+        },
+        {
+          "id": "test-000030",
+          "question": "50 * 2 - 39 = ?",
+          "answer": 61,
+          "response": " 50 * 2 = 100. 110 - 39 = 91.\nFinal answer: <answer>91</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Sam17. 117 + 86 = 193.\nFinal answer: <answer>193</answer>"
+        },
+        {
+          "id": "test-000066",
+          "question": "(23 + 12) * 3 = ?",
+          "answer": 105,
+          "response": " 13 + 12 = 25. 25 * 3 = 75.\nFinal answer: <answer>75</answer>"
+        },
+        {
+          "id": "test-000118",
+          "question": "3 * 79 - 92 = ?",
+          "answer": 145,
+          "response": " 3 * 79 = 29= 237. 237 - 92 = 225.\nFinal answer: <answer>225</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000036",
+          "question": "4 * 59 = ?",
+          "answer": 236,
+          "response": " 4 * 59 = 29* 59.\nFinal answer: <answer>29</answer>"
+        },
+        {
+          "id": "test-000054",
+          "question": "74 * 4 = ?",
+          "answer": 296,
+          "response": " 74 * 4 = 3 184.\nFinal answer: <answer>384</answer>"
+        },
+        {
+          "id": "test-000054",
+          "question": "74 * 4 = ?",
+          "answer": 296,
+          "response": " 74 * 4 = 3 286.\nFinal answer: <answer>386</answer>"
+        },
+        {
+          "id": "test-000058",
+          "question": "5 * 87 = ?",
+          "answer": 435,
+          "response": " 5 * 87 = 42 give 45.\nFinal answer: <answer>425</answer>"
+        },
+        {
+          "id": "test-000058",
+          "question": "5 * 87 = ?",
+          "answer": 435,
+          "response": " 5 * 87 = 47 to 455.\nFinal answer: <answer>475</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Anna37. 337 + 86 =  gives 523.\nFinal answer: <answer>523</answer>"
+        }
+      ],
+      "invalid:not_number": [
+        {
+          "id": "test-000038",
+          "question": "9 * 66 = ?",
+          "answer": 594,
+          "response": " 9 * 66 = 634.\nFinal answer: <answer>634= 758.\nFinal answer: <answer>758</answer>"
+        },
+        {
+          "id": "test-000502",
+          "question": "9 * 47 = ?",
+          "answer": 423,
+          "response": " 9 * 47 = 423.\nFinal answer: <answer>423= 54.\nFinal answer: <answer>543</answer>"
+        },
+        {
+          "id": "test-000818",
+          "question": "Sue has 2 baskets with 8 cookies in each. She gives 6 cookies to Jack. How many cookies does Sue have now?",
+          "answer": 10,
+          "response": " 2 * 8 = 16. 16 - 6 = 0.\nFinal answer: <answer>ised0</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000060",
+          "question": "10 * 55 = ?",
+          "answer": 550,
+          "response": " 10 * 55 = 550.\nFinal answer: <answer>559</answer>"
+        },
+        {
+          "id": "test-000844",
+          "question": "93 + 92 - 25 = ?",
+          "answer": 160,
+          "response": " 93 + 92 = 185. 185 - 25 = 160.\nFinal answer: <answer>180</answer>"
+        },
+        {
+          "id": "test-000844",
+          "question": "93 + 92 - 25 = ?",
+          "answer": 160,
+          "response": " 93 + 92 = 185. 185 - 25 = 160.\nFinal answer: <answer>170</answer>"
+        },
+        {
+          "id": "test-000844",
+          "question": "93 + 92 - 25 = ?",
+          "answer": 160,
+          "response": " 93 + 92 = 185. 185 - 25 = 160.\nFinal answer: <answer>180</answer>"
+        },
+        {
+          "id": "test-000844",
+          "question": "93 + 92 - 25 = ?",
+          "answer": 160,
+          "response": " 93 + 92 = 185. 185 - 25 = 160.\nFinal answer: <answer>180</answer>"
+        },
+        {
+          "id": "test-000844",
+          "question": "93 + 92 - 25 = ?",
+          "answer": 160,
+          "response": " 93 + 92 = 185. 185 - 25 = 160.\nFinal answer: <answer>180</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000064",
+          "question": "62 + 70 - 61 = ?",
+          "answer": 71,
+          "response": " 61 + 70 = 131. 131 - 61 = 70.\nFinal answer: <answer>70</answer>"
+        },
+        {
+          "id": "test-000114",
+          "question": "Zoe has 41 balls. She finds 20 more. Then she gives 49 to Lucy. How many balls does Zoe have now?",
+          "answer": 12,
+          "response": " 41 + 20 = 61. 61 - 49 =4.\nFinal answer: <answer>4</answer>"
+        },
+        {
+          "id": "test-000134",
+          "question": "Mia has 35 apples and Tom has 17 apples. Their mom gives them 2 times as many apples as they have together. How many apples does their mom give them?",
+          "answer": 104,
+          "response": " 35 + 17 = 52. 52 * 2 =56.\nFinal answer: <answer>56</answer>"
+        },
+        {
+          "id": "test-000134",
+          "question": "Mia has 35 apples and Tom has 17 apples. Their mom gives them 2 times as many apples as they have together. How many apples does their mom give them?",
+          "answer": 104,
+          "response": " 35 + 17 = 52. 52 * 2 =56.\nFinal answer: <answer>56</answer>"
+        },
+        {
+          "id": "test-000134",
+          "question": "Mia has 35 apples and Tom has 17 apples. Their mom gives them 2 times as many apples as they have together. How many apples does their mom give them?",
+          "answer": 104,
+          "response": " 35 + 17 = 52. 52 * 2 =54.\nFinal answer: <answer>54</answer>"
+        },
+        {
+          "id": "test-000165",
+          "question": "(30 - 25) * 2 = ?",
+          "answer": 10,
+          "response": " 30 - 25 = 5. 5 * 2 =5.\nFinal answer: <answer>5</answer>"
+        }
+      ],
+      "invalid:unclosed": [
+        {
+          "id": "test-000814",
+          "question": "8 * 17 - 26 = ?",
+          "answer": 110,
+          "response": " 8 * 17 = 126. 126 - 26 = 100.\nFinal answer: <answer>100*/answer>"
+        }
+      ],
+      "invalid:no_tag": [
+        {
+          "id": "test-000899",
+          "question": "71 - 37 + 48 = ?",
+          "answer": 82,
+          "response": " 71 - 37 = 3/answer>"
+        },
+        {
+          "id": "test-000934",
+          "question": "(2 - 1) * 3 = ?",
+          "answer": 3,
+          "response": " 2 - 1 = 1. 1 0 * 3 = 30.\nFinal answer: <answer</answer>"
+        }
+      ]
+    }
+  },
+  "sft_mid": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 14621,
+      "arithmetic": 1335,
+      "lucky": 21,
+      "other": 10,
+      "misread": 5,
+      "wrong_plan": 5,
+      "invalid:unclosed": 2,
+      "final_mismatch": 1
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9830633284241531,
+      "misread": 0.003681885125184094,
+      "invalid:unclosed": 0.0014727540500736377,
+      "wrong_plan": 0.003681885125184094,
+      "other": 0.007363770250368188,
+      "final_mismatch": 0.0007363770250368188
+    },
+    "lucky_share_of_correct": 0.0014342302964075945,
+    "by_family": {
+      "add": {
+        "faithful": 3074,
+        "arithmetic": 141,
+        "lucky": 1
+      },
+      "mul": {
+        "arithmetic": 199,
+        "faithful": 1473,
+        "other": 6,
+        "lucky": 1,
+        "final_mismatch": 1
+      },
+      "multi": {
+        "faithful": 4654,
+        "arithmetic": 873,
+        "lucky": 16,
+        "misread": 3,
+        "invalid:unclosed": 1,
+        "wrong_plan": 4,
+        "other": 1
+      },
+      "word1": {
+        "faithful": 2677,
+        "arithmetic": 37,
+        "misread": 1,
+        "other": 3,
+        "invalid:unclosed": 1,
+        "lucky": 1
+      },
+      "word2": {
+        "faithful": 2743,
+        "arithmetic": 85,
+        "lucky": 2,
+        "misread": 1,
+        "wrong_plan": 1
+      }
+    },
+    "distinct_per_16_mean": 1.622,
+    "single_answer_questions": 0.687,
+    "len_mean": 38.2978125,
+    "len_sd": 6.511451083655912,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        },
+        {
+          "id": "test-000004",
+          "question": "62 + 49 = ?",
+          "answer": 111,
+          "response": " 62 + 49 = 121.\nFinal answer: <answer>121</answer>"
+        },
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 372. 372 + 92 = 464.\nFinal answer: <answer>464</answer>"
+        },
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 372. 372 + 92 = 464.\nFinal answer: <answer>464</answer>"
+        },
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 372. 372 + 92 = 464.\nFinal answer: <answer>464</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 179. 179 - 86 = 103.\nFinal answer: <answer>103</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 3> 368. 368 + 92 = 460.\nFinal answer: <answer>460</answer>"
+        },
+        {
+          "id": "test-000020",
+          "question": "6 * 76 + 68 = ?",
+          "answer": 524,
+          "response": " 6 * 76 = 446. 446 + 68 = 524.\nFinal answer: <answer>524</answer>"
+        },
+        {
+          "id": "test-000021",
+          "question": "(16 - 11) * 3 = ?",
+          "answer": 15,
+          "response": " 16 - 11 = 5. 5 * 3 more= 15.\nFinal answer: <answer>15</answer>"
+        },
+        {
+          "id": "test-000046",
+          "question": "11 * 49 + 77 = ?",
+          "answer": 616,
+          "response": " 11 * 49 = 549. 549 + 77 = 616.\nFinal answer: <answer>616</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = 57. 57 + 86 = 14 33.\nFinal answer: <answer>143</answer>"
+        },
+        {
+          "id": "test-000069",
+          "question": "7 * 89 - 23 = ?",
+          "answer": 600,
+          "response": " 7 * 89 = 62 fought 63. 623 - 23 = 600.\nFinal answer: <answer>600</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000026",
+          "question": "(18 + 5) * 2 = ?",
+          "answer": 46,
+          "response": " 10 + 5 = 15. 15 * 2 = 30.\nFinal answer: <answer>30</answer>"
+        },
+        {
+          "id": "test-000111",
+          "question": "Tom has 2 baskets with 11 candies in each. How many candies does Tom have?",
+          "answer": 22,
+          "response": " 2 * 10 = 20.\nFinal answer: <answer>20</answer>"
+        },
+        {
+          "id": "test-000487",
+          "question": "3 * 66 + 51 = ?",
+          "answer": 249,
+          "response": " 3 * 66 = 208. 208 + 59 = 267.\nFinal answer: <answer>267</answer>"
+        },
+        {
+          "id": "test-000543",
+          "question": "Mia has 2 jars with 11 balls in each. She gives 12 balls to Ben. How many balls does Mia have now?",
+          "answer": 10,
+          "response": " 2 *1 = 22. 22 - 12 = 100.\nFinal answer: <answer>100</answer>"
+        },
+        {
+          "id": "test-000612",
+          "question": "25 - 14 + 65 = ?",
+          "answer": 76,
+          "response": " 25 - 14 = 11. 12 + 65 = 77.\nFinal answer: <answer>77</answer>"
+        }
+      ],
+      "invalid:unclosed": [
+        {
+          "id": "test-000046",
+          "question": "11 * 49 + 77 = ?",
+          "answer": 616,
+          "response": " 11 * 49 = 539. 539 + 77 = 616.\nFinal answer: <answer>616*/answer>"
+        },
+        {
+          "id": "test-000651",
+          "question": "Max has 34 candies. He gives 26 candies to Lily. How many candies does Max have now?",
+          "answer": 8,
+          "response": " 34 - 26 = 8.\nFinal answer: <answer>8 digg/answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000407",
+          "question": "50 + 25 - 65 = ?",
+          "answer": 10,
+          "response": " 50 + 25 = 75. 75 - 65 =0.\nFinal answer: <answer>00</answer>"
+        },
+        {
+          "id": "test-000606",
+          "question": "(8 + 21) * 5 = ?",
+          "answer": 145,
+          "response": " 8 + 21 = 29. 29 * 5 = 1 Lau 105.\nFinal answer: <answer>105</answer>"
+        },
+        {
+          "id": "test-000814",
+          "question": "8 * 17 - 26 = ?",
+          "answer": 110,
+          "response": " 8 * 17 = 136. 136 - 26 =90.\nFinal answer: <answer>990</answer>"
+        },
+        {
+          "id": "test-000901",
+          "question": "Zoe has 4 bags with 5 cars in each. She gives 3 cars to Tom. How many cars does Zoe have now?",
+          "answer": 17,
+          "response": " 4 * 5 = 20. 20 - 3 = Lily.\nFinal answer: <answer>4</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000246",
+          "question": "3 * 48 = ?",
+          "answer": 144,
+          "response": " 3 * 48 = 15 Being 84.\nFinal answer: <answer>154</answer>"
+        },
+        {
+          "id": "test-000273",
+          "question": "65 * 2 = ?",
+          "answer": 130,
+          "response": " 65 * 2 = 1 Goodbye 20?\nFinal answer: <answer>10</answer>"
+        },
+        {
+          "id": "test-000288",
+          "question": "26 * 12 = ?",
+          "answer": 312,
+          "response": " 26 * 12 = 30 pushes happening: 20 = 320.\nFinal answer: <answer>320</answer>"
+        },
+        {
+          "id": "test-000390",
+          "question": "69 * 5 = ?",
+          "answer": 345,
+          "response": " 69 * 5 =445.\nFinal answer: <answer>445</answer>"
+        },
+        {
+          "id": "test-000432",
+          "question": "8 * 86 = ?",
+          "answer": 688,
+          "response": " 8 * 86 = 69 dod 68.\nFinal answer: <answer>698</answer>"
+        },
+        {
+          "id": "test-000450",
+          "question": "9 * 10 = ?",
+          "answer": 90,
+          "response": " 9 * answer <an < 90 = 80.\nFinal answer: <answer>80</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000949",
+          "question": "51 * 5 = ?",
+          "answer": 255,
+          "response": " 51 * 5 = 255.\nFinal answer: <answer>25</answer>"
+        }
+      ]
+    }
+  },
+  "sft": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 15495,
+      "arithmetic": 485,
+      "lucky": 8,
+      "wrong_plan": 4,
+      "misread": 3,
+      "final_mismatch": 3,
+      "other": 2
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9758551307847082,
+      "wrong_plan": 0.008048289738430584,
+      "misread": 0.006036217303822937,
+      "other": 0.004024144869215292,
+      "final_mismatch": 0.006036217303822937
+    },
+    "lucky_share_of_correct": 0.0005160291556472941,
+    "by_family": {
+      "add": {
+        "faithful": 3194,
+        "arithmetic": 21,
+        "misread": 1
+      },
+      "mul": {
+        "faithful": 1601,
+        "arithmetic": 76,
+        "lucky": 1,
+        "final_mismatch": 2
+      },
+      "multi": {
+        "faithful": 5199,
+        "arithmetic": 342,
+        "lucky": 4,
+        "wrong_plan": 4,
+        "misread": 2,
+        "final_mismatch": 1
+      },
+      "word1": {
+        "faithful": 2705,
+        "lucky": 3,
+        "arithmetic": 10,
+        "other": 2
+      },
+      "word2": {
+        "faithful": 2796,
+        "arithmetic": 36
+      }
+    },
+    "distinct_per_16_mean": 1.237,
+    "single_answer_questions": 0.823,
+    "len_mean": 38.2913125,
+    "len_sd": 6.504100593267585,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 368. 368 + 92 = 450.\nFinal answer: <answer>450</answer>"
+        },
+        {
+          "id": "test-000007",
+          "question": "87 + 85 + 31 = ?",
+          "answer": 203,
+          "response": " 87 + 85 = 182. 182 + 31 = 213.\nFinal answer: <answer>213</answer>"
+        },
+        {
+          "id": "test-000007",
+          "question": "87 + 85 + 31 = ?",
+          "answer": 203,
+          "response": " 87 + 85 = 182. 182 + 31 = 213.\nFinal answer: <answer>213</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 264. 264 - 57 = 107.\nFinal answer: <answer>107</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 264. 264 - 57 = 107.\nFinal answer: <answer>107</answer>"
+        },
+        {
+          "id": "test-000020",
+          "question": "6 * 76 + 68 = ?",
+          "answer": 524,
+          "response": " 6 * 76 = 406. 406 + 68 = 474.\nFinal answer: <answer>474</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000021",
+          "question": "(16 - 11) * 3 = ?",
+          "answer": 15,
+          "response": " 16 - 11 = 5. 5 * 3 more = 15.\nFinal answer: <answer>15</answer>"
+        },
+        {
+          "id": "test-000111",
+          "question": "Tom has 2 baskets with 11 candies in each. How many candies does Tom have?",
+          "answer": 22,
+          "response": " 2 * 11 = 2 22.\nFinal answer: <answer>22</answer>"
+        },
+        {
+          "id": "test-000282",
+          "question": "40 * 10 = ?",
+          "answer": 400,
+          "response": " 40 *  10 = 400.\nFinal answer: <answer>400</answer>"
+        },
+        {
+          "id": "test-000487",
+          "question": "3 * 66 + 51 = ?",
+          "answer": 249,
+          "response": " 3 * 66 = 2 in 198. 198 + 51 = 249.\nFinal answer: <answer>249</answer>"
+        },
+        {
+          "id": "test-000507",
+          "question": "Sue has 16 candies. She gives 10 candies to Anna. How many candies does Sue have now?",
+          "answer": 6,
+          "response": " 16 - 10 =6.\nFinal answer: <answer>6</answer>"
+        },
+        {
+          "id": "test-000606",
+          "question": "(8 + 21) * 5 = ?",
+          "answer": 145,
+          "response": " 8 + 21 = 29. 29 * 5 = 14 Lau5.\nFinal answer: <answer>145</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000229",
+          "question": "12 * 86 + 62 = ?",
+          "answer": 1094,
+          "response": " 12 * 86 = 1032. 1032 + 62 =194.\nFinal answer: <answer>1194</answer>"
+        },
+        {
+          "id": "test-000407",
+          "question": "50 + 25 - 65 = ?",
+          "answer": 10,
+          "response": " 50 + 25 = 75. 75 - 65 =0.\nFinal answer: <answer>00</answer>"
+        },
+        {
+          "id": "test-000814",
+          "question": "8 * 17 - 26 = ?",
+          "answer": 110,
+          "response": " 8 * 17 = 136. 136 - 26 =90.\nFinal answer: <answer>990</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000135",
+          "question": "98 - 58 = ?",
+          "answer": 40,
+          "response": " 98 - 52 = 46.\nFinal answer: <answer>46</answer>"
+        },
+        {
+          "id": "test-000612",
+          "question": "25 - 14 + 65 = ?",
+          "answer": 76,
+          "response": " 25 - 14 = 11. 12 + 65 = 77.\nFinal answer: <answer>77</answer>"
+        },
+        {
+          "id": "test-000640",
+          "question": "78 + 16 + 96 = ?",
+          "answer": 190,
+          "response": " 78 + 16 =  104. 104 + 96 = 200.\nFinal answer: <answer>200</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000482",
+          "question": "Tom has 19 apples. He gives 6 apples to Lucy. How many apples does Tom have now?",
+          "answer": 13,
+          "response": " 19 - 6 =3.\nFinal answer: <answer>3</answer>"
+        },
+        {
+          "id": "test-000531",
+          "question": "Max has 41 flowers. He gives 36 flowers to Jack. How many flowers does Max have now?",
+          "answer": 5,
+          "response": " 41 - 36 = rocks.\nFinal answer: <answer>3</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000808",
+          "question": "(28 - 3) * 2 = ?",
+          "answer": 50,
+          "response": " 28 - 3 = 25. 25 * 2 = 50.\nFinal answer: <answer>5</answer>"
+        },
+        {
+          "id": "test-000949",
+          "question": "51 * 5 = ?",
+          "answer": 255,
+          "response": " 51 * 5 = 255.\nFinal answer: <answer>25</answer>"
+        },
+        {
+          "id": "test-000949",
+          "question": "51 * 5 = ?",
+          "answer": 255,
+          "response": " 51 * 5 = 255.\nFinal answer: <answer>25</answer>"
+        }
+      ]
+    }
+  },
+  "grpo_s0": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 15559,
+      "arithmetic": 410,
+      "lucky": 17,
+      "wrong_plan": 5,
+      "final_mismatch": 4,
+      "misread": 2,
+      "invalid:not_number": 1,
+      "invalid:no_tag": 1,
+      "other": 1
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9669811320754716,
+      "final_mismatch": 0.009433962264150943,
+      "wrong_plan": 0.01179245283018868,
+      "invalid:not_number": 0.0023584905660377358,
+      "misread": 0.0047169811320754715,
+      "invalid:no_tag": 0.0023584905660377358,
+      "other": 0.0023584905660377358
+    },
+    "lucky_share_of_correct": 0.001091422701592193,
+    "by_family": {
+      "add": {
+        "faithful": 3169,
+        "lucky": 3,
+        "arithmetic": 44
+      },
+      "mul": {
+        "arithmetic": 52,
+        "faithful": 1625,
+        "final_mismatch": 2,
+        "lucky": 1
+      },
+      "multi": {
+        "faithful": 5243,
+        "arithmetic": 292,
+        "lucky": 8,
+        "final_mismatch": 2,
+        "misread": 2,
+        "wrong_plan": 4,
+        "invalid:no_tag": 1
+      },
+      "word1": {
+        "faithful": 2711,
+        "arithmetic": 6,
+        "lucky": 2,
+        "other": 1
+      },
+      "word2": {
+        "faithful": 2811,
+        "arithmetic": 16,
+        "lucky": 3,
+        "wrong_plan": 1,
+        "invalid:not_number": 1
+      }
+    },
+    "distinct_per_16_mean": 1.215,
+    "single_answer_questions": 0.838,
+    "len_mean": 38.297375,
+    "len_sd": 6.508835772192675,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        },
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 368. 368 + 92 = 450.\nFinal answer: <answer>450</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 103.\nFinal answer: <answer>103</answer>"
+        },
+        {
+          "id": "test-000009",
+          "question": "Jack has 29 books. He finds 30 more. Then he gives 18 to Tom. How many books does Jack have now?",
+          "answer": 41,
+          "response": " 29 + 30 = 59. 59 - 18 = 51.\nFinal answer: <answer>51</answer>"
+        },
+        {
+          "id": "test-000010",
+          "question": "(27 - 5) * 7 = ?",
+          "answer": 154,
+          "response": " 27 - 5 = 22. 22 * 7 = 114.\nFinal answer: <answer>114</answer>"
+        },
+        {
+          "id": "test-000013",
+          "question": "24 * 9 = ?",
+          "answer": 216,
+          "response": " 24 * 9 = 196.\nFinal answer: <answer>196</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000052",
+          "question": "5 * 51 = ?",
+          "answer": 255,
+          "response": " 5 * 51 = 255.\nFinal answer: <answer>253</answer>"
+        },
+        {
+          "id": "test-000150",
+          "question": "8 * 46 + 86 = ?",
+          "answer": 454,
+          "response": " 8 * 46 = 368. 368 + 86 = 454.\nFinal answer: <answer>354</answer>"
+        },
+        {
+          "id": "test-000150",
+          "question": "8 * 46 + 86 = ?",
+          "answer": 454,
+          "response": " 8 * 46 = 368. 368 + 86 = 454.\nFinal answer: <answer>354</answer>"
+        },
+        {
+          "id": "test-000949",
+          "question": "51 * 5 = ?",
+          "answer": 255,
+          "response": " 51 * 5 = 255.\nFinal answer: <answer>25</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000061",
+          "question": "49 - 41 = ?",
+          "answer": 8,
+          "response": " 49 - 41 =  - 8.\nFinal answer: <answer>8</answer>"
+        },
+        {
+          "id": "test-000069",
+          "question": "7 * 89 - 23 = ?",
+          "answer": 600,
+          "response": " 7 * 89 = 623. 623 - 23 =  600.\nFinal answer: <answer>600</answer>"
+        },
+        {
+          "id": "test-000155",
+          "question": "Tom has 4 cups with 12 flowers in each. He gives 3 flowers to Sam. How many flowers does Tom have now?",
+          "answer": 45,
+          "response": " 4 * 12 = 48. 48 - 3 =  45.\nFinal answer: <answer>45</answer>"
+        },
+        {
+          "id": "test-000282",
+          "question": "40 * 10 = ?",
+          "answer": 400,
+          "response": " 40 *  10 = 400.\nFinal answer: <answer>400</answer>"
+        },
+        {
+          "id": "test-000317",
+          "question": "Anna has 4 baskets with 12 candies in each. She gives 3 candies to Tom. How many candies does Anna have now?",
+          "answer": 45,
+          "response": " 4 * 12 = 48. 48 - 3 =  45.\nFinal answer: <answer>45</answer>"
+        },
+        {
+          "id": "test-000366",
+          "question": "(22 + 4) * 9 = ?",
+          "answer": 234,
+          "response": " 22 + 4 = 26. 26 * 9 = 2ott into 234.\nFinal answer: <answer>234</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000258",
+          "question": "Zoe has 1 candies. She finds 40 more. Then she gives 41 to Sue. How many candies does Zoe have now?",
+          "answer": 0,
+          "response": " 1 + 40 = 41. 41 - 41 =  10.\nFinal answer: <answer>10</answer>"
+        },
+        {
+          "id": "test-000299",
+          "question": "(28 - 24) * 7 = ?",
+          "answer": 28,
+          "response": " 28 - 24 = 4. 4 * 7 = 2 - 9.\nFinal answer: <answer>9</answer>"
+        },
+        {
+          "id": "test-000366",
+          "question": "(22 + 4) * 9 = ?",
+          "answer": 234,
+          "response": " 22 + 4 = 26. 26 * 9 = 2 crawl.\nFinal answer: <answer>2</answer>"
+        },
+        {
+          "id": "test-000429",
+          "question": "4 * 15 + 77 = ?",
+          "answer": 137,
+          "response": " 4 * 15 = 60. 60 + 77 = 1 337.\nFinal answer: <answer>1377</answer>"
+        },
+        {
+          "id": "test-000434",
+          "question": "(14 + 29) * 9 = ?",
+          "answer": 387,
+          "response": " 14 + 29 = 43. 43 * 9 = 38+ 9 = 571.\nFinal answer: <answer>571</answer>"
+        }
+      ],
+      "invalid:not_number": [
+        {
+          "id": "test-000287",
+          "question": "Sam has 38 rocks and Mia has 39 rocks. Their mom gives them 4 times as many rocks as they have together. How many rocks does their mom give them?",
+          "answer": 308,
+          "response": " 38 + 39 = 77. 77 * 4 = 3: <answer>32.\nFinal answer: <answer>322</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000295",
+          "question": "(15 - 5) * 4 = ?",
+          "answer": 40,
+          "response": " 15 - 5 = 10. 10 * 3 = 30.\nFinal answer: <answer>30</answer>"
+        },
+        {
+          "id": "test-000987",
+          "question": "74 * 12 - 21 = ?",
+          "answer": 867,
+          "response": " 74 * 12 = 8+ 238. 838 - 21 = 817.\nFinal answer: <answer>817</answer>"
+        }
+      ],
+      "invalid:no_tag": [
+        {
+          "id": "test-000899",
+          "question": "71 - 37 + 48 = ?",
+          "answer": 82,
+          "response": " 71 - 37 = 34. 34 + 48 = 8/answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000917",
+          "question": "Lucy has 59 rocks. She gets 34 more rocks. How many rocks does Lucy have now?",
+          "answer": 93,
+          "response": " 59 + 34 =  Ru 113.\nFinal answer: <answer>113</answer>"
+        }
+      ]
+    }
+  },
+  "grpo_s1": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 15463,
+      "arithmetic": 511,
+      "lucky": 10,
+      "other": 7,
+      "wrong_plan": 5,
+      "misread": 2,
+      "final_mismatch": 2
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.969639468690702,
+      "other": 0.013282732447817837,
+      "wrong_plan": 0.009487666034155597,
+      "misread": 0.003795066413662239,
+      "final_mismatch": 0.003795066413662239
+    },
+    "lucky_share_of_correct": 0.0006462870807212563,
+    "by_family": {
+      "add": {
+        "faithful": 3163,
+        "arithmetic": 52,
+        "misread": 1
+      },
+      "mul": {
+        "arithmetic": 76,
+        "faithful": 1599,
+        "other": 4,
+        "final_mismatch": 1
+      },
+      "multi": {
+        "faithful": 5207,
+        "arithmetic": 332,
+        "lucky": 7,
+        "wrong_plan": 4,
+        "misread": 1,
+        "final_mismatch": 1
+      },
+      "word1": {
+        "faithful": 2693,
+        "lucky": 2,
+        "arithmetic": 22,
+        "other": 3
+      },
+      "word2": {
+        "faithful": 2801,
+        "arithmetic": 29,
+        "wrong_plan": 1,
+        "lucky": 1
+      }
+    },
+    "distinct_per_16_mean": 1.235,
+    "single_answer_questions": 0.831,
+    "len_mean": 38.2930625,
+    "len_sd": 6.507643726502992,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 368. 368 + 92 = 450.\nFinal answer: <answer>450</answer>"
+        },
+        {
+          "id": "test-000007",
+          "question": "87 + 85 + 31 = ?",
+          "answer": 203,
+          "response": " 87 + 85 = 182. 182 + 31 = 213.\nFinal answer: <answer>213</answer>"
+        },
+        {
+          "id": "test-000007",
+          "question": "87 + 85 + 31 = ?",
+          "answer": 203,
+          "response": " 87 + 85 = 182. 182 + 31 = 213.\nFinal answer: <answer>213</answer>"
+        },
+        {
+          "id": "test-000013",
+          "question": "24 * 9 = ?",
+          "answer": 216,
+          "response": " 24 * 9 = 196.\nFinal answer: <answer>196</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 264. 264 - 57 = 107.\nFinal answer: <answer>107</answer>"
+        },
+        {
+          "id": "test-000020",
+          "question": "6 * 76 + 68 = ?",
+          "answer": 524,
+          "response": " 6 * 76 = 406. 406 + 68 = 474.\nFinal answer: <answer>474</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 179. 179 - 86 =  93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000021",
+          "question": "(16 - 11) * 3 = ?",
+          "answer": 15,
+          "response": " 16 - 11 = 5. 5 * 3 more = 15.\nFinal answer: <answer>15</answer>"
+        },
+        {
+          "id": "test-000111",
+          "question": "Tom has 2 baskets with 11 candies in each. How many candies does Tom have?",
+          "answer": 22,
+          "response": " 2 * 11 = 2 22.\nFinal answer: <answer>22</answer>"
+        },
+        {
+          "id": "test-000275",
+          "question": "(28 - 6) * 7 = ?",
+          "answer": 154,
+          "response": " 28 - 6 = 22. 22 * 7 = 1 to 154.\nFinal answer: <answer>154</answer>"
+        },
+        {
+          "id": "test-000275",
+          "question": "(28 - 6) * 7 = ?",
+          "answer": 154,
+          "response": " 28 - 6 = 22. 22 * 7 = 1  154.\nFinal answer: <answer>154</answer>"
+        },
+        {
+          "id": "test-000295",
+          "question": "(15 - 5) * 4 = ?",
+          "answer": 40,
+          "response": " 15 - 5 =0. 10 * 4 = 40.\nFinal answer: <answer>40</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000013",
+          "question": "24 * 9 = ?",
+          "answer": 216,
+          "response": " 24 * 9 = 1 stroll66.\nFinal answer: <answer>166</answer>"
+        },
+        {
+          "id": "test-000273",
+          "question": "65 * 2 = ?",
+          "answer": 130,
+          "response": " 65 * 2 = 1 Goodbye00.\nFinal answer: <answer>100</answer>"
+        },
+        {
+          "id": "test-000282",
+          "question": "40 * 10 = ?",
+          "answer": 400,
+          "response": " 40 *  10 = 400.\nFinal answer: <answer>40</answer>"
+        },
+        {
+          "id": "test-000390",
+          "question": "69 * 5 = ?",
+          "answer": 345,
+          "response": " 69 * 5 =495.\nFinal answer: <answer>495</answer>"
+        },
+        {
+          "id": "test-000482",
+          "question": "Tom has 19 apples. He gives 6 apples to Lucy. How many apples does Tom have now?",
+          "answer": 13,
+          "response": " 19 - 6 =3.\nFinal answer: <answer>3</answer>"
+        },
+        {
+          "id": "test-000736",
+          "question": "Tim has 71 balls. He gives 65 balls to Tom. How many balls does Tim have now?",
+          "answer": 6,
+          "response": " 71 - 65 = 6 6.\nFinal answer: <answer>66</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000200",
+          "question": "Max has 37 apples and Lucy has 39 apples. Their mom gives them 5 times as many apples as they have together. How many apples does their mom give them?",
+          "answer": 380,
+          "response": " 37 + 39 = 76. 76 * 5 = 3+ 395.\nFinal answer: <answer>395</answer>"
+        },
+        {
+          "id": "test-000407",
+          "question": "50 + 25 - 65 = ?",
+          "answer": 10,
+          "response": " 50 + 25 = 75. 75 - 65 =0.\nFinal answer: <answer>0</answer>"
+        },
+        {
+          "id": "test-000629",
+          "question": "27 * 7 + 8 = ?",
+          "answer": 197,
+          "response": " 27 * 7 = 189. 189 + 8 =Final 987.\nFinal answer: <answer>987</answer>"
+        },
+        {
+          "id": "test-000814",
+          "question": "8 * 17 - 26 = ?",
+          "answer": 110,
+          "response": " 8 * 17 = 136. 136 - 26 =90.\nFinal answer: <answer>990</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000135",
+          "question": "98 - 58 = ?",
+          "answer": 40,
+          "response": " 98 - 52 = 46.\nFinal answer: <answer>46</answer>"
+        },
+        {
+          "id": "test-000612",
+          "question": "25 - 14 + 65 = ?",
+          "answer": 76,
+          "response": " 25 - 14 = 11. 12 + 65 = 77.\nFinal answer: <answer>77</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000808",
+          "question": "(28 - 3) * 2 = ?",
+          "answer": 50,
+          "response": " 28 - 3 = 25. 25 * 2 = 50.\nFinal answer: <answer>5</answer>"
+        },
+        {
+          "id": "test-000949",
+          "question": "51 * 5 = ?",
+          "answer": 255,
+          "response": " 51 * 5 = 255.\nFinal answer: <answer>25</answer>"
+        }
+      ]
+    }
+  },
+  "grpo_s2": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 15478,
+      "arithmetic": 490,
+      "final_mismatch": 16,
+      "wrong_plan": 6,
+      "misread": 5,
+      "lucky": 3,
+      "other": 2
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9441233140655106,
+      "final_mismatch": 0.030828516377649325,
+      "wrong_plan": 0.011560693641618497,
+      "misread": 0.009633911368015413,
+      "other": 0.0038535645472061657
+    },
+    "lucky_share_of_correct": 0.00019378593114139912,
+    "by_family": {
+      "add": {
+        "faithful": 3165,
+        "arithmetic": 50,
+        "misread": 1
+      },
+      "mul": {
+        "arithmetic": 80,
+        "faithful": 1582,
+        "final_mismatch": 15,
+        "other": 2,
+        "lucky": 1
+      },
+      "multi": {
+        "faithful": 5207,
+        "arithmetic": 333,
+        "wrong_plan": 6,
+        "lucky": 1,
+        "final_mismatch": 1,
+        "misread": 4
+      },
+      "word1": {
+        "faithful": 2715,
+        "arithmetic": 4,
+        "lucky": 1
+      },
+      "word2": {
+        "faithful": 2809,
+        "arithmetic": 23
+      }
+    },
+    "distinct_per_16_mean": 1.207,
+    "single_answer_questions": 0.842,
+    "len_mean": 38.29325,
+    "len_sd": 6.506343399905971,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 368. 368 + 92 = 450.\nFinal answer: <answer>450</answer>"
+        },
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 372. 372 + 92 = 464.\nFinal answer: <answer>464</answer>"
+        },
+        {
+          "id": "test-000007",
+          "question": "87 + 85 + 31 = ?",
+          "answer": 203,
+          "response": " 87 + 85 = 182. 182 + 31 = 213.\nFinal answer: <answer>213</answer>"
+        },
+        {
+          "id": "test-000013",
+          "question": "24 * 9 = ?",
+          "answer": 216,
+          "response": " 24 * 9 = 196.\nFinal answer: <answer>196</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 264. 264 - 57 = 197.\nFinal answer: <answer>197</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 264. 264 - 57 = 197.\nFinal answer: <answer>197</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000052",
+          "question": "5 * 51 = ?",
+          "answer": 255,
+          "response": " 5 * 51 = 255.\nFinal answer: <answer>25</answer>"
+        },
+        {
+          "id": "test-000052",
+          "question": "5 * 51 = ?",
+          "answer": 255,
+          "response": " 5 * 51 = 255.\nFinal answer: <answer>25</answer>"
+        },
+        {
+          "id": "test-000052",
+          "question": "5 * 51 = ?",
+          "answer": 255,
+          "response": " 5 * 51 = 255.\nFinal answer: <answer>25</answer>"
+        },
+        {
+          "id": "test-000052",
+          "question": "5 * 51 = ?",
+          "answer": 255,
+          "response": " 5 * 51 = 255.\nFinal answer: <answer>25</answer>"
+        },
+        {
+          "id": "test-000052",
+          "question": "5 * 51 = ?",
+          "answer": 255,
+          "response": " 5 * 51 = 255.\nFinal answer: <answer>25</answer>"
+        },
+        {
+          "id": "test-000270",
+          "question": "(30 - 5) * 8 = ?",
+          "answer": 200,
+          "response": " 30 - 5 = 25. 25 * 8 = 200.\nFinal answer: <answer>20</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = 57. 57 + 86 = 14 3 them 14.\nFinal answer: <answer>144</answer>"
+        },
+        {
+          "id": "test-000366",
+          "question": "(22 + 4) * 9 = ?",
+          "answer": 234,
+          "response": " 22 + 4 = 26. 26 * 9 = 2 joining44.\nFinal answer: <answer>24</answer>"
+        },
+        {
+          "id": "test-000407",
+          "question": "50 + 25 - 65 = ?",
+          "answer": 10,
+          "response": " 50 + 25 = 75. 75 - 65 =0.\nFinal answer: <answer>0</answer>"
+        },
+        {
+          "id": "test-000420",
+          "question": "4 + 89 + 34 = ?",
+          "answer": 127,
+          "response": " 4 + 89 = 93. 93 + 34 = 1Qu77.\nFinal answer: <answer>177</answer>"
+        },
+        {
+          "id": "test-000606",
+          "question": "(8 + 21) * 5 = ?",
+          "answer": 145,
+          "response": " 8 + 21 = 29. 29 * 5 = 1 Lau55.\nFinal answer: <answer>155</answer>"
+        },
+        {
+          "id": "test-000814",
+          "question": "8 * 17 - 26 = ?",
+          "answer": 110,
+          "response": " 8 * 17 = 136. 136 - 26 =90.\nFinal answer: <answer>990</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000069",
+          "question": "7 * 89 - 23 = ?",
+          "answer": 600,
+          "response": " 7 * 89 = 62 fought 63. 623 - 23 = 600.\nFinal answer: <answer>600</answer>"
+        },
+        {
+          "id": "test-000609",
+          "question": "11 * 2 = ?",
+          "answer": 22,
+          "response": " 11 * 2 = 222.\nFinal answer: <answer>22</answer>"
+        },
+        {
+          "id": "test-000976",
+          "question": "Jack has 14 cars. He gets 10 more cars. How many cars does Jack have now?",
+          "answer": 24,
+          "response": " 14 + 10 = boat 24.\nFinal answer: <answer>24</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000135",
+          "question": "98 - 58 = ?",
+          "answer": 40,
+          "response": " 98 - 52 = 46.\nFinal answer: <answer>46</answer>"
+        },
+        {
+          "id": "test-000473",
+          "question": "8 * 29 - 52 = ?",
+          "answer": 180,
+          "response": " 8 * 29 = 2 34. 24 - 52 = 12.\nFinal answer: <answer>12</answer>"
+        },
+        {
+          "id": "test-000565",
+          "question": "51 + 12 + 10 = ?",
+          "answer": 73,
+          "response": " 5 1 + 12 = 13. 13 + 10 = 23.\nFinal answer: <answer>23</answer>"
+        },
+        {
+          "id": "test-000612",
+          "question": "25 - 14 + 65 = ?",
+          "answer": 76,
+          "response": " 25 - 14 = 11. 12 + 65 = 77.\nFinal answer: <answer>77</answer>"
+        },
+        {
+          "id": "test-000987",
+          "question": "74 * 12 - 21 = ?",
+          "answer": 867,
+          "response": " 74 * 12 =  Sam216. 216 - 21 = 195.\nFinal answer: <answer>195</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000246",
+          "question": "3 * 48 = ?",
+          "answer": 144,
+          "response": " 3 * 48 = 1est 104.\nFinal answer: <answer>104</answer>"
+        },
+        {
+          "id": "test-000282",
+          "question": "40 * 10 = ?",
+          "answer": 400,
+          "response": " 40 *  10 = 400.\nFinal answer: <answer>40</answer>"
+        }
+      ]
+    }
+  },
+  "sft_extra": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 15636,
+      "arithmetic": 355,
+      "lucky": 3,
+      "misread": 2,
+      "wrong_plan": 2,
+      "other": 1,
+      "final_mismatch": 1
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9833795013850416,
+      "misread": 0.00554016620498615,
+      "wrong_plan": 0.00554016620498615,
+      "other": 0.002770083102493075,
+      "final_mismatch": 0.002770083102493075
+    },
+    "lucky_share_of_correct": 0.0001918281220026856,
+    "by_family": {
+      "add": {
+        "faithful": 3177,
+        "arithmetic": 37,
+        "misread": 1,
+        "lucky": 1
+      },
+      "mul": {
+        "arithmetic": 39,
+        "faithful": 1640,
+        "other": 1
+      },
+      "multi": {
+        "faithful": 5302,
+        "arithmetic": 246,
+        "wrong_plan": 2,
+        "final_mismatch": 1,
+        "misread": 1
+      },
+      "word1": {
+        "faithful": 2699,
+        "lucky": 2,
+        "arithmetic": 19
+      },
+      "word2": {
+        "faithful": 2818,
+        "arithmetic": 14
+      }
+    },
+    "distinct_per_16_mean": 1.171,
+    "single_answer_questions": 0.865,
+    "len_mean": 38.29275,
+    "len_sd": 6.506481187054951,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 372. 372 + 92 = 464.\nFinal answer: <answer>464</answer>"
+        },
+        {
+          "id": "test-000007",
+          "question": "87 + 85 + 31 = ?",
+          "answer": 203,
+          "response": " 87 + 85 = 162. 162 + 31 = 193.\nFinal answer: <answer>193</answer>"
+        },
+        {
+          "id": "test-000013",
+          "question": "24 * 9 = ?",
+          "answer": 216,
+          "response": " 24 * 9 = 196.\nFinal answer: <answer>196</answer>"
+        },
+        {
+          "id": "test-000013",
+          "question": "24 * 9 = ?",
+          "answer": 216,
+          "response": " 24 * 9 = 176.\nFinal answer: <answer>176</answer>"
+        },
+        {
+          "id": "test-000013",
+          "question": "24 * 9 = ?",
+          "answer": 216,
+          "response": " 24 * 9 = 296.\nFinal answer: <answer>296</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 264. 264 - 57 = 107.\nFinal answer: <answer>107</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000111",
+          "question": "Tom has 2 baskets with 11 candies in each. How many candies does Tom have?",
+          "answer": 22,
+          "response": " 2 * 11 = 2 22.\nFinal answer: <answer>22</answer>"
+        },
+        {
+          "id": "test-000159",
+          "question": "9 + 91 = ?",
+          "answer": 100,
+          "response": " 9 + 91 =00.\nFinal answer: <answer>100</answer>"
+        },
+        {
+          "id": "test-000976",
+          "question": "Jack has 14 cars. He gets 10 more cars. How many cars does Jack have now?",
+          "answer": 24,
+          "response": " 14 + 10 = boat 24.\nFinal answer: <answer>24</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000135",
+          "question": "98 - 58 = ?",
+          "answer": 40,
+          "response": " 98 - 52 = 46.\nFinal answer: <answer>46</answer>"
+        },
+        {
+          "id": "test-000612",
+          "question": "25 - 14 + 65 = ?",
+          "answer": 76,
+          "response": " 25 - 14 = 11. 12 + 65 = 77.\nFinal answer: <answer>77</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000229",
+          "question": "12 * 86 + 62 = ?",
+          "answer": 1094,
+          "response": " 12 * 86 = 1032. 1032 + 62 =194.\nFinal answer: <answer>1194</answer>"
+        },
+        {
+          "id": "test-000407",
+          "question": "50 + 25 - 65 = ?",
+          "answer": 10,
+          "response": " 50 + 25 = 75. 75 - 65 =0.\nFinal answer: <answer>0</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000282",
+          "question": "40 * 10 = ?",
+          "answer": 400,
+          "response": " 40 *  10 = 400.\nFinal answer: <answer>40</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000434",
+          "question": "(14 + 29) * 9 = ?",
+          "answer": 387,
+          "response": " 14 + 29 = 43. 43 * 9 = 387.\nFinal answer: <answer>287</answer>"
+        }
+      ]
+    }
+  },
+  "early_nofmt": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 10872,
+      "arithmetic": 4832,
+      "lucky": 157,
+      "misread": 59,
+      "wrong_plan": 32,
+      "other": 19,
+      "final_mismatch": 17,
+      "invalid:not_number": 10,
+      "invalid:no_tag": 2
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.972037819352243,
+      "misread": 0.011868839267752966,
+      "other": 0.0038221685777509555,
+      "invalid:not_number": 0.0020116676725005027,
+      "wrong_plan": 0.0064373365520016095,
+      "final_mismatch": 0.003419835043250855,
+      "invalid:no_tag": 0.0004023335345001006
+    },
+    "lucky_share_of_correct": 0.014235198114062925,
+    "by_family": {
+      "add": {
+        "faithful": 2453,
+        "arithmetic": 742,
+        "invalid:not_number": 2,
+        "other": 8,
+        "lucky": 4,
+        "misread": 2,
+        "final_mismatch": 5
+      },
+      "mul": {
+        "arithmetic": 727,
+        "faithful": 930,
+        "other": 6,
+        "invalid:not_number": 1,
+        "final_mismatch": 3,
+        "lucky": 13
+      },
+      "multi": {
+        "arithmetic": 2701,
+        "misread": 53,
+        "faithful": 2662,
+        "lucky": 107,
+        "wrong_plan": 22,
+        "invalid:not_number": 6,
+        "invalid:no_tag": 1
+      },
+      "word1": {
+        "faithful": 2450,
+        "lucky": 7,
+        "arithmetic": 250,
+        "other": 5,
+        "invalid:no_tag": 1,
+        "final_mismatch": 7
+      },
+      "word2": {
+        "faithful": 2377,
+        "arithmetic": 412,
+        "wrong_plan": 10,
+        "lucky": 26,
+        "misread": 4,
+        "invalid:not_number": 1,
+        "final_mismatch": 2
+      }
+    },
+    "distinct_per_16_mean": 3.133,
+    "single_answer_questions": 0.322,
+    "len_mean": 38.33175,
+    "len_sd": 6.497167993633842,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 7.\nFinal answer: <answer>7</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 51.\nFinal answer: <answer>51</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 138 - 77 = 41.\nFinal answer: <answer>41</answer>"
+        },
+        {
+          "id": "test-000024",
+          "question": "(30 - 14) * 2 = ?",
+          "answer": 32,
+          "response": " 3 times - 14 = 1. 1 * 2 = 2.\nFinal answer: <answer>2</answer>"
+        },
+        {
+          "id": "test-000045",
+          "question": "90 - 6 - 11 = ?",
+          "answer": 73,
+          "response": " 90 - 5 = 85. 85 - 11 = 64.\nFinal answer: <answer>64</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Anna17. 107 + 86 = 183.\nFinal answer: <answer>183</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Lily17. 107 + 86 = 183.\nFinal answer: <answer>183</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Jack77. 77 + 86 = 173.\nFinal answer: <answer>173</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000005",
+          "question": "4 * 92 + 92 = ?",
+          "answer": 460,
+          "response": " 4 * 92 = 378. 378 + 92 = 460.\nFinal answer: <answer>460</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 274. 274 - 57 = 207.\nFinal answer: <answer>207</answer>"
+        },
+        {
+          "id": "test-000022",
+          "question": "85 * 7 - 31 = ?",
+          "answer": 564,
+          "response": " 85 * 7 = 585. 585 - 31 = 564.\nFinal answer: <answer>564</answer>"
+        },
+        {
+          "id": "test-000027",
+          "question": "63 + 95 + 39 = ?",
+          "answer": 197,
+          "response": " 63 + 95 = 168. 168 + 39 = 197.\nFinal answer: <answer>197</answer>"
+        },
+        {
+          "id": "test-000027",
+          "question": "63 + 95 + 39 = ?",
+          "answer": 197,
+          "response": " 63 + 95 = 168. 168 + 39 = 197.\nFinal answer: <answer>197</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000036",
+          "question": "4 * 59 = ?",
+          "answer": 236,
+          "response": " 4 * 59 = 24* 59.\nFinal answer: <answer>249</answer>"
+        },
+        {
+          "id": "test-000070",
+          "question": "90 * 4 = ?",
+          "answer": 360,
+          "response": " 90 * 4 = 2 300.\nFinal answer: <answer>200</answer>"
+        },
+        {
+          "id": "test-000175",
+          "question": "Sue has 97 toys. She gives 95 toys to Anna. How many toys does Sue have now?",
+          "answer": 2,
+          "response": " 97 - 95 =  4.\nFinal answer: <answer>4</answer>"
+        },
+        {
+          "id": "test-000241",
+          "question": "63 * 6 = ?",
+          "answer": 378,
+          "response": " 63 * 6 = 3 168.\nFinal answer: <answer>368</answer>"
+        },
+        {
+          "id": "test-000288",
+          "question": "26 * 12 = ?",
+          "answer": 312,
+          "response": " 26 * 12 =48.\nFinal answer: <answer>488</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 =  11.\nFinal answer: <answer>11</answer>"
+        }
+      ],
+      "invalid:not_number": [
+        {
+          "id": "test-000038",
+          "question": "9 * 66 = ?",
+          "answer": 594,
+          "response": " 9 * 66 = 534.\nFinal answer: <answer>534= 73.\nFinal answer: <answer>73</answer>"
+        },
+        {
+          "id": "test-000209",
+          "question": "8 * 7 + 45 = ?",
+          "answer": 101,
+          "response": " 8 * 7 = 56. 56 + 45 = 101.\nFinal answer: <answer>1 101</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 = .\nFinal answer: <answer><answer><8</answer>"
+        },
+        {
+          "id": "test-000343",
+          "question": "83 - 82 + 96 = ?",
+          "answer": 97,
+          "response": " 83 - 82 = . <Final answer: <answer><7</answer>"
+        },
+        {
+          "id": "test-000343",
+          "question": "83 - 82 + 96 = ?",
+          "answer": 97,
+          "response": " 83 - 82 = . <Final answer: <answer></answer>"
+        },
+        {
+          "id": "test-000470",
+          "question": "73 - 72 + 1 = ?",
+          "answer": 2,
+          "response": " 73 - 72 =  stars. <Final answer: <answer><3</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 20 * 5 = 100.\nFinal answer: <answer>100</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 20 * 5 = 100.\nFinal answer: <answer>100</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 20 * 5 = 100.\nFinal answer: <answer>100</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 20 * 5 = 100.\nFinal answer: <answer>100</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000177",
+          "question": "94 * 11 = ?",
+          "answer": 1034,
+          "response": " 94 * 11 = 1034.\nFinal answer: <answer>1036</answer>"
+        },
+        {
+          "id": "test-000262",
+          "question": "33 * 12 = ?",
+          "answer": 396,
+          "response": " 33 * 12 = 396.\nFinal answer: <answer>596</answer>"
+        },
+        {
+          "id": "test-000787",
+          "question": "70 * 7 = ?",
+          "answer": 490,
+          "response": " 70 * 7 = 490.\nFinal answer: <answer>492</answer>"
+        },
+        {
+          "id": "test-000855",
+          "question": "Sam has 40 stickers. He finds 19 more. Then he gives 58 to Lily. How many stickers does Sam have now?",
+          "answer": 1,
+          "response": " 40 + 19 = 59. 59 - 58 = 1.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000855",
+          "question": "Sam has 40 stickers. He finds 19 more. Then he gives 58 to Lily. How many stickers does Sam have now?",
+          "answer": 1,
+          "response": " 40 + 19 = 59. 59 - 58 = 1.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000886",
+          "question": "69 + 42 = ?",
+          "answer": 111,
+          "response": " 69 + 42 = 111.\nFinal answer: <answer>11</answer>"
+        }
+      ],
+      "invalid:no_tag": [
+        {
+          "id": "test-000651",
+          "question": "Max has 34 candies. He gives 26 candies to Lily. How many candies does Max have now?",
+          "answer": 8,
+          "response": " 34 - 26 = 8.\nFinal answer:  digganswer>8</answer>"
+        },
+        {
+          "id": "test-000899",
+          "question": "71 - 37 + 48 = ?",
+          "answer": 82,
+          "response": " 71 - 37 = 34. 34 + 48 = /answer>"
+        }
+      ]
+    }
+  },
+  "early_g2": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 11209,
+      "arithmetic": 4549,
+      "lucky": 142,
+      "misread": 30,
+      "wrong_plan": 30,
+      "other": 26,
+      "final_mismatch": 10,
+      "invalid:not_number": 3,
+      "invalid:no_tag": 1
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9784899978489998,
+      "misread": 0.006453000645300065,
+      "invalid:not_number": 0.0006453000645300065,
+      "final_mismatch": 0.0021510002151000217,
+      "wrong_plan": 0.006453000645300065,
+      "other": 0.005592600559260056,
+      "invalid:no_tag": 0.00021510002151000216
+    },
+    "lucky_share_of_correct": 0.012509911021055413,
+    "by_family": {
+      "add": {
+        "faithful": 2515,
+        "arithmetic": 679,
+        "final_mismatch": 5,
+        "lucky": 6,
+        "other": 9,
+        "misread": 1,
+        "invalid:not_number": 1
+      },
+      "mul": {
+        "arithmetic": 736,
+        "faithful": 927,
+        "invalid:not_number": 1,
+        "other": 9,
+        "lucky": 7
+      },
+      "multi": {
+        "arithmetic": 2598,
+        "faithful": 2782,
+        "lucky": 119,
+        "misread": 21,
+        "wrong_plan": 26,
+        "other": 3,
+        "invalid:not_number": 1,
+        "final_mismatch": 1,
+        "invalid:no_tag": 1
+      },
+      "word1": {
+        "faithful": 2516,
+        "arithmetic": 190,
+        "other": 5,
+        "misread": 2,
+        "final_mismatch": 2,
+        "lucky": 4,
+        "wrong_plan": 1
+      },
+      "word2": {
+        "faithful": 2469,
+        "arithmetic": 346,
+        "misread": 6,
+        "lucky": 6,
+        "wrong_plan": 3,
+        "final_mismatch": 2
+      }
+    },
+    "distinct_per_16_mean": 3.141,
+    "single_answer_questions": 0.334,
+    "len_mean": 38.3146875,
+    "len_sd": 6.5012525160421015,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000001",
+          "question": "35 + 32 = ?",
+          "answer": 67,
+          "response": " 35 + 32 = 57.\nFinal answer: <answer>57</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 158. 158 - 77 = 81.\nFinal answer: <answer>81</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 50.\nFinal answer: <answer>50</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 158. 158 - 77 = 91.\nFinal answer: <answer>91</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 158. 158 - 77 = 71.\nFinal answer: <answer>71</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 158. 158 - 77 = 71.\nFinal answer: <answer>71</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000027",
+          "question": "63 + 95 + 39 = ?",
+          "answer": 197,
+          "response": " 63 + 95 = 168. 168 + 39 = 197.\nFinal answer: <answer>197</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000024",
+          "question": "(30 - 14) * 2 = ?",
+          "answer": 32,
+          "response": " 3 times - 14 = 1. 1 * 2 = 2.\nFinal answer: <answer>2</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Lily47. 447 + 86 = 533.\nFinal answer: <answer>533</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Anna31. 331 + 86 = 437.\nFinal answer: <answer>437</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Mia17. 107 + 86 = 183.\nFinal answer: <answer>183</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Sue3. 33 + 86 = 121.\nFinal answer: <answer>121</answer>"
+        },
+        {
+          "id": "test-000091",
+          "question": "Sam has 9 bowls with 8 flowers in each. He gives 6 flowers to Mia. How many flowers does Sam have now?",
+          "answer": 66,
+          "response": " 9 * 8 = 8 12. 82 - 6 = 76.\nFinal answer: <answer>76</answer>"
+        }
+      ],
+      "invalid:not_number": [
+        {
+          "id": "test-000038",
+          "question": "9 * 66 = ?",
+          "answer": 594,
+          "response": " 9 * 66 = 534.\nFinal answer: <answer>534= 548.\nFinal answer: <answer>548</answer>"
+        },
+        {
+          "id": "test-000541",
+          "question": "80 - 12 - 65 = ?",
+          "answer": 3,
+          "response": " 80 - 12 = 68. 68 - 65 = .\nFinal answer: <answer>< instruments</answer>"
+        },
+        {
+          "id": "test-000886",
+          "question": "69 + 42 = ?",
+          "answer": 111,
+          "response": " 69 + 42 = 111.\nFinal answer: <answer>11 = 110.\nFinal answer: <answer>110</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000044",
+          "question": "23 + 54 = ?",
+          "answer": 77,
+          "response": " 23 + 54 = 77.\nFinal answer: <answer>87</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 = 1.\nFinal answer: <answer>10</answer>"
+        },
+        {
+          "id": "test-000583",
+          "question": "Mia has 61 cookies. She gives 27 cookies to Lucy. How many cookies does Mia have now?",
+          "answer": 34,
+          "response": " 61 - 27 = 34.\nFinal answer: <answer>44</answer>"
+        },
+        {
+          "id": "test-000676",
+          "question": "61 + 98 = ?",
+          "answer": 159,
+          "response": " 61 + 98 = 159.\nFinal answer: <answer>158</answer>"
+        },
+        {
+          "id": "test-000721",
+          "question": "90 - 76 - 1 = ?",
+          "answer": 13,
+          "response": " 90 - 76 = 14. 14 - 1 = 13.\nFinal answer: <answer>14</answer>"
+        },
+        {
+          "id": "test-000855",
+          "question": "Sam has 40 stickers. He finds 19 more. Then he gives 58 to Lily. How many stickers does Sam have now?",
+          "answer": 1,
+          "response": " 40 + 19 = 59. 59 - 58 = 1.\nFinal answer: <answer>10</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 20 * 5 = 100.\nFinal answer: <answer>100</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 22 * 5 = 110.\nFinal answer: <answer>110</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000054",
+          "question": "74 * 4 = ?",
+          "answer": 296,
+          "response": " 74 * 4 = 3 184.\nFinal answer: <answer>384</answer>"
+        },
+        {
+          "id": "test-000058",
+          "question": "5 * 87 = ?",
+          "answer": 435,
+          "response": " 5 * 87 = 41 give 45.\nFinal answer: <answer>415</answer>"
+        },
+        {
+          "id": "test-000070",
+          "question": "90 * 4 = ?",
+          "answer": 360,
+          "response": " 90 * 4 = 2 360.\nFinal answer: <answer>260</answer>"
+        },
+        {
+          "id": "test-000087",
+          "question": "Ben has 11 stars. He gets 6 more stars. How many stars does Ben have now?",
+          "answer": 17,
+          "response": " 11 + 6 = 1+ 67.\nFinal answer: <answer>16</answer>"
+        },
+        {
+          "id": "test-000175",
+          "question": "Sue has 97 toys. She gives 95 toys to Anna. How many toys does Sue have now?",
+          "answer": 2,
+          "response": " 97 - 95 =  0.\nFinal answer: <answer>0</answer>"
+        },
+        {
+          "id": "test-000175",
+          "question": "Sue has 97 toys. She gives 95 toys to Anna. How many toys does Sue have now?",
+          "answer": 2,
+          "response": " 97 - 95 =  8.\nFinal answer: <answer>8</answer>"
+        }
+      ],
+      "invalid:no_tag": [
+        {
+          "id": "test-000899",
+          "question": "71 - 37 + 48 = ?",
+          "answer": 82,
+          "response": " 71 - 37 = 34. 34 + 48 =/answer>"
+        }
+      ]
+    }
+  },
+  "early_g4": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 11170,
+      "arithmetic": 4486,
+      "lucky": 173,
+      "wrong_plan": 48,
+      "misread": 46,
+      "final_mismatch": 40,
+      "other": 31,
+      "invalid:unclosed": 4,
+      "invalid:no_tag": 2
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9632810822417865,
+      "misread": 0.009877603607472621,
+      "wrong_plan": 0.010307064633884476,
+      "other": 0.006656645909383724,
+      "invalid:no_tag": 0.00042946102641185313,
+      "final_mismatch": 0.008589220528237063,
+      "invalid:unclosed": 0.0008589220528237063
+    },
+    "lucky_share_of_correct": 0.015251697081900733,
+    "by_family": {
+      "add": {
+        "faithful": 2526,
+        "arithmetic": 657,
+        "other": 15,
+        "lucky": 8,
+        "final_mismatch": 9,
+        "misread": 1
+      },
+      "mul": {
+        "arithmetic": 657,
+        "faithful": 1006,
+        "other": 10,
+        "misread": 1,
+        "lucky": 5,
+        "invalid:unclosed": 1
+      },
+      "multi": {
+        "faithful": 2782,
+        "arithmetic": 2543,
+        "lucky": 135,
+        "misread": 41,
+        "wrong_plan": 33,
+        "invalid:no_tag": 1,
+        "final_mismatch": 15,
+        "invalid:unclosed": 2
+      },
+      "word1": {
+        "faithful": 2440,
+        "arithmetic": 266,
+        "lucky": 8,
+        "other": 6
+      },
+      "word2": {
+        "faithful": 2416,
+        "arithmetic": 363,
+        "wrong_plan": 15,
+        "lucky": 17,
+        "misread": 3,
+        "final_mismatch": 16,
+        "invalid:no_tag": 1,
+        "invalid:unclosed": 1
+      }
+    },
+    "distinct_per_16_mean": 3.139,
+    "single_answer_questions": 0.313,
+    "len_mean": 38.3274375,
+    "len_sd": 6.507896909416571,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000001",
+          "question": "35 + 32 = ?",
+          "answer": 67,
+          "response": " 35 + 32 = 77.\nFinal answer: <answer>77</answer>"
+        },
+        {
+          "id": "test-000002",
+          "question": "Ben has 7 baskets with 7 cookies in each. He gives 18 cookies to Max. How many cookies does Ben have now?",
+          "answer": 31,
+          "response": " 7 * 7 = 59. 59 - 18 = 41.\nFinal answer: <answer>41</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 101.\nFinal answer: <answer>101</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 158. 158 - 77 = 91.\nFinal answer: <answer>91</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000042",
+          "question": "87 - 63 = ?",
+          "answer": 24,
+          "response": " 87 - 63 = 2 4.\nFinal answer: <answer>24</answer>"
+        },
+        {
+          "id": "test-000045",
+          "question": "90 - 6 - 11 = ?",
+          "answer": 73,
+          "response": " 90 - 6 = 94. 94 - 11 = 73.\nFinal answer: <answer>73</answer>"
+        },
+        {
+          "id": "test-000046",
+          "question": "11 * 49 + 77 = ?",
+          "answer": 616,
+          "response": " 11 * 49 = 549. 549 + 77 = 616.\nFinal answer: <answer>616</answer>"
+        },
+        {
+          "id": "test-000046",
+          "question": "11 * 49 + 77 = ?",
+          "answer": 616,
+          "response": " 11 * 49 = 549. 549 + 77 = 616.\nFinal answer: <answer>616</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000021",
+          "question": "(16 - 11) * 3 = ?",
+          "answer": 15,
+          "response": " 16 - 11 = 5 - 15 = 4.\nFinal answer: <answer>4</answer>"
+        },
+        {
+          "id": "test-000024",
+          "question": "(30 - 14) * 2 = ?",
+          "answer": 32,
+          "response": " 3 times - 14 = 1. 1 * 2 = 2.\nFinal answer: <answer>2</answer>"
+        },
+        {
+          "id": "test-000030",
+          "question": "50 * 2 - 39 = ?",
+          "answer": 61,
+          "response": " 50 * 2 =10. 110 - 39 = 91.\nFinal answer: <answer>91</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Tom17. 107 + 86 = 183.\nFinal answer: <answer>183</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Max17. 107 + 86 = 183.\nFinal answer: <answer>183</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Sue17. 117 + 86 = 193.\nFinal answer: <answer>193</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000041",
+          "question": "Mia has 3 cups with 9 flowers in each. She gives 15 flowers to Tim. How many flowers does Mia have now?",
+          "answer": 12,
+          "response": " 3 * 9 = 27. 27 - 15 = 2 each.\nFinal answer: <answer>2</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 20 * 5 = 100.\nFinal answer: <answer>100</answer>"
+        },
+        {
+          "id": "test-000055",
+          "question": "Sue has 4 jars with 9 toys in each. She gives 1 toys to Max. How many toys does Sue have now?",
+          "answer": 35,
+          "response": " 4 * 9 = 36. 36 - 1 = 3 4.\nFinal answer: <answer>34</answer>"
+        },
+        {
+          "id": "test-000067",
+          "question": "Sue has 7 jars with 6 rocks in each. She gives 12 rocks to Sam. How many rocks does Sue have now?",
+          "answer": 30,
+          "response": " 7 * 6 = 42. 42 - 12 = rule scraped sound it.\nFinal answer: <answer>9</answer>"
+        },
+        {
+          "id": "test-000092",
+          "question": "Mia has 6 flowers and Ben has 5 flowers. Their mom gives them 3 times as many flowers as they have together. How many flowers does their mom give them?",
+          "answer": 33,
+          "response": " 6 + 5 = 11. 11 + 3 = 14.\nFinal answer: <answer>14</answer>"
+        },
+        {
+          "id": "test-000114",
+          "question": "Zoe has 41 balls. She finds 20 more. Then she gives 49 to Lucy. How many balls does Zoe have now?",
+          "answer": 12,
+          "response": " 41 + 20 = 61. 61 - 49 =0.\nFinal answer: <answer>0</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000042",
+          "question": "87 - 63 = ?",
+          "answer": 24,
+          "response": " 87 - 63 = 2 borrowed.\nFinal answer: <answer>2</answer>"
+        },
+        {
+          "id": "test-000065",
+          "question": "56 * 6 = ?",
+          "answer": 336,
+          "response": " 56 * 6 = 38 sitting 48.\nFinal answer: <answer>38</answer>"
+        },
+        {
+          "id": "test-000104",
+          "question": "87 + 8 = ?",
+          "answer": 95,
+          "response": " 87 + 8 =75.\nFinal answer: <answer>75</answer>"
+        },
+        {
+          "id": "test-000143",
+          "question": "9 * 14 = ?",
+          "answer": 126,
+          "response": " 9 * 14 = 12*.\nFinal answer: <answer>12</answer>"
+        },
+        {
+          "id": "test-000174",
+          "question": "9 * 24 = ?",
+          "answer": 216,
+          "response": " 9 * 24 = 24 3.\nFinal answer: <answer>24</answer>"
+        },
+        {
+          "id": "test-000208",
+          "question": "14 + 92 = ?",
+          "answer": 106,
+          "response": " 14 + 92 = 10= 104.\nFinal answer: <answer>104</answer>"
+        }
+      ],
+      "invalid:no_tag": [
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 ="
+        },
+        {
+          "id": "test-000634",
+          "question": "Sam has 7 boxes with 7 stars in each. He gives 18 stars to Tim. How many stars does Sam have now?",
+          "answer": 31,
+          "response": " 7 * 7 = 49. 49 - 18 = 3ged scary found welcomed toOne as he saw before bathrobeband dad teams toward much decideTakewormer>3 Tom sailorYuckpid/answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000099",
+          "question": "87 + 96 = ?",
+          "answer": 183,
+          "response": " 87 + 96 = 183.\nFinal answer: <answer>18</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 = 1.\nFinal answer: <answer>10</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 = 1.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 = 1.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 = 1.\nFinal answer: <answer>10</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 = 1.\nFinal answer: <answer>11</answer>"
+        }
+      ],
+      "invalid:unclosed": [
+        {
+          "id": "test-000334",
+          "question": "47 * 9 = ?",
+          "answer": 423,
+          "response": " 47 * 9 = 333.\nFinal answer: <answer>333\n/answer>"
+        },
+        {
+          "id": "test-000855",
+          "question": "Sam has 40 stickers. He finds 19 more. Then he gives 58 to Lily. How many stickers does Sam have now?",
+          "answer": 1,
+          "response": " 40 + 19 = 59. 59 - 58 = 1.\nFinal answer: <answer>1inal/answer>"
+        },
+        {
+          "id": "test-000874",
+          "question": "46 - 15 - 22 = ?",
+          "answer": 9,
+          "response": " 46 - 15 = 31. 31 - 22 = 9.\nFinal answer: <answer>9</answer="
+        },
+        {
+          "id": "test-000912",
+          "question": "90 - 32 + 8 = ?",
+          "answer": 66,
+          "response": " 90 - 32 = 58. 58 + 8 = 66.\nFinal answer: <answer>66</answer="
+        }
+      ]
+    }
+  },
+  "early_beta0": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 10849,
+      "arithmetic": 4829,
+      "lucky": 156,
+      "misread": 67,
+      "wrong_plan": 50,
+      "other": 34,
+      "final_mismatch": 10,
+      "invalid:not_number": 4,
+      "invalid:no_tag": 1
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9667667667667668,
+      "misread": 0.013413413413413414,
+      "wrong_plan": 0.01001001001001001,
+      "other": 0.006806806806806807,
+      "invalid:no_tag": 0.0002002002002002002,
+      "final_mismatch": 0.002002002002002002,
+      "invalid:not_number": 0.0008008008008008008
+    },
+    "lucky_share_of_correct": 0.0141753748296229,
+    "by_family": {
+      "add": {
+        "faithful": 2389,
+        "arithmetic": 804,
+        "misread": 2,
+        "other": 11,
+        "final_mismatch": 3,
+        "lucky": 6,
+        "invalid:not_number": 1
+      },
+      "mul": {
+        "arithmetic": 740,
+        "faithful": 924,
+        "other": 14,
+        "invalid:not_number": 1,
+        "lucky": 1
+      },
+      "multi": {
+        "arithmetic": 2593,
+        "faithful": 2723,
+        "misread": 60,
+        "lucky": 134,
+        "wrong_plan": 33,
+        "invalid:no_tag": 1,
+        "final_mismatch": 4,
+        "other": 3,
+        "invalid:not_number": 1
+      },
+      "word1": {
+        "faithful": 2476,
+        "arithmetic": 233,
+        "final_mismatch": 1,
+        "lucky": 4,
+        "other": 6
+      },
+      "word2": {
+        "faithful": 2337,
+        "lucky": 11,
+        "arithmetic": 459,
+        "misread": 5,
+        "wrong_plan": 17,
+        "final_mismatch": 2,
+        "invalid:not_number": 1
+      }
+    },
+    "distinct_per_16_mean": 3.031,
+    "single_answer_questions": 0.321,
+    "len_mean": 38.3350625,
+    "len_sd": 6.498378307015816,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 105.\nFinal answer: <answer>105</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000002",
+          "question": "Ben has 7 baskets with 7 cookies in each. He gives 18 cookies to Max. How many cookies does Ben have now?",
+          "answer": 31,
+          "response": " 7 * 7 = 59. 59 - 18 = 41.\nFinal answer: <answer>41</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 61.\nFinal answer: <answer>61</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 81.\nFinal answer: <answer>81</answer>"
+        },
+        {
+          "id": "test-000003",
+          "question": "97 + 51 - 77 = ?",
+          "answer": 71,
+          "response": " 97 + 51 = 148. 148 - 77 = 51.\nFinal answer: <answer>51</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000002",
+          "question": "Ben has 7 baskets with 7 cookies in each. He gives 18 cookies to Max. How many cookies does Ben have now?",
+          "answer": 31,
+          "response": " 7 * 7 = 4umbers 49. 49 - 18 = 31.\nFinal answer: <answer>31</answer>"
+        },
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 274. 274 - 57 = 207.\nFinal answer: <answer>207</answer>"
+        },
+        {
+          "id": "test-000020",
+          "question": "6 * 76 + 68 = ?",
+          "answer": 524,
+          "response": " 6 * 76 = 446. 446 + 68 = 524.\nFinal answer: <answer>524</answer>"
+        },
+        {
+          "id": "test-000020",
+          "question": "6 * 76 + 68 = ?",
+          "answer": 524,
+          "response": " 6 * 76 = 466. 466 + 68 = 524.\nFinal answer: <answer>524</answer>"
+        },
+        {
+          "id": "test-000022",
+          "question": "85 * 7 - 31 = ?",
+          "answer": 564,
+          "response": " 85 * 7 = 585. 585 - 31 = 564.\nFinal answer: <answer>564</answer>"
+        },
+        {
+          "id": "test-000027",
+          "question": "63 + 95 + 39 = ?",
+          "answer": 197,
+          "response": " 63 + 95 = 168. 168 + 39 = 197.\nFinal answer: <answer>197</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 179. 109 - 86 = 13.\nFinal answer: <answer>13</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 179. 107 - 86 = 91.\nFinal answer: <answer>91</answer>"
+        },
+        {
+          "id": "test-000024",
+          "question": "(30 - 14) * 2 = ?",
+          "answer": 32,
+          "response": " 3 times - 14 = 1. 1 * 2 = 2.\nFinal answer: <answer>2</answer>"
+        },
+        {
+          "id": "test-000028",
+          "question": "82 + 69 + 97 = ?",
+          "answer": 248,
+          "response": " 82 + 69 = 151. 151 + 67 = 228.\nFinal answer: <answer>228</answer>"
+        },
+        {
+          "id": "test-000028",
+          "question": "82 + 69 + 97 = ?",
+          "answer": 248,
+          "response": " 82 + 69 = 151. 151 + 67 = 218.\nFinal answer: <answer>218</answer>"
+        },
+        {
+          "id": "test-000028",
+          "question": "82 + 69 + 97 = ?",
+          "answer": 248,
+          "response": " 82 + 69 = 141. 141 + 67 = 228.\nFinal answer: <answer>228</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000030",
+          "question": "50 * 2 - 39 = ?",
+          "answer": 61,
+          "response": " 50 * 2 =50. 50 - 39 = 11.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 20 * 5 = 100.\nFinal answer: <answer>100</answer>"
+        },
+        {
+          "id": "test-000114",
+          "question": "Zoe has 41 balls. She finds 20 more. Then she gives 49 to Lucy. How many balls does Zoe have now?",
+          "answer": 12,
+          "response": " 41 + 20 = 61. 61 - 49 =2.\nFinal answer: <answer>2</answer>"
+        },
+        {
+          "id": "test-000121",
+          "question": "Anna has 57 balls. She finds 29 more. Then she gives 20 to Jack. How many balls does Anna have now?",
+          "answer": 66,
+          "response": " 57 + 29 = 86. 86 - 20 = < 56.\nFinal answer: <answer>56</answer>"
+        },
+        {
+          "id": "test-000121",
+          "question": "Anna has 57 balls. She finds 29 more. Then she gives 20 to Jack. How many balls does Anna have now?",
+          "answer": 66,
+          "response": " 57 + 29 = 86. 86 - 20 =  76.\nFinal answer: <answer>76</answer>"
+        },
+        {
+          "id": "test-000121",
+          "question": "Anna has 57 balls. She finds 29 more. Then she gives 20 to Jack. How many balls does Anna have now?",
+          "answer": 66,
+          "response": " 57 + 29 = 86. 86 - 29 = 57.\nFinal answer: <answer>57</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000036",
+          "question": "4 * 59 = ?",
+          "answer": 236,
+          "response": " 4 * 59 = 29* 59.\nFinal answer: <answer>29</answer>"
+        },
+        {
+          "id": "test-000095",
+          "question": "3 * 91 = ?",
+          "answer": 273,
+          "response": " 3 * 91 = 2inal 293.\nFinal answer: <answer>293</answer>"
+        },
+        {
+          "id": "test-000117",
+          "question": "53 + 48 = ?",
+          "answer": 101,
+          "response": " 53 + 48 == 91.\nFinal answer: <answer>91</answer>"
+        },
+        {
+          "id": "test-000174",
+          "question": "9 * 24 = ?",
+          "answer": 216,
+          "response": " 9 * 24 = 29\n 25.\nFinal answer: <answer>295</answer>"
+        },
+        {
+          "id": "test-000186",
+          "question": "(10 - 5) * 5 = ?",
+          "answer": 25,
+          "response": " 10 - 5 = . 5 * 5 =5.\nFinal answer: <answer>5</answer>"
+        },
+        {
+          "id": "test-000246",
+          "question": "3 * 48 = ?",
+          "answer": 144,
+          "response": " 3 * 48 = 15 balls.\nFinal answer: <answer>15</answer>"
+        }
+      ],
+      "invalid:no_tag": [
+        {
+          "id": "test-000120",
+          "question": "88 + 44 + 79 = ?",
+          "answer": 211,
+          "response": " 88 + 44 = 132. 132 + 79 = 2 Their disco bones,\"ched catches using moves tools knowing Tinaises weep mysterious glittering steps steer musicses wayright even knightsœHivet 23</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000128",
+          "question": "Mia has 6 boxes with 10 apples in each. How many apples does Mia have?",
+          "answer": 60,
+          "response": " 6 * 10 = 60.\nF* 60 = 360.\nFinal answer: <answer>360</answer>"
+        },
+        {
+          "id": "test-000165",
+          "question": "(30 - 25) * 2 = ?",
+          "answer": 10,
+          "response": " 30 - 25 = 5. 5 * 2 = 10.\nFinal answer: <answer>18</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 = 1.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 = 1.\nFinal answer: <answer>10</answer>"
+        },
+        {
+          "id": "test-000317",
+          "question": "Anna has 4 baskets with 12 candies in each. She gives 3 candies to Tom. How many candies does Anna have now?",
+          "answer": 45,
+          "response": " 4 * 12 = 48. 48 - 3 = 45.\nFinal answer: <answer>46</answer>"
+        },
+        {
+          "id": "test-000434",
+          "question": "(14 + 29) * 9 = ?",
+          "answer": 387,
+          "response": " 14 + 29 = 43. 43 * 9 = 387.\nFinal answer: <answer>787</answer>"
+        }
+      ],
+      "invalid:not_number": [
+        {
+          "id": "test-000337",
+          "question": "Jack has 25 cookies and Sue has 11 cookies. Their mom gives them 3 times as many cookies as they have together. How many cookies does their mom give them?",
+          "answer": 108,
+          "response": " 25 + 11 = 36. 36 * 3 = 108.\nFinal answer: <answer>1 108</answer>"
+        },
+        {
+          "id": "test-000343",
+          "question": "83 - 82 + 96 = ?",
+          "answer": 97,
+          "response": " 83 - 82 = . <Final answer: <answer> < machine</answer>"
+        },
+        {
+          "id": "test-000521",
+          "question": "16 + 88 = ?",
+          "answer": 104,
+          "response": " 16 + 88 = 104.\nFinal answer: <answer>1 104</answer>"
+        },
+        {
+          "id": "test-000523",
+          "question": "12 * 81 = ?",
+          "answer": 972,
+          "response": " 12 * 81 = 992.\nFinal answer: <answer>992<93</answer>"
+        }
+      ]
+    }
+  },
+  "sft_1000_t07": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 9261,
+      "arithmetic": 6438,
+      "lucky": 167,
+      "misread": 97,
+      "final_mismatch": 26,
+      "wrong_plan": 6,
+      "other": 5
+    },
+    "share_of_wrong": {
+      "arithmetic": 0.9796104686548995,
+      "final_mismatch": 0.003956177723676202,
+      "misread": 0.01475958612294583,
+      "wrong_plan": 0.0009129640900791236,
+      "other": 0.0007608034083992696
+    },
+    "lucky_share_of_correct": 0.017713194739075094,
+    "by_family": {
+      "add": {
+        "faithful": 2073,
+        "arithmetic": 1140,
+        "final_mismatch": 2,
+        "misread": 1
+      },
+      "mul": {
+        "arithmetic": 874,
+        "faithful": 803,
+        "other": 3
+      },
+      "multi": {
+        "arithmetic": 3198,
+        "faithful": 2165,
+        "lucky": 117,
+        "misread": 50,
+        "wrong_plan": 3,
+        "final_mismatch": 19
+      },
+      "word1": {
+        "faithful": 2290,
+        "arithmetic": 410,
+        "other": 2,
+        "wrong_plan": 2,
+        "misread": 16
+      },
+      "word2": {
+        "faithful": 1930,
+        "arithmetic": 816,
+        "misread": 30,
+        "lucky": 50,
+        "final_mismatch": 5,
+        "wrong_plan": 1
+      }
+    },
+    "distinct_per_16_mean": 3.407,
+    "single_answer_questions": 0.29,
+    "len_mean": 38.3363125,
+    "len_sd": 6.5029286788602985,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 85.\nFinal answer: <answer>85</answer>"
+        },
+        {
+          "id": "test-000001",
+          "question": "35 + 32 = ?",
+          "answer": 67,
+          "response": " 35 + 32 = 77.\nFinal answer: <answer>77</answer>"
+        },
+        {
+          "id": "test-000001",
+          "question": "35 + 32 = ?",
+          "answer": 67,
+          "response": " 35 + 32 = 77.\nFinal answer: <answer>77</answer>"
+        },
+        {
+          "id": "test-000001",
+          "question": "35 + 32 = ?",
+          "answer": 67,
+          "response": " 35 + 32 = 77.\nFinal answer: <answer>77</answer>"
+        }
+      ],
+      "final_mismatch": [
+        {
+          "id": "test-000004",
+          "question": "62 + 49 = ?",
+          "answer": 111,
+          "response": " 62 + 49 = 111.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000201",
+          "question": "Jack has 39 stickers. He finds 19 more. Then he gives 58 to Zoe. How many stickers does Jack have now?",
+          "answer": 0,
+          "response": " 39 + 19 = 58. 58 - 58 = 0.\nFinal answer: <answer>08</answer>"
+        },
+        {
+          "id": "test-000201",
+          "question": "Jack has 39 stickers. He finds 19 more. Then he gives 58 to Zoe. How many stickers does Jack have now?",
+          "answer": 0,
+          "response": " 39 + 19 = 58. 58 - 58 = 0.\nFinal answer: <answer>08</answer>"
+        },
+        {
+          "id": "test-000300",
+          "question": "84 - 83 = ?",
+          "answer": 1,
+          "response": " 84 - 83 = 1.\nFinal answer: <answer>11</answer>"
+        },
+        {
+          "id": "test-000439",
+          "question": "Sue has 47 cookies. She finds 14 more. Then she gives 57 to Max. How many cookies does Sue have now?",
+          "answer": 4,
+          "response": " 47 + 14 = 61. 61 - 57 = 4.\nFinal answer: <answer>49</answer>"
+        },
+        {
+          "id": "test-000439",
+          "question": "Sue has 47 cookies. She finds 14 more. Then she gives 57 to Max. How many cookies does Sue have now?",
+          "answer": 4,
+          "response": " 47 + 14 = 61. 61 - 57 = 4.\nFinal answer: <answer>49</answer>"
+        }
+      ],
+      "lucky": [
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        },
+        {
+          "id": "test-000006",
+          "question": "88 + 91 - 86 = ?",
+          "answer": 93,
+          "response": " 88 + 91 = 189. 189 - 86 = 93.\nFinal answer: <answer>93</answer>"
+        }
+      ],
+      "misread": [
+        {
+          "id": "test-000040",
+          "question": "65 + 26 + 72 = ?",
+          "answer": 163,
+          "response": " 65 + 26 = 91. 91 + 71 = 162.\nFinal answer: <answer>162</answer>"
+        },
+        {
+          "id": "test-000047",
+          "question": "(22 - 20) * 5 = ?",
+          "answer": 10,
+          "response": " 22 - 20 =2. 10 * 5 = 50.\nFinal answer: <answer>50</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Lily17. 91 + 86 = 187.\nFinal answer: <answer>187</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Lily17. 117 + 86 = 195.\nFinal answer: <answer>195</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Lily37. 337 + 86 = 423.\nFinal answer: <answer>423</answer>"
+        },
+        {
+          "id": "test-000062",
+          "question": "3 * 19 + 86 = ?",
+          "answer": 143,
+          "response": " 3 * 19 = Anna13. 81 + 86 = 167.\nFinal answer: <answer>167</answer>"
+        }
+      ],
+      "wrong_plan": [
+        {
+          "id": "test-000224",
+          "question": "(8 - 5) * 5 = ?",
+          "answer": 15,
+          "response": " 8 - 5 = 3. 3 * 5 = 1 have.\nFinal answer: <answer>18</answer>"
+        },
+        {
+          "id": "test-000434",
+          "question": "(14 + 29) * 9 = ?",
+          "answer": 387,
+          "response": " 14 + 29 = 43. 43 * 9 = 30+ 30.\nFinal answer: <answer>300</answer>"
+        },
+        {
+          "id": "test-000677",
+          "question": "Lucy has 2 rocks. She gives 2 rocks to Tim. How many rocks does Lucy have now?",
+          "answer": 0,
+          "response": " 2 + 2 = 4.\nFinal answer: <answer>4</answer>"
+        },
+        {
+          "id": "test-000894",
+          "question": "Max has 3 boxes with 4 cookies in each. He gives 10 cookies to Tom. How many cookies does Max have now?",
+          "answer": 2,
+          "response": " 3 * 4 = 12. 12 - 10 =2.\nFinal answer: <answer>12</answer>"
+        },
+        {
+          "id": "test-000908",
+          "question": "(4 - 2) * 2 = ?",
+          "answer": 4,
+          "response": " 4 - 2 = 2. 2 * 2 < 4 = 8.\nFinal answer: <answer>8</answer>"
+        },
+        {
+          "id": "test-000984",
+          "question": "Lily has 2 shells. She gives 2 shells to Sam. How many shells does Lily have now?",
+          "answer": 0,
+          "response": " 2 + 2 = 4.\nFinal answer: <answer>4</answer>"
+        }
+      ],
+      "other": [
+        {
+          "id": "test-000409",
+          "question": "62 * 8 = ?",
+          "answer": 496,
+          "response": " 62 * 8 = 4 164.\nFinal answer: <answer>464</answer>"
+        },
+        {
+          "id": "test-000503",
+          "question": "46 * 2 = ?",
+          "answer": 92,
+          "response": " 46 * 2 =88.\nFinal answer: <answer>88</answer>"
+        },
+        {
+          "id": "test-000503",
+          "question": "46 * 2 = ?",
+          "answer": 92,
+          "response": " 46 * 2 =92.\nFinal answer: <answer>992</answer>"
+        },
+        {
+          "id": "test-000639",
+          "question": "Sam has 10 rocks. He gives 6 rocks to Ben. How many rocks does Sam have now?",
+          "answer": 4,
+          "response": " 10 - 6 = Sam.\nFinal answer: <answer>3</answer>"
+        },
+        {
+          "id": "test-000976",
+          "question": "Jack has 14 cars. He gets 10 more cars. How many cars does Jack have now?",
+          "answer": 24,
+          "response": " 14 + 10 = boat.\nFinal answer: <answer>10</answer>"
+        }
+      ]
+    }
+  },
+  "sft_t07": {
+    "n_responses": 16000,
+    "counts": {
+      "faithful": 15686,
+      "arithmetic": 314
+    },
+    "share_of_wrong": {
+      "arithmetic": 1.0
+    },
+    "lucky_share_of_correct": 0.0,
+    "by_family": {
+      "add": {
+        "faithful": 3207,
+        "arithmetic": 9
+      },
+      "mul": {
+        "faithful": 1634,
+        "arithmetic": 46
+      },
+      "multi": {
+        "faithful": 5311,
+        "arithmetic": 241
+      },
+      "word1": {
+        "faithful": 2718,
+        "arithmetic": 2
+      },
+      "word2": {
+        "faithful": 2816,
+        "arithmetic": 16
+      }
+    },
+    "distinct_per_16_mean": 1.097,
+    "single_answer_questions": 0.921,
+    "len_mean": 38.290875,
+    "len_sd": 6.503961618458014,
+    "examples": {
+      "faithful": [
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        },
+        {
+          "id": "test-000000",
+          "question": "8 + 87 = ?",
+          "answer": 95,
+          "response": " 8 + 87 = 95.\nFinal answer: <answer>95</answer>"
+        }
+      ],
+      "arithmetic": [
+        {
+          "id": "test-000014",
+          "question": "24 * 11 - 57 = ?",
+          "answer": 207,
+          "response": " 24 * 11 = 264. 264 - 57 = 107.\nFinal answer: <answer>107</answer>"
+        },
+        {
+          "id": "test-000020",
+          "question": "6 * 76 + 68 = ?",
+          "answer": 524,
+          "response": " 6 * 76 = 406. 406 + 68 = 474.\nFinal answer: <answer>474</answer>"
+        },
+        {
+          "id": "test-000022",
+          "question": "85 * 7 - 31 = ?",
+          "answer": 564,
+          "response": " 85 * 7 = 605. 605 - 31 = 574.\nFinal answer: <answer>574</answer>"
+        },
+        {
+          "id": "test-000022",
+          "question": "85 * 7 - 31 = ?",
+          "answer": 564,
+          "response": " 85 * 7 = 585. 585 - 31 = 554.\nFinal answer: <answer>554</answer>"
+        },
+        {
+          "id": "test-000022",
+          "question": "85 * 7 - 31 = ?",
+          "answer": 564,
+          "response": " 85 * 7 = 605. 605 - 31 = 574.\nFinal answer: <answer>574</answer>"
+        },
+        {
+          "id": "test-000022",
+          "question": "85 * 7 - 31 = ?",
+          "answer": 564,
+          "response": " 85 * 7 = 585. 585 - 31 = 554.\nFinal answer: <answer>554</answer>"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "ref": "sft/step_01000",
+  "systems": {
+    "grpo_early_s0": {
+      "kl_per_token_mean": 0.016659671181923498,
+      "kl_per_token_se": 0.0007462840619547519,
+      "n_responses": 2000
+    },
+    "grpo_early_s1": {
+      "kl_per_token_mean": 0.016629682206539657,
+      "kl_per_token_se": 0.0007703337470585075,
+      "n_responses": 2000
+    },
+    "grpo_early_s2": {
+      "kl_per_token_mean": 0.016817693783336835,
+      "kl_per_token_se": 0.0007433327569834296,
+      "n_responses": 2000
+    },
+    "early_beta0": {
+      "kl_per_token_mean": 0.017036812468276822,
+      "kl_per_token_se": 0.0008204819997614489,
+      "n_responses": 2000
+    },
+    "early_nofmt": {
+      "kl_per_token_mean": 0.015736453160712698,
+      "kl_per_token_se": 0.0006797342683416896,
+      "n_responses": 2000
+    },
+    "early_g2": {
+      "kl_per_token_mean": 0.013174262571867075,
+      "kl_per_token_se": 0.0005975719437226302,
+      "n_responses": 2000
+    },
+    "early_g4": {
+      "kl_per_token_mean": 0.014631822544779426,
+      "kl_per_token_se": 0.0006838417791667587,
+      "n_responses": 2000
+    },
+    "sft/step_02250": {
+      "kl_per_token_mean": 0.03274395701098183,
+      "kl_per_token_se": 0.0010622883757756391,
+      "n_responses": 2000
+    }
+  }
+}

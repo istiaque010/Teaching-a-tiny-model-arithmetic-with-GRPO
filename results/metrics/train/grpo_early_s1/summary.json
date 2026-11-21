@@ -1,0 +1,72 @@
+{
+  "run": "grpo_early_s1",
+  "config": {
+    "run": "grpo_early_s1",
+    "init": "sft/step_01000",
+    "seed": 1,
+    "iters": 300,
+    "prompts_per_step": 16,
+    "group_size": 8,
+    "temperature": 1.0,
+    "max_new": 64,
+    "epochs": 2,
+    "minibatch": 64,
+    "lr": 1e-05,
+    "warmup": 5,
+    "clip_eps": 0.2,
+    "beta": 0.04,
+    "grad_clip": 1.0,
+    "w_correct": 1.0,
+    "w_format": 0.1,
+    "eval_every": 50,
+    "eval_samples": 4
+  },
+  "train_seconds": 1019.4816584993387,
+  "responses": 38400,
+  "response_tokens": 1529332,
+  "evals": [
+    {
+      "iter": 0,
+      "greedy_acc": 0.644,
+      "sample_acc": 0.5345,
+      "format_rate": 0.9985
+    },
+    {
+      "iter": 50,
+      "greedy_acc": 0.722,
+      "sample_acc": 0.625,
+      "format_rate": 1.0
+    },
+    {
+      "iter": 100,
+      "greedy_acc": 0.726,
+      "sample_acc": 0.6375,
+      "format_rate": 0.999
+    },
+    {
+      "iter": 150,
+      "greedy_acc": 0.734,
+      "sample_acc": 0.647,
+      "format_rate": 0.9985
+    },
+    {
+      "iter": 200,
+      "greedy_acc": 0.762,
+      "sample_acc": 0.6795,
+      "format_rate": 0.9995
+    },
+    {
+      "iter": 250,
+      "greedy_acc": 0.756,
+      "sample_acc": 0.6915,
+      "format_rate": 0.9975
+    },
+    {
+      "iter": 300,
+      "greedy_acc": 0.756,
+      "sample_acc": 0.7175,
+      "format_rate": 0.9995
+    }
+  ],
+  "peak_rss_mb": 3529.140625
+}

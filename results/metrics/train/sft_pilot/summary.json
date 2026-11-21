@@ -1,0 +1,63 @@
+{
+  "run": "sft_pilot",
+  "config": {
+    "run": "sft_pilot",
+    "init": "base",
+    "seed": 0,
+    "steps": 1200,
+    "batch": 64,
+    "lr": 0.0003,
+    "min_lr": 3e-05,
+    "warmup": 100,
+    "weight_decay": 0.1,
+    "eval_every": 200,
+    "eval_samples": 2
+  },
+  "train_seconds": 913.3228071004851,
+  "response_tokens": 3064862,
+  "examples": 76800,
+  "evals": [
+    {
+      "step": 0,
+      "greedy_acc": 0.0,
+      "sample_acc": 0.0,
+      "format_rate": 0.0
+    },
+    {
+      "step": 200,
+      "greedy_acc": 0.012,
+      "sample_acc": 0.008,
+      "format_rate": 0.993
+    },
+    {
+      "step": 400,
+      "greedy_acc": 0.094,
+      "sample_acc": 0.054,
+      "format_rate": 0.999
+    },
+    {
+      "step": 600,
+      "greedy_acc": 0.262,
+      "sample_acc": 0.177,
+      "format_rate": 0.997
+    },
+    {
+      "step": 800,
+      "greedy_acc": 0.616,
+      "sample_acc": 0.441,
+      "format_rate": 0.999
+    },
+    {
+      "step": 1000,
+      "greedy_acc": 0.714,
+      "sample_acc": 0.631,
+      "format_rate": 1.0
+    },
+    {
+      "step": 1200,
+      "greedy_acc": 0.824,
+      "sample_acc": 0.693,
+      "format_rate": 0.999
+    }
+  ]
+}

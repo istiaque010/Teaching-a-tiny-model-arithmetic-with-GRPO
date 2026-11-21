@@ -1,0 +1,20 @@
+# Ablation H8: group size 2, 64 prompts per step (same 128 responses).
+run: early_g2
+init: sft/step_01000
+seed: 0
+iters: 300
+prompts_per_step: 64
+group_size: 2
+temperature: 1.0
+max_new: 64
+epochs: 2
+minibatch: 64
+lr: 1.0e-5
+warmup: 5
+clip_eps: 0.2
+beta: 0.04
+grad_clip: 1.0
+w_correct: 1.0
+w_format: 0.1
+eval_every: 50
+eval_samples: 4

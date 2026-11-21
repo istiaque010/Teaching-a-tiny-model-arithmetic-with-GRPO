@@ -1,0 +1,48 @@
+{"iter": 0, "question": "Tom has 12 toys and Lily has 4 toys. Their mom gives them 5 times as many toys as they have together. How many toys does their mom give them?", "answer": 80, "response": " 12 + 4 = 16. 16 * 5 = 80.\nFinal answer: <answer>80</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 0, "question": "Tom has 12 toys and Lily has 4 toys. Their mom gives them 5 times as many toys as they have together. How many toys does their mom give them?", "answer": 80, "response": " 12 + 4 = 16. 16 * 5 = 80.\nFinal answer: <answer>80</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 0, "question": "Tom has 12 toys and Lily has 4 toys. Their mom gives them 5 times as many toys as they have together. How many toys does their mom give them?", "answer": 80, "response": " 12 + 4 = 16. 16 * 5 = 80.\nFinal answer: <answer>80</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 0, "question": "Tom has 12 toys and Lily has 4 toys. Their mom gives them 5 times as many toys as they have together. How many toys does their mom give them?", "answer": 80, "response": " 12 + 4 = 16. 16 * 5 = 80.\nFinal answer: <answer>80</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 0, "question": "Tom has 12 toys and Lily has 4 toys. Their mom gives them 5 times as many toys as they have together. How many toys does their mom give them?", "answer": 80, "response": " 12 + 4 = 16. 16 * 5 = 80.\nFinal answer: <answer>80</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 0, "question": "Tom has 12 toys and Lily has 4 toys. Their mom gives them 5 times as many toys as they have together. How many toys does their mom give them?", "answer": 80, "response": " 12 + 4 = 16. 16 * 5 = 80.\nFinal answer: <answer>80</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 0, "question": "Tom has 12 toys and Lily has 4 toys. Their mom gives them 5 times as many toys as they have together. How many toys does their mom give them?", "answer": 80, "response": " 12 + 4 = 16. 16 * 5 = 80.\nFinal answer: <answer>80</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 0, "question": "Tom has 12 toys and Lily has 4 toys. Their mom gives them 5 times as many toys as they have together. How many toys does their mom give them?", "answer": 80, "response": " 12 + 4 = 16. 16 * 5 = 80.\nFinal answer: <answer>80</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 0, "question": "54 * 11 - 30 = ?", "answer": 564, "response": " 54 * 11 = 624. 624 - 30 = 684.\nFinal answer: <answer>684</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 0, "question": "54 * 11 - 30 = ?", "answer": 564, "response": " 54 * 11 = 614. 614 - 30 = 644.\nFinal answer: <answer>644</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 0, "question": "54 * 11 - 30 = ?", "answer": 564, "response": " 54 * 11 = 614. 614 - 30 = 624.\nFinal answer: <answer>624</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 0, "question": "54 * 11 - 30 = ?", "answer": 564, "response": " 54 * 11 = 654. 654 - 30 = 644.\nFinal answer: <answer>644</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 0, "question": "54 * 11 - 30 = ?", "answer": 564, "response": " 54 * 11 = 604. 604 - 30 = 554.\nFinal answer: <answer>554</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 0, "question": "54 * 11 - 30 = ?", "answer": 564, "response": " 54 * 11 = 604. 604 - 30 = 664.\nFinal answer: <answer>664</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 0, "question": "54 * 11 - 30 = ?", "answer": 564, "response": " 54 * 11 = 684. 684 - 30 = 674.\nFinal answer: <answer>674</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 0, "question": "54 * 11 - 30 = ?", "answer": 564, "response": " 54 * 11 = 694. 694 - 30 = 654.\nFinal answer: <answer>654</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 25, "question": "34 * 8 - 5 = ?", "answer": 267, "response": " 34 * 8 = 268. 268 - 5 = 253.\nFinal answer: <answer>253</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 25, "question": "34 * 8 - 5 = ?", "answer": 267, "response": " 34 * 8 = 208. 208 - 5 = 225.\nFinal answer: <answer>225</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 25, "question": "34 * 8 - 5 = ?", "answer": 267, "response": " 34 * 8 = 278. 278 - 5 = 273.\nFinal answer: <answer>273</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 25, "question": "34 * 8 - 5 = ?", "answer": 267, "response": " 34 * 8 = 248. 248 - 5 = 273.\nFinal answer: <answer>273</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 25, "question": "34 * 8 - 5 = ?", "answer": 267, "response": " 34 * 8 = 268. 268 - 5 = 243.\nFinal answer: <answer>243</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 25, "question": "34 * 8 - 5 = ?", "answer": 267, "response": " 34 * 8 = 268. 268 - 5 = 233.\nFinal answer: <answer>233</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 25, "question": "34 * 8 - 5 = ?", "answer": 267, "response": " 34 * 8 = 252. 252 - 5 = 227.\nFinal answer: <answer>227</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 25, "question": "34 * 8 - 5 = ?", "answer": 267, "response": " 34 * 8 = 268. 268 - 5 = 253.\nFinal answer: <answer>253</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 25, "question": "38 + 26 = ?", "answer": 64, "response": " 38 + 26 = 64.\nFinal answer: <answer>64</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 25, "question": "38 + 26 = ?", "answer": 64, "response": " 38 + 26 = 64.\nFinal answer: <answer>64</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 25, "question": "38 + 26 = ?", "answer": 64, "response": " 38 + 26 = 64.\nFinal answer: <answer>64</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 25, "question": "38 + 26 = ?", "answer": 64, "response": " 38 + 26 = 64.\nFinal answer: <answer>64</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 25, "question": "38 + 26 = ?", "answer": 64, "response": " 38 + 26 = 64.\nFinal answer: <answer>64</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 25, "question": "38 + 26 = ?", "answer": 64, "response": " 38 + 26 = 64.\nFinal answer: <answer>64</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 25, "question": "38 + 26 = ?", "answer": 64, "response": " 38 + 26 = 64.\nFinal answer: <answer>64</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 25, "question": "38 + 26 = ?", "answer": 64, "response": " 38 + 26 = 64.\nFinal answer: <answer>64</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "Zoe has 8 cups with 3 toys in each. She gives 9 toys to Ben. How many toys does Zoe have now?", "answer": 15, "response": " 8 * 3 = 24. 24 - 9 = 15.\nFinal answer: <answer>15</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "Zoe has 8 cups with 3 toys in each. She gives 9 toys to Ben. How many toys does Zoe have now?", "answer": 15, "response": " 8 * 3 = 24. 24 - 9 = 15.\nFinal answer: <answer>15</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "Zoe has 8 cups with 3 toys in each. She gives 9 toys to Ben. How many toys does Zoe have now?", "answer": 15, "response": " 8 * 3 = 24. 24 - 9 = 15.\nFinal answer: <answer>15</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "Zoe has 8 cups with 3 toys in each. She gives 9 toys to Ben. How many toys does Zoe have now?", "answer": 15, "response": " 8 * 3 = 24. 24 - 9 = 15.\nFinal answer: <answer>15</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "Zoe has 8 cups with 3 toys in each. She gives 9 toys to Ben. How many toys does Zoe have now?", "answer": 15, "response": " 8 * 3 = 24. 24 - 9 = 15.\nFinal answer: <answer>15</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "Zoe has 8 cups with 3 toys in each. She gives 9 toys to Ben. How many toys does Zoe have now?", "answer": 15, "response": " 8 * 3 = 24. 24 - 9 = 15.\nFinal answer: <answer>15</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "Zoe has 8 cups with 3 toys in each. She gives 9 toys to Ben. How many toys does Zoe have now?", "answer": 15, "response": " 8 * 3 = 24. 24 - 9 = 15.\nFinal answer: <answer>15</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "Zoe has 8 cups with 3 toys in each. She gives 9 toys to Ben. How many toys does Zoe have now?", "answer": 15, "response": " 8 * 3 = 24. 24 - 9 = 15.\nFinal answer: <answer>15</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "93 - 50 - 41 = ?", "answer": 2, "response": " 93 - 50 = 43. 43 - 41 = 2.\nFinal answer: <answer>2</answer>", "reward": 1.1, "adv": 0.9999980926513672}
+{"iter": 50, "question": "93 - 50 - 41 = ?", "answer": 2, "response": " 93 - 50 = 63. 63 - 41 = 22.\nFinal answer: <answer>22</answer>", "reward": 0.1, "adv": -0.9999979138374329}
+{"iter": 50, "question": "93 - 50 - 41 = ?", "answer": 2, "response": " 93 - 50 = 43. 43 - 41 = 2.\nFinal answer: <answer>2</answer>", "reward": 1.1, "adv": 0.9999980926513672}
+{"iter": 50, "question": "93 - 50 - 41 = ?", "answer": 2, "response": " 93 - 50 = 43. 42 - 41 = 31.\nFinal answer: <answer>31</answer>", "reward": 0.1, "adv": -0.9999979138374329}
+{"iter": 50, "question": "93 - 50 - 41 = ?", "answer": 2, "response": " 93 - 50 = 33. 33 - 41 = 4.\nFinal answer: <answer>4</answer>", "reward": 0.1, "adv": -0.9999979138374329}
+{"iter": 50, "question": "93 - 50 - 41 = ?", "answer": 2, "response": " 93 - 50 = 43. 43 - 41 = 2.\nFinal answer: <answer>2</answer>", "reward": 1.1, "adv": 0.9999980926513672}
+{"iter": 50, "question": "93 - 50 - 41 = ?", "answer": 2, "response": " 93 - 50 = 43. 4 tumbled - 41 = 8.\nFinal answer: <answer>8</answer>", "reward": 0.1, "adv": -0.9999979138374329}
+{"iter": 50, "question": "93 - 50 - 41 = ?", "answer": 2, "response": " 93 - 50 = 43. 43 - 41 = 2.\nFinal answer: <answer>2</answer>", "reward": 1.1, "adv": 0.9999980926513672}

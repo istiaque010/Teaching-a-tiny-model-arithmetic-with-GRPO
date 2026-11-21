@@ -1,0 +1,23 @@
+[sft_extra] step 0 val greedy 0.986 sample 0.979 format 1.000  train 0s
+[sft_extra] step 0 loss 0.0006 lr 3.00e-05
+[sft_extra] step 50 loss 0.0018 lr 3.00e-05
+[sft_extra] step 100 loss 0.0016 lr 3.00e-05
+[sft_extra] step 150 loss 0.0008 lr 3.00e-05
+[sft_extra] step 200 loss 0.0004 lr 3.00e-05
+[sft_extra] step 204 val greedy 0.988 sample 0.977 format 1.000  train 138s
+[sft_extra] step 250 loss 0.0009 lr 3.00e-05
+[sft_extra] step 300 loss 0.0006 lr 3.00e-05
+[sft_extra] step 350 loss 0.0006 lr 3.00e-05
+[sft_extra] step 400 loss 0.0006 lr 3.00e-05
+[sft_extra] step 408 val greedy 0.992 sample 0.979 format 1.000  train 280s
+[sft_extra] step 450 loss 0.0042 lr 3.00e-05
+[sft_extra] step 500 loss 0.0016 lr 3.00e-05
+[sft_extra] step 550 loss 0.0012 lr 3.00e-05
+[sft_extra] step 600 loss 0.0006 lr 3.00e-05
+[sft_extra] step 612 val greedy 0.986 sample 0.978 format 1.000  train 421s
+[sft_extra] step 650 loss 0.0002 lr 3.00e-05
+[sft_extra] step 700 loss 0.0035 lr 3.00e-05
+[sft_extra] step 750 loss 0.0010 lr 3.00e-05
+[sft_extra] step 800 loss 0.0008 lr 3.00e-05
+[sft_extra] step 816 val greedy 0.986 sample 0.975 format 1.000  train 562s
+[sft_extra] step 819 val greedy 0.986 sample 0.973 format 1.000  train 564s

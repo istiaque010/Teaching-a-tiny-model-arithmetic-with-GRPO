@@ -1,0 +1,11 @@
+run: sft_pilot
+init: base
+seed: 0
+steps: 1200
+batch: 64
+lr: 3.0e-4
+min_lr: 3.0e-5
+warmup: 100
+weight_decay: 0.1
+eval_every: 200
+eval_samples: 2

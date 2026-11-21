@@ -1,0 +1,37 @@
+[grpo_early_s0] iter 0 val greedy 0.644 sample 0.534 format 0.999  train 0s
+[grpo_early_s0] iter 0 reward 0.608 correct 0.508 zero_var 0.38 len 43.6 clip 0.003 kl 0.00021540095589630577 roll 1.7s opt 2.0s
+[grpo_early_s0] iter 10 reward 0.803 correct 0.703 zero_var 0.25 len 38.7 clip 0.005 kl 0.016463242814445993 roll 1.7s opt 2.4s
+[grpo_early_s0] iter 20 reward 0.764 correct 0.664 zero_var 0.69 len 36.4 clip 0.001 kl 0.0070733919884394675 roll 1.7s opt 1.0s
+[grpo_early_s0] iter 30 reward 1.038 correct 0.938 zero_var 0.75 len 35.3 clip 0.000 kl 0.001768531517057635 roll 1.6s opt 0.8s
+[grpo_early_s0] iter 40 reward 0.662 correct 0.562 zero_var 0.31 len 40.0 clip 0.002 kl 0.028406189242708678 roll 1.6s opt 2.0s
+[grpo_early_s0] iter 50 val greedy 0.698 sample 0.615 format 0.999  train 177s
+[grpo_early_s0] iter 50 reward 0.592 correct 0.492 zero_var 0.19 len 40.1 clip 0.002 kl 0.01827044376678471 roll 1.6s opt 2.3s
+[grpo_early_s0] iter 60 reward 0.639 correct 0.539 zero_var 0.50 len 40.4 clip 0.000 kl 0.008158213702048684 roll 1.6s opt 1.5s
+[grpo_early_s0] iter 70 reward 0.592 correct 0.492 zero_var 0.25 len 42.8 clip 0.002 kl 0.019903025470467666 roll 1.7s opt 2.5s
+[grpo_early_s0] iter 80 reward 0.967 correct 0.867 zero_var 0.62 len 36.9 clip 0.001 kl 0.011649605433146158 roll 1.7s opt 1.2s
+[grpo_early_s0] iter 90 reward 0.928 correct 0.828 zero_var 0.81 len 38.7 clip 0.002 kl 0.007003538295947409 roll 1.8s opt 0.7s
+[grpo_early_s0] iter 100 val greedy 0.736 sample 0.651 format 0.998  train 346s
+[grpo_early_s0] iter 100 reward 0.709 correct 0.609 zero_var 0.38 len 38.5 clip 0.004 kl 0.017597597440431337 roll 1.5s opt 1.9s
+[grpo_early_s0] iter 110 reward 0.741 correct 0.641 zero_var 0.56 len 41.4 clip 0.000 kl 0.0062540897603718445 roll 1.6s opt 1.4s
+[grpo_early_s0] iter 120 reward 0.850 correct 0.750 zero_var 0.44 len 41.4 clip 0.006 kl 0.015351308064319077 roll 1.8s opt 2.1s
+[grpo_early_s0] iter 130 reward 0.772 correct 0.672 zero_var 0.12 len 40.5 clip 0.001 kl 0.017524374601945697 roll 1.7s opt 2.8s
+[grpo_early_s0] iter 140 reward 0.873 correct 0.773 zero_var 0.50 len 37.5 clip 0.001 kl 0.01007820429591437 roll 1.7s opt 1.7s
+[grpo_early_s0] iter 150 val greedy 0.760 sample 0.680 format 0.998  train 515s
+[grpo_early_s0] iter 150 reward 0.772 correct 0.672 zero_var 0.38 len 42.6 clip 0.002 kl 0.009029093865749772 roll 1.9s opt 2.1s
+[grpo_early_s0] iter 160 reward 0.772 correct 0.672 zero_var 0.62 len 41.1 clip 0.000 kl 0.01164443589940616 roll 1.9s opt 1.3s
+[grpo_early_s0] iter 170 reward 0.748 correct 0.648 zero_var 0.44 len 39.9 clip 0.002 kl 0.021971774757600537 roll 1.7s opt 1.8s
+[grpo_early_s0] iter 180 reward 0.819 correct 0.719 zero_var 0.38 len 39.5 clip 0.005 kl 0.027582315071233418 roll 1.6s opt 1.9s
+[grpo_early_s0] iter 190 reward 0.702 correct 0.602 zero_var 0.56 len 42.6 clip 0.000 kl 0.016543893206701285 roll 1.7s opt 1.4s
+[grpo_early_s0] iter 200 val greedy 0.752 sample 0.675 format 1.000  train 680s
+[grpo_early_s0] iter 200 reward 0.677 correct 0.578 zero_var 0.62 len 42.7 clip 0.000 kl 0.016679201532879148 roll 1.6s opt 1.2s
+[grpo_early_s0] iter 210 reward 0.920 correct 0.820 zero_var 0.62 len 38.8 clip 0.003 kl 0.012652197450694472 roll 1.7s opt 1.3s
+[grpo_early_s0] iter 220 reward 0.741 correct 0.641 zero_var 0.69 len 40.6 clip 0.001 kl 0.013461643435790722 roll 1.8s opt 1.1s
+[grpo_early_s0] iter 230 reward 0.920 correct 0.820 zero_var 0.56 len 39.7 clip 0.001 kl 0.01637741745121455 roll 1.7s opt 1.4s
+[grpo_early_s0] iter 240 reward 0.889 correct 0.789 zero_var 0.56 len 39.9 clip 0.000 kl 0.011351646629626809 roll 1.8s opt 1.5s
+[grpo_early_s0] iter 250 val greedy 0.748 sample 0.684 format 1.000  train 840s
+[grpo_early_s0] iter 250 reward 0.639 correct 0.539 zero_var 0.62 len 39.2 clip 0.000 kl 0.030913780738304662 roll 1.7s opt 1.2s
+[grpo_early_s0] iter 260 reward 0.897 correct 0.797 zero_var 0.50 len 39.3 clip 0.000 kl 0.01803183389852826 roll 1.7s opt 1.7s
+[grpo_early_s0] iter 270 reward 0.725 correct 0.625 zero_var 0.56 len 38.8 clip 0.001 kl 0.02019776173554133 roll 1.8s opt 1.5s
+[grpo_early_s0] iter 280 reward 0.647 correct 0.547 zero_var 0.50 len 39.6 clip 0.000 kl 0.017000221964747084 roll 1.9s opt 2.0s
+[grpo_early_s0] iter 290 reward 0.803 correct 0.703 zero_var 0.62 len 43.7 clip 0.000 kl 0.0570288252763092 roll 1.7s opt 1.3s
+[grpo_early_s0] iter 300 val greedy 0.764 sample 0.702 format 1.000  train 1012s

@@ -1,0 +1,48 @@
+{"iter": 0, "question": "88 - 58 + 44 = ?", "answer": 74, "response": " 88 - 58 = 20. 20 + 44 = 64.\nFinal answer: <answer>64</answer>", "reward": 0.1, "adv": -0.9999979734420776}
+{"iter": 0, "question": "88 - 58 + 44 = ?", "answer": 74, "response": " 88 - 58 = 30. 30 + 44 = 74.\nFinal answer: <answer>74</answer>", "reward": 1.1, "adv": 0.9999979734420776}
+{"iter": 0, "question": "99 - 42 - 9 = ?", "answer": 48, "response": " 99 - 42 = 57. 57 - 9 = 58.\nFinal answer: <answer>58</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 0, "question": "99 - 42 - 9 = ?", "answer": 48, "response": " 99 - 42 = 59. 59 - 9 = 50.\nFinal answer: <answer>50</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 25, "question": "(18 - 10) * 8 = ?", "answer": 64, "response": " 18 - 10 = 8. 8 * 8 = 64.\nFinal answer: <answer>64</answer>", "reward": 1.1, "adv": 0.9999979734420776}
+{"iter": 25, "question": "(18 - 10) * 8 = ?", "answer": 64, "response": " 18 - 10 = 8. 8 * 8 = 6.\nFinal answer: <answer>6</answer>", "reward": 0.1, "adv": -0.9999979734420776}
+{"iter": 25, "question": "32 + 28 = ?", "answer": 60, "response": " 32 + 28 = 60.\nFinal answer: <answer>60</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 25, "question": "32 + 28 = ?", "answer": 60, "response": " 32 + 28 = 60.\nFinal answer: <answer>60</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "11 * 11 - 68 = ?", "answer": 53, "response": " 11 * 11 = 141. 141 - 68 = 73.\nFinal answer: <answer>73</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 50, "question": "11 * 11 - 68 = ?", "answer": 53, "response": " 11 * 11 = 141. 141 - 68 = 73.\nFinal answer: <answer>73</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 50, "question": "Lucy has 38 balls and Jack has 9 balls. Their mom gives them 3 times as many balls as they have together. How many balls does their mom give them?", "answer": 141, "response": " 38 + 9 = 47. 47 * 3 = 141.\nFinal answer: <answer>141</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 50, "question": "Lucy has 38 balls and Jack has 9 balls. Their mom gives them 3 times as many balls as they have together. How many balls does their mom give them?", "answer": 141, "response": " 38 + 9 = 47. 47 * 3 = 141.\nFinal answer: <answer>141</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 75, "question": "Anna has 47 stars. She gets 26 more stars. How many stars does Anna have now?", "answer": 73, "response": " 47 + 26 = 73.\nFinal answer: <answer>73</answer>", "reward": 1.1, "adv": 0.9999979734420776}
+{"iter": 75, "question": "Anna has 47 stars. She gets 26 more stars. How many stars does Anna have now?", "answer": 73, "response": " 47 + 26 = 83.\nFinal answer: <answer>83</answer>", "reward": 0.1, "adv": -0.9999979734420776}
+{"iter": 75, "question": "75 - 46 = ?", "answer": 29, "response": " 75 - 46 = 29.\nFinal answer: <answer>29</answer>", "reward": 1.1, "adv": 0.9999979734420776}
+{"iter": 75, "question": "75 - 46 = ?", "answer": 29, "response": " 75 - 46 = 39.\nFinal answer: <answer>39</answer>", "reward": 0.1, "adv": -0.9999979734420776}
+{"iter": 100, "question": "(9 + 5) * 9 = ?", "answer": 126, "response": " 9 + 5 = 14. 14 * 9 = 26.\nFinal answer: <answer>26</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 100, "question": "(9 + 5) * 9 = ?", "answer": 126, "response": " 9 + 5 = 10. 10 * 9 = 90.\nFinal answer: <answer>90</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 100, "question": "Sue has 38 shells. She finds 21 more. Then she gives 56 to Lucy. How many shells does Sue have now?", "answer": 3, "response": " 38 + 21 = 59. 59 - 56 = 3.\nFinal answer: <answer>3</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 100, "question": "Sue has 38 shells. She finds 21 more. Then she gives 56 to Lucy. How many shells does Sue have now?", "answer": 3, "response": " 38 + 21 = 59. 59 - 56 = 3.\nFinal answer: <answer>3</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 125, "question": "51 * 9 + 68 = ?", "answer": 527, "response": " 51 * 9 = 459. 459 + 68 = 517.\nFinal answer: <answer>517</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 125, "question": "51 * 9 + 68 = ?", "answer": 527, "response": " 51 * 9 = 459. 459 + 68 = 517.\nFinal answer: <answer>517</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 125, "question": "5 * 93 - 35 = ?", "answer": 430, "response": " 5 * 93 = 485. 485 - 35 = 440.\nFinal answer: <answer>440</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 125, "question": "5 * 93 - 35 = ?", "answer": 430, "response": " 5 * 93 = 49 Jake 45. 495 - 35 = 470.\nFinal answer: <answer>470</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 150, "question": "88 * 10 + 73 = ?", "answer": 953, "response": " 88 * 10 = 880. 880 + 73 = 853.\nFinal answer: <answer>853</answer>", "reward": 0.1, "adv": -0.9999979734420776}
+{"iter": 150, "question": "88 * 10 + 73 = ?", "answer": 953, "response": " 88 * 10 = 880. 880 + 73 = 953.\nFinal answer: <answer>953</answer>", "reward": 1.1, "adv": 0.9999979734420776}
+{"iter": 150, "question": "Lily has 38 apples. She finds 14 more. Then she gives 30 to Anna. How many apples does Lily have now?", "answer": 22, "response": " 38 + 14 = 52. 52 - 30 = 22.\nFinal answer: <answer>22</answer>", "reward": 1.1, "adv": 0.9999979734420776}
+{"iter": 150, "question": "Lily has 38 apples. She finds 14 more. Then she gives 30 to Anna. How many apples does Lily have now?", "answer": 22, "response": " 38 + 14 = 52. 52 - 30 = 12.\nFinal answer: <answer>12</answer>", "reward": 0.1, "adv": -0.9999979734420776}
+{"iter": 175, "question": "Lucy has 5 flowers. She finds 17 more. Then she gives 6 to Max. How many flowers does Lucy have now?", "answer": 16, "response": " 5 + 17 = 22. 22 - 6 = 16.\nFinal answer: <answer>16</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 175, "question": "Lucy has 5 flowers. She finds 17 more. Then she gives 6 to Max. How many flowers does Lucy have now?", "answer": 16, "response": " 5 + 17 = 22. 22 - 6 = 16.\nFinal answer: <answer>16</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 175, "question": "Sue has 33 toys. She finds 39 more. Then she gives 40 to Tom. How many toys does Sue have now?", "answer": 32, "response": " 33 + 39 = 72. 72 - 40 = 22.\nFinal answer: <answer>22</answer>", "reward": 0.1, "adv": -0.9999979734420776}
+{"iter": 175, "question": "Sue has 33 toys. She finds 39 more. Then she gives 40 to Tom. How many toys does Sue have now?", "answer": 32, "response": " 33 + 39 = 72. 72 - 40 = 32.\nFinal answer: <answer>32</answer>", "reward": 1.1, "adv": 0.9999979734420776}
+{"iter": 200, "question": "Lily has 75 books. She gives 65 books to Jack. How many books does Lily have now?", "answer": 10, "response": " 75 - 65 = 0.\nFinal answer: <answer>0</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 200, "question": "Lily has 75 books. She gives 65 books to Jack. How many books does Lily have now?", "answer": 10, "response": " 75 - 65 = 0.\nFinal answer: <answer>0</answer>", "reward": 0.1, "adv": 0.0}
+{"iter": 200, "question": "3 + 14 + 80 = ?", "answer": 97, "response": " 3 + 14 = 17. 17 + 80 = 97.\nFinal answer: <answer>97</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 200, "question": "3 + 14 + 80 = ?", "answer": 97, "response": " 3 + 14 = 17. 17 + 80 = 97.\nFinal answer: <answer>97</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 225, "question": "(10 + 21) * 8 = ?", "answer": 248, "response": " 10 + 21 = 31. 31 * 8 = 248.\nFinal answer: <answer>248</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 225, "question": "(10 + 21) * 8 = ?", "answer": 248, "response": " 10 + 21 = 31. 31 * 8 = 248.\nFinal answer: <answer>248</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 225, "question": "Zoe has 59 cars. She finds 11 more. Then she gives 33 to Tim. How many cars does Zoe have now?", "answer": 37, "response": " 59 + 11 = 70. 70 - 33 = 37.\nFinal answer: <answer>37</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 225, "question": "Zoe has 59 cars. She finds 11 more. Then she gives 33 to Tim. How many cars does Zoe have now?", "answer": 37, "response": " 59 + 11 = 70. 70 - 33 = 37.\nFinal answer: <answer>37</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 250, "question": "(10 + 21) * 5 = ?", "answer": 155, "response": " 10 + 21 = 31. 31 * 5 = 155.\nFinal answer: <answer>155</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 250, "question": "(10 + 21) * 5 = ?", "answer": 155, "response": " 10 + 21 = 31. 31 * 5 = 155.\nFinal answer: <answer>155</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 250, "question": "Sue has 19 cars. She gets 13 more cars. How many cars does Sue have now?", "answer": 32, "response": " 19 + 13 = 32.\nFinal answer: <answer>32</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 250, "question": "Sue has 19 cars. She gets 13 more cars. How many cars does Sue have now?", "answer": 32, "response": " 19 + 13 = 32.\nFinal answer: <answer>32</answer>", "reward": 1.1, "adv": 0.0}
+{"iter": 275, "question": "Zoe has 51 stars. She finds 39 more. Then she gives 18 to Max. How many stars does Zoe have now?", "answer": 72, "response": " 51 + 39 = 90. 90 - 18 = 72.\nFinal answer: <answer>72</answer>", "reward": 1.1, "adv": 0.9999979734420776}
+{"iter": 275, "question": "Zoe has 51 stars. She finds 39 more. Then she gives 18 to Max. How many stars does Zoe have now?", "answer": 72, "response": " 51 + 39 =  Sue isn80. 80 - 18 = 62.\nFinal answer: <answer>62</answer>", "reward": 0.1, "adv": -0.9999979734420776}
+{"iter": 275, "question": "5 * 18 - 88 = ?", "answer": 2, "response": " 5 * 18 = 90. 90 - 88 = 0.\nFinal answer: <answer>0</answer>", "reward": 0.1, "adv": -0.9999979734420776}
+{"iter": 275, "question": "5 * 18 - 88 = ?", "answer": 2, "response": " 5 * 18 = 80. 80 - 88 = 2.\nFinal answer: <answer>2</answer>", "reward": 1.1, "adv": 0.9999979734420776}

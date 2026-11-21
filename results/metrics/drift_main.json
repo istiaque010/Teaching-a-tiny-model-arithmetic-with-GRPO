@@ -1,0 +1,25 @@
+{
+  "ref": "sft",
+  "systems": {
+    "grpo_s0": {
+      "kl_per_token_mean": 0.0012089045515400443,
+      "kl_per_token_se": 0.0002464241818466536,
+      "n_responses": 2000
+    },
+    "grpo_s1": {
+      "kl_per_token_mean": 0.0009281806028886593,
+      "kl_per_token_se": 0.0001917876751454395,
+      "n_responses": 2000
+    },
+    "grpo_s2": {
+      "kl_per_token_mean": 0.0013711243146487854,
+      "kl_per_token_se": 0.00022499548933194708,
+      "n_responses": 2000
+    },
+    "sft_extra": {
+      "kl_per_token_mean": 0.0017991555401354446,
+      "kl_per_token_se": 0.00036614221756120724,
+      "n_responses": 2000
+    }
+  }
+}

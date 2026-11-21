@@ -1,0 +1,12 @@
+# SFT warm-up (Phase 5): base (Project 1 small) -> checkpoints/sft. ~64 examples x 3,000 updates = 192k examples.
+run: sft
+init: base
+seed: 0
+steps: 3000
+batch: 64
+lr: 3.0e-4
+min_lr: 3.0e-5
+warmup: 100
+weight_decay: 0.1
+eval_every: 250
+eval_samples: 2

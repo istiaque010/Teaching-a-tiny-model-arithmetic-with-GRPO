@@ -1,0 +1,20 @@
+# Learning-rate pilot (Phase 10): 60 iterations from the SFT step-1,000 checkpoint (more reward variance than the final SFT model), chosen on validation only.
+run: lr_1e5
+init: sft/step_01000
+seed: 100
+iters: 60
+prompts_per_step: 16
+group_size: 8
+temperature: 1.0
+max_new: 64
+epochs: 2
+minibatch: 64
+lr: 1.0e-5
+warmup: 5
+clip_eps: 0.2
+beta: 0.04
+grad_clip: 1.0
+w_correct: 1.0
+w_format: 0.1
+eval_every: 20
+eval_samples: 4

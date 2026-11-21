@@ -1,0 +1,13 @@
+# Phase 11/12 comparison pairs [A, B, question]; the hypothesis numbers refer to configs/hypotheses.md.
+pairs:
+  - [sft, base, "H1/H2: what the SFT warm-up gives"]
+  - [grpo_s0, sft, "H3/H5/H6: GRPO vs its start (final SFT)"]
+  - [grpo_s0, sft_extra, "H4: GRPO vs more SFT, same wall-clock (final SFT start)"]
+  - [grpo_early_s0, sft_1000, "H10: GRPO vs its start (SFT step 1,000)"]
+  - [grpo_early_s0, sft_mid, "H11: GRPO vs more SFT, same wall-clock (step 1,000 start)"]
+  - [grpo_early_s0, early_nofmt, "H7: format bonus"]
+  - [grpo_early_s0, early_g2, "H8: group size 8 vs 2"]
+  - [grpo_early_s0, early_g4, "H8: group size 8 vs 4"]
+  - [grpo_early_s0, early_beta0, "H9: KL penalty 0.04 vs 0"]
+  - [grpo_early_s0, sft_1000_t07, "temperature control: GRPO vs SFT step 1,000 sampled at T = 0.7"]
+  - [grpo_s0, sft_t07, "temperature control: GRPO vs final SFT sampled at T = 0.7"]

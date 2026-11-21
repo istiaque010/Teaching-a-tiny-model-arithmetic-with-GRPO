@@ -1,0 +1,19 @@
+sft_mid = sft/step_02250
+base {'greedy_acc': 0.0, 'sample_acc': 0.0, 'format_rate': 0.0, 'pass@1': 0.0, 'pass@4': 0.0, 'pass@16': 0.0, 'median_tokens': 64.0}
+sft_1000 {'greedy_acc': 0.636, 'sample_acc': 0.5364, 'format_rate': 0.999, 'pass@1': 0.5364, 'pass@4': 0.7649, 'pass@16': 0.903, 'median_tokens': 39.0}
+sft {'greedy_acc': 0.987, 'sample_acc': 0.9689, 'format_rate': 1.0, 'pass@1': 0.9689, 'pass@4': 0.9942, 'pass@16': 0.996, 'median_tokens': 39.0}
+sft_mid {'greedy_acc': 0.949, 'sample_acc': 0.9151, 'format_rate': 0.9999, 'pass@1': 0.9151, 'pass@4': 0.9771, 'pass@16': 0.993, 'median_tokens': 39.0}
+sft_extra {'greedy_acc': 0.989, 'sample_acc': 0.9774, 'format_rate': 1.0, 'pass@1': 0.9774, 'pass@4': 0.9958, 'pass@16': 0.999, 'median_tokens': 39.0}
+grpo_s0 {'greedy_acc': 0.993, 'sample_acc': 0.9735, 'format_rate': 0.9999, 'pass@1': 0.9735, 'pass@4': 0.9957, 'pass@16': 1.0, 'median_tokens': 39.0}
+grpo_s1 {'greedy_acc': 0.982, 'sample_acc': 0.9671, 'format_rate': 1.0, 'pass@1': 0.9671, 'pass@4': 0.9923, 'pass@16': 0.998, 'median_tokens': 39.0}
+grpo_s2 {'greedy_acc': 0.982, 'sample_acc': 0.9676, 'format_rate': 1.0, 'pass@1': 0.9676, 'pass@4': 0.9906, 'pass@16': 0.996, 'median_tokens': 39.0}
+grpo_early_s0 {'greedy_acc': 0.761, 'sample_acc': 0.701, 'format_rate': 0.9996, 'pass@1': 0.701, 'pass@4': 0.8451, 'pass@16': 0.917, 'median_tokens': 39.0}
+grpo_early_s1 {'greedy_acc': 0.756, 'sample_acc': 0.6866, 'format_rate': 0.9993, 'pass@1': 0.6866, 'pass@4': 0.842, 'pass@16': 0.924, 'median_tokens': 39.0}
+grpo_early_s2 {'greedy_acc': 0.736, 'sample_acc': 0.6876, 'format_rate': 0.9996, 'pass@1': 0.6876, 'pass@4': 0.8442, 'pass@16': 0.931, 'median_tokens': 39.0}
+early_nofmt {'greedy_acc': 0.752, 'sample_acc': 0.6893, 'format_rate': 0.9992, 'pass@1': 0.6893, 'pass@4': 0.8367, 'pass@16': 0.918, 'median_tokens': 39.0}
+early_g2 {'greedy_acc': 0.778, 'sample_acc': 0.7094, 'format_rate': 0.9998, 'pass@1': 0.7094, 'pass@4': 0.8591, 'pass@16': 0.925, 'median_tokens': 39.0}
+early_g4 {'greedy_acc': 0.766, 'sample_acc': 0.7089, 'format_rate': 0.9996, 'pass@1': 0.7089, 'pass@4': 0.8616, 'pass@16': 0.934, 'median_tokens': 39.0}
+early_beta0 {'greedy_acc': 0.751, 'sample_acc': 0.6878, 'format_rate': 0.9997, 'pass@1': 0.6878, 'pass@4': 0.8393, 'pass@16': 0.919, 'median_tokens': 39.0}
+sft_1000_t07 {'sample_acc': 0.5893, 'format_rate': 1.0, 'pass@1': 0.5893, 'pass@4': 0.7581, 'pass@16': 0.874, 'median_tokens': 39.0}
+sft_t07 {'sample_acc': 0.9804, 'format_rate': 1.0, 'pass@1': 0.9804, 'pass@4': 0.994, 'pass@16': 0.996, 'median_tokens': 39.0}
+eval done

@@ -1,0 +1,99 @@
+{
+  "run": "sft",
+  "config": {
+    "run": "sft",
+    "init": "base",
+    "seed": 0,
+    "steps": 3000,
+    "batch": 64,
+    "lr": 0.0003,
+    "min_lr": 3e-05,
+    "warmup": 100,
+    "weight_decay": 0.1,
+    "eval_every": 250,
+    "eval_samples": 2
+  },
+  "train_seconds": 2261.441924795974,
+  "response_tokens": 7658502,
+  "examples": 192000,
+  "evals": [
+    {
+      "step": 0,
+      "greedy_acc": 0.0,
+      "sample_acc": 0.0,
+      "format_rate": 0.0
+    },
+    {
+      "step": 250,
+      "greedy_acc": 0.008,
+      "sample_acc": 0.016,
+      "format_rate": 0.995
+    },
+    {
+      "step": 500,
+      "greedy_acc": 0.13,
+      "sample_acc": 0.071,
+      "format_rate": 0.998
+    },
+    {
+      "step": 750,
+      "greedy_acc": 0.438,
+      "sample_acc": 0.284,
+      "format_rate": 0.997
+    },
+    {
+      "step": 1000,
+      "greedy_acc": 0.644,
+      "sample_acc": 0.548,
+      "format_rate": 0.998
+    },
+    {
+      "step": 1250,
+      "greedy_acc": 0.688,
+      "sample_acc": 0.59,
+      "format_rate": 1.0
+    },
+    {
+      "step": 1500,
+      "greedy_acc": 0.796,
+      "sample_acc": 0.721,
+      "format_rate": 1.0
+    },
+    {
+      "step": 1750,
+      "greedy_acc": 0.838,
+      "sample_acc": 0.787,
+      "format_rate": 1.0
+    },
+    {
+      "step": 2000,
+      "greedy_acc": 0.896,
+      "sample_acc": 0.848,
+      "format_rate": 1.0
+    },
+    {
+      "step": 2250,
+      "greedy_acc": 0.96,
+      "sample_acc": 0.899,
+      "format_rate": 1.0
+    },
+    {
+      "step": 2500,
+      "greedy_acc": 0.974,
+      "sample_acc": 0.94,
+      "format_rate": 1.0
+    },
+    {
+      "step": 2750,
+      "greedy_acc": 0.968,
+      "sample_acc": 0.953,
+      "format_rate": 1.0
+    },
+    {
+      "step": 3000,
+      "greedy_acc": 0.986,
+      "sample_acc": 0.969,
+      "format_rate": 1.0
+    }
+  ]
+}

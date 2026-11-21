@@ -1,0 +1,62 @@
+{
+  "train": {
+    "n": 100000,
+    "family": {
+      "add": 11329,
+      "multi": 35242,
+      "mul": 1797,
+      "word2": 29756,
+      "word1": 21876
+    },
+    "difficulty": {
+      "easy": 35002,
+      "multi": 64998
+    },
+    "answer_median": 64,
+    "answer_max": 1271
+  },
+  "val": {
+    "n": 500,
+    "family": {
+      "word2": 131,
+      "mul": 44,
+      "multi": 170,
+      "add": 98,
+      "word1": 57
+    },
+    "difficulty": {
+      "multi": 301,
+      "easy": 199
+    },
+    "answer_median": 72,
+    "answer_max": 1089
+  },
+  "test": {
+    "n": 1000,
+    "family": {
+      "add": 201,
+      "word2": 177,
+      "multi": 347,
+      "mul": 105,
+      "word1": 170
+    },
+    "difficulty": {
+      "easy": 476,
+      "multi": 524
+    },
+    "answer_median": 68,
+    "answer_max": 1189
+  },
+  "overlap_train_val": {
+    "question": 0,
+    "chain": 0
+  },
+  "overlap_test_train": {
+    "question": 0,
+    "chain": 0
+  },
+  "overlap_test_val": {
+    "question": 0,
+    "chain": 0
+  }
+}

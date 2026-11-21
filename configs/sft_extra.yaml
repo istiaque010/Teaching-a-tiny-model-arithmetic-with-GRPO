@@ -1,0 +1,14 @@
+# Matched control (Phase 11): more SFT from the final SFT model for the same training wall-clock as grpo_s0
+# (618 s / 0.754 s per update = 819 updates), constant lr 3e-5 (= the end of SFT's schedule).
+run: sft_extra
+init: sft
+seed: 1
+steps: 819
+batch: 64
+lr: 3.0e-5
+min_lr: 3.0e-5
+schedule: constant
+warmup: 0
+weight_decay: 0.1
+eval_every: 204
+eval_samples: 4

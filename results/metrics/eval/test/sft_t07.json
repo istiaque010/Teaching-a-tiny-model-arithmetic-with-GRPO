@@ -1,0 +1,28 @@
+{
+  "n_questions": 1000,
+  "n_samples": 16,
+  "sample_acc": 0.980375,
+  "format_rate": 1.0,
+  "pass@1": 0.980375,
+  "pass@2": 0.9902333333333333,
+  "pass@4": 0.9940082417582418,
+  "pass@8": 0.995588888888889,
+  "pass@16": 0.996,
+  "median_tokens": 39.0,
+  "ended_rate": 1.0,
+  "sample_acc_family": {
+    "add": 0.9972014925373134,
+    "mul": 0.9726190476190476,
+    "multi": 0.9565922190201729,
+    "word1": 0.9992647058823529,
+    "word2": 0.9943502824858758
+  },
+  "sample_acc_difficulty": {
+    "easy": 0.992515756302521,
+    "multi": 0.9693463740458015
+  },
+  "sample_s_per_answer_batched": 0.008809354193748732,
+  "temperature": 0.7,
+  "max_new": 64,
+  "ckpt": "sft"
+}

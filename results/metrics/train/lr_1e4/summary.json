@@ -1,0 +1,54 @@
+{
+  "run": "lr_1e4",
+  "config": {
+    "run": "lr_1e4",
+    "init": "sft/step_01000",
+    "seed": 100,
+    "iters": 60,
+    "prompts_per_step": 16,
+    "group_size": 8,
+    "temperature": 1.0,
+    "max_new": 64,
+    "epochs": 2,
+    "minibatch": 64,
+    "lr": 0.0001,
+    "warmup": 5,
+    "clip_eps": 0.2,
+    "beta": 0.04,
+    "grad_clip": 1.0,
+    "w_correct": 1.0,
+    "w_format": 0.1,
+    "eval_every": 20,
+    "eval_samples": 4
+  },
+  "train_seconds": 217.33833019970916,
+  "responses": 7680,
+  "response_tokens": 304693,
+  "evals": [
+    {
+      "iter": 0,
+      "greedy_acc": 0.644,
+      "sample_acc": 0.5345,
+      "format_rate": 0.9985
+    },
+    {
+      "iter": 20,
+      "greedy_acc": 0.46,
+      "sample_acc": 0.405,
+      "format_rate": 0.996
+    },
+    {
+      "iter": 40,
+      "greedy_acc": 0.482,
+      "sample_acc": 0.405,
+      "format_rate": 0.997
+    },
+    {
+      "iter": 60,
+      "greedy_acc": 0.45,
+      "sample_acc": 0.365,
+      "format_rate": 0.997
+    }
+  ],
+  "peak_rss_mb": 3402.65234375
+}

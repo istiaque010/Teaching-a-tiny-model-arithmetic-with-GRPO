@@ -1,0 +1,10 @@
+[lr_1e4] iter 0 val greedy 0.644 sample 0.534 format 0.999  train 0s
+[lr_1e4] iter 0 reward 0.631 correct 0.531 zero_var 0.31 len 41.3 clip 0.013 kl 0.04123700485649415 roll 1.8s opt 2.3s
+[lr_1e4] iter 10 reward 0.521 correct 0.422 zero_var 0.25 len 40.7 clip 0.010 kl 181.1302525202295 roll 1.9s opt 2.7s
+[lr_1e4] iter 20 val greedy 0.460 sample 0.405 format 0.996  train 73s
+[lr_1e4] iter 20 reward 0.459 correct 0.359 zero_var 0.50 len 41.2 clip 0.008 kl 0.08911465037169652 roll 1.7s opt 1.6s
+[lr_1e4] iter 30 reward 0.498 correct 0.398 zero_var 0.38 len 38.2 clip 0.017 kl 0.10993746608096325 roll 1.8s opt 2.0s
+[lr_1e4] iter 40 val greedy 0.482 sample 0.405 format 0.997  train 143s
+[lr_1e4] iter 40 reward 0.614 correct 0.516 zero_var 0.44 len 37.6 clip 0.013 kl 0.14334743494953597 roll 1.8s opt 2.1s
+[lr_1e4] iter 50 reward 0.498 correct 0.398 zero_var 0.38 len 38.4 clip 0.021 kl 0.05543829089234127 roll 1.7s opt 1.9s
+[lr_1e4] iter 60 val greedy 0.450 sample 0.365 format 0.997  train 217s

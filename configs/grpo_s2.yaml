@@ -1,0 +1,20 @@
+# Main GRPO (Phase 10) from the final SFT model, seed 2. lr 1e-5 from the Phase 10 pilot.
+run: grpo_s2
+init: sft
+seed: 2
+iters: 300
+prompts_per_step: 16
+group_size: 8
+temperature: 1.0
+max_new: 64
+epochs: 2
+minibatch: 64
+lr: 1.0e-5
+warmup: 5
+clip_eps: 0.2
+beta: 0.04
+grad_clip: 1.0
+w_correct: 1.0
+w_format: 0.1
+eval_every: 50
+eval_samples: 4

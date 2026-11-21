@@ -1,0 +1,48 @@
+{
+  "run": "grpo_pilot",
+  "config": {
+    "run": "grpo_pilot",
+    "init": "sft_pilot",
+    "seed": 0,
+    "iters": 30,
+    "prompts_per_step": 16,
+    "group_size": 8,
+    "temperature": 1.0,
+    "max_new": 64,
+    "epochs": 2,
+    "minibatch": 64,
+    "lr": 1e-05,
+    "warmup": 5,
+    "clip_eps": 0.2,
+    "beta": 0.04,
+    "grad_clip": 1.0,
+    "w_correct": 1.0,
+    "w_format": 0.1,
+    "eval_every": 15,
+    "eval_samples": 2
+  },
+  "train_seconds": 95.37653239944484,
+  "responses": 3840,
+  "response_tokens": 153132,
+  "evals": [
+    {
+      "iter": 0,
+      "greedy_acc": 0.824,
+      "sample_acc": 0.727,
+      "format_rate": 1.0
+    },
+    {
+      "iter": 15,
+      "greedy_acc": 0.794,
+      "sample_acc": 0.731,
+      "format_rate": 1.0
+    },
+    {
+      "iter": 30,
+      "greedy_acc": 0.778,
+      "sample_acc": 0.701,
+      "format_rate": 1.0
+    }
+  ],
+  "peak_rss_mb": 3598.65625
+}
